@@ -44,12 +44,12 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+          <div className="group relative aspect-[4/5] overflow-hidden rounded-lg">
             <Image
               src="/images/finish-line.png"
               alt="An athlete crossing the ZanziFit finish line at sunset on the Zanzibar coast"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>

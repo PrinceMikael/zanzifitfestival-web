@@ -69,8 +69,8 @@ export default function FestivalPage() {
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {DISCIPLINES.map((d) => (
             <article key={d.name} className="overflow-hidden rounded-lg border border-border bg-ink-soft">
-              <div className="relative aspect-[16/10]">
-                <Image src={d.image} alt={`${d.name} at ZanziFit Festival`} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="group relative aspect-[16/10]">
+                <Image src={d.image} alt={`${d.name} at ZanziFit Festival`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-soft via-ink-soft/20 to-transparent" />
                 <span className="absolute left-5 top-5 rounded-sm bg-ink/80 px-3 py-1.5 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber backdrop-blur">
                   {d.tag}
@@ -128,8 +128,8 @@ export default function FestivalPage() {
               ))}
             </ul>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-            <Image src="/images/festival-village.png" alt="The ZanziFit festival village and expo at golden hour" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+          <div className="group relative aspect-[4/3] overflow-hidden rounded-lg">
+            <Image src="/images/festival-village.png" alt="The ZanziFit festival village and expo at golden hour" fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </section>

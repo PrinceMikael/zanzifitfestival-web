@@ -85,6 +85,19 @@ Applied consistently across all four forms (Newsletter, Partnership Inquiry, Con
 - Submit button disabled until the form is valid; on submit, re-validates everything and focuses the first invalid field if any slipped through.
 - Existing "simulated success" UX pattern (swap form for a thank-you state) is kept as-is — validation only changes what happens before that point.
 
+## 7. Light / dark theme
+
+**Trigger:** the site currently ships a single fixed dark theme with no light variant. Added as a requirement after initial spec approval.
+
+- **Selection logic:** a manual sun/moon toggle in `SiteHeader`, defaulting on first visit to the visitor's OS-level `prefers-color-scheme`. Choice is persisted in `localStorage` and re-applied on future visits, overriding system preference once set.
+- **Palette:** the light theme reuses existing brand tokens rather than introducing new colors — `--bone` (`#EDE7D8`) becomes the light-mode background, `--ink` becomes light-mode foreground text, `--amber` and `--deep-teal` remain the accents in both themes. This keeps the "horizon meets start line" identity intact in both modes instead of genericizing to plain white/gray.
+- **Mechanism:** `globals.css` already defines all component-facing colors as semantic tokens (`--background`, `--foreground`, `--card`, `--border`, etc.) consumed via Tailwind utility classes (`bg-background`, `text-bone`, `border-border`) rather than hardcoded colors — confirmed by reading every page/component file. Theme switching is implemented by adding a second token block scoped to `:root[data-theme="light"]` that remaps the semantic tokens to the Bone-based palette; a `data-theme` attribute on `<html>` (managed by a small `ThemeProvider` client component) toggles between blocks. No per-component changes needed for the common case since components already consume tokens, not raw colors.
+- **Known exceptions requiring explicit review:** a few places currently assume the dark theme structurally, not just via token color:
+  - `site-header.tsx` logo has `className="... invert lg:h-9"` — inverts a black-on-transparent logo to read white on dark backgrounds; must become conditional (no invert in light mode).
+  - `site-footer.tsx` logo has the same `invert` class.
+  - `PageHero`'s decorative radial-gradient background uses fixed `var(--amber)` / `var(--deep-teal)` at low opacity — should still read fine on a light background but gets visually verified during implementation.
+  - Any component passing `tone="dark"` explicitly (the `SectionHeading` default) needs a check that "dark tone" still means "readable on the current theme's background," since that prop currently means "for use on a dark-background section" independent of site-wide theme — these are orthogonal concepts that need to be reconciled (see Task in the plan).
+
 ## Out of scope for this round
 
 - Any real backend/database implementation (§4 is a recommendation doc only, per explicit instruction to plan this later).

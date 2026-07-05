@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
-import { Chevrons } from '@/components/chevrons'
 
 export const metadata: Metadata = {
   title: 'Leadership',

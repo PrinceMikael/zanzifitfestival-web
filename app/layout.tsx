@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Fraunces, Space_Grotesk, Inter } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { ThemeScript } from '@/components/theme-script'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -57,6 +58,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${spaceGrotesk.variable} ${inter.variable} bg-background`}
     >
       <body className="antialiased">
+        <ThemeScript />
         <SiteHeader />
         {children}
         <SiteFooter />

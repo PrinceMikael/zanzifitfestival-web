@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Chevrons } from '@/components/chevrons'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 const NAV = [
   { href: '/about', label: 'About' },
@@ -90,6 +91,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Link
             href="/register"
             className="group hidden items-center gap-2 rounded-sm bg-amber px-5 py-2.5 font-utility text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5 sm:inline-flex"

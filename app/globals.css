@@ -49,6 +49,24 @@
   --font-body: var(--font-inter);
 }
 
+/* Light theme — remaps only the semantic (shadcn-style) tokens that
+   body/bg-background/text-foreground consume. Section components that
+   reference brand tokens directly (bg-ink, text-bone, bg-deep-teal) are
+   unaffected by this block and are handled per-section in later work. */
+:root[data-theme='light'] {
+  --background: var(--bone);
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --secondary-foreground: var(--bone);
+  --muted: #e4ddc9;
+  --muted-foreground: rgba(11, 14, 18, 0.62);
+  --border: rgba(11, 14, 18, 0.12);
+  --input: rgba(11, 14, 18, 0.16);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

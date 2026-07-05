@@ -21,7 +21,7 @@ const TEAM = [
     name: 'Salim Kikeke',
     role: 'Chairman of the Board',
     image: '/images/leadership/salim-kikeke.jpg',
-    bio: 'Chairs the ZanziFit board, guiding the festival's governance and long-term strategic direction.',
+    bio: 'Chairs the ZanziFit board, guiding the festival\'s governance and long-term strategic direction.',
   },
   {
     name: 'Hassan Mussa',
@@ -33,13 +33,13 @@ const TEAM = [
     name: 'Mohamed Sharif',
     role: 'Director & Board Member',
     image: '/images/leadership/mohamed-sharif.jpg',
-    bio: 'Contributes to board-level direction and oversight across the festival's core operations.',
+    bio: 'Contributes to board-level direction and oversight across the festival\'s core operations.',
   },
   {
     name: 'Hassan Ali',
     role: 'Director & Board Member',
     image: '/images/leadership/hassan-ali.jpg',
-    bio: 'Contributes to board-level direction and oversight across the festival's core operations.',
+    bio: 'Contributes to board-level direction and oversight across the festival\'s core operations.',
   },
   {
     name: 'Walter Mwach',

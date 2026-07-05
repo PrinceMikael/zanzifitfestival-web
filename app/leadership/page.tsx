@@ -12,36 +12,41 @@ export const metadata: Metadata = {
 
 const TEAM = [
   {
-    name: 'Juma Salim',
-    role: 'Founder & Festival Director',
-    image: '/images/leader-1.png',
-    bio: 'Endurance athlete and events entrepreneur. Juma founded ZanziFit to give East Africa a world-class festival on home soil.',
+    name: 'Ally Daudi',
+    role: 'Founder & Executive Director',
+    image: '/images/leadership/ally-daudi.jpg',
+    bio: 'Founder of ZanziFit Festival, driving the vision to bring a world-class endurance sports platform to East Africa.',
   },
   {
-    name: 'Amina Rashid',
-    role: 'Event Director',
-    image: '/images/leader-2.png',
-    bio: 'Fifteen years running large-scale destination events across the region. Amina owns race-weekend delivery end to end.',
+    name: 'Salim Kikeke',
+    role: 'Chairman of the Board',
+    image: '/images/leadership/salim-kikeke.jpg',
+    bio: 'Chairs the ZanziFit board, guiding the festival's governance and long-term strategic direction.',
   },
   {
-    name: 'David Okoth',
-    role: 'Head of Sport & Competition',
-    image: '/images/leader-3.png',
-    bio: 'Former national cyclist and certified course designer. David maps the courses and holds the timing to elite standards.',
+    name: 'Hassan Mussa',
+    role: 'Project Manager & Board Member',
+    image: '/images/leadership/hassan-mussa.jpg',
+    bio: 'Oversees festival project delivery, coordinating the operational work that turns the event plan into race day.',
   },
   {
-    name: 'Sofia Mbwana',
-    role: 'Head of Partnerships',
-    image: '/images/leader-4.png',
-    bio: 'Brand and sponsorship strategist. Sofia builds the partner programme that keeps the festival premium and sustainable.',
+    name: 'Mohamed Sharif',
+    role: 'Director & Board Member',
+    image: '/images/leadership/mohamed-sharif.jpg',
+    bio: 'Contributes to board-level direction and oversight across the festival's core operations.',
   },
-]
-
-const ADVISORS = [
-  'Zanzibar Tourism Board — destination advisory',
-  'Regional Cycling Federation — sporting sanction',
-  'Coastal Medical Group — safety & medical direction',
-  'HYROX-style format consultants — competition design',
+  {
+    name: 'Hassan Ali',
+    role: 'Director & Board Member',
+    image: '/images/leadership/hassan-ali.jpg',
+    bio: 'Contributes to board-level direction and oversight across the festival's core operations.',
+  },
+  {
+    name: 'Walter Mwach',
+    role: 'Board Secretary',
+    image: '/images/leadership/walter-mwach.jpg',
+    bio: 'Maintains board governance records and supports the formal decision-making process behind the festival.',
+  },
 ]
 
 export default function LeadershipPage() {
@@ -55,7 +60,7 @@ export default function LeadershipPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <SectionHeading eyebrow="Leadership" title="Meet the core team." />
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m) => (
             <article key={m.name} className="group">
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border">
@@ -77,16 +82,17 @@ export default function LeadershipPage() {
       </section>
 
       <section className="border-t border-border bg-ink-soft py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow="Advisory & partners" title="Backed by the right expertise." />
-          <ul className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
-            {ADVISORS.map((a) => (
-              <li key={a} className="flex items-center gap-3 rounded-sm border border-border bg-background px-5 py-4 text-bone">
-                <Chevrons className="shrink-0 text-amber" count={1} />
-                <span className="text-sm leading-relaxed">{a}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <SectionHeading
+            eyebrow="Governance"
+            title="One board, full accountability."
+            align="center"
+          />
+          <p className="mx-auto mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground">
+            The six leaders above make up ZanziFit Festival&apos;s complete governing board —
+            there is no separate advisory layer. As the festival grows, formal advisory and
+            sanctioning partnerships (destination, sporting, medical) will be announced here.
+          </p>
         </div>
       </section>
     </main>

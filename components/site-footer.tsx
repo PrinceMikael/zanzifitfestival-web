@@ -50,6 +50,8 @@ export function SiteFooter() {
               alt="ZFit Festival"
               width={150}
               height={50}
+              // Footer always renders on bg-ink (literal brand-dark), unaffected
+              // by the light/dark toggle — logo invert stays unconditional.
               className="h-9 w-auto invert"
             />
             <p className="mt-5 text-pretty leading-relaxed text-bone/65">

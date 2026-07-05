@@ -67,7 +67,7 @@ export function NewsletterForm() {
         </button>
       </div>
       {error ? (
-        <p id="newsletter-email-error" role="alert" className="mt-2 text-xs text-ember">
+        <p id="newsletter-email-error" role="alert" className="mt-2 text-xs text-destructive">
           {error}
         </p>
       ) : null}

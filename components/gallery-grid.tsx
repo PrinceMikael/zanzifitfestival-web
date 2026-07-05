@@ -11,7 +11,7 @@ const ITEMS: Item[] = [
   { src: '/images/finish-line.png', alt: 'An athlete crossing the finish line at sunset', tag: 'Moments' },
   { src: '/images/festival-village.png', alt: 'The festival village at golden hour', tag: 'Festival', span: true },
   { src: '/images/zanzibar-coast.png', alt: 'Aerial view of the Zanzibar coastline', tag: 'Destination' },
-  { src: '/images/hero-poster.png', alt: 'The ZanziFit start line at dawn', tag: 'Moments' },
+  { src: '/images/finish-line.png', alt: 'The ZanziFit start line at dawn', tag: 'Moments' },
 ]
 
 const FILTERS = ['All', 'Cycling', 'HYROX', 'Festival', 'Destination', 'Moments']

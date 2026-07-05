@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+/* ZanziFit brand theme */
+
+@custom-variant dark (&:is(.dark *));
+
+/* ================================================================
+   ZanziFit Festival — "Horizon meets the start line"
+   Brand tokens
+   ================================================================ */
+:root {
+  /* Raw brand palette */
+  --ink: #0b0e12; /* near-black w/ blue undertone */
+  --bone: #ede7d8; /* light reversed sections */
+  --amber: #dfa23b; /* primary accent */
+  --deep-teal: #0e4f4c; /* ocean / luxury register */
+  --ember: #c64a2c; /* live / urgent moments ONLY */
+
+  --ink-soft: #12161c;
+  --ink-line: rgba(237, 231, 216, 0.12);
+  --bone-muted: rgba(237, 231, 216, 0.62);
+  --ink-muted: rgba(11, 14, 18, 0.62);
+
+  /* Mapped semantic tokens (dark-first brand theme) */
+  --background: var(--ink);
+  --foreground: var(--bone);
+  --card: var(--ink-soft);
+  --card-foreground: var(--bone);
+  --popover: var(--ink-soft);
+  --popover-foreground: var(--bone);
+  --primary: var(--amber);
+  --primary-foreground: #17110a;
+  --secondary: var(--deep-teal);
+  --secondary-foreground: var(--bone);
+  --muted: #171b21;
+  --muted-foreground: var(--bone-muted);
+  --accent: var(--amber);
+  --accent-foreground: #17110a;
+  --destructive: var(--ember);
+  --destructive-foreground: var(--bone);
+  --border: var(--ink-line);
+  --input: rgba(237, 231, 216, 0.16);
+  --ring: var(--amber);
+
+  --radius: 0.25rem;
+
+  --font-display: var(--font-fraunces);
+  --font-utility: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Named brand colors usable as utilities: bg-ink, text-amber, etc. */
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-bone: var(--bone);
+  --color-amber: var(--amber);
+  --color-deep-teal: var(--deep-teal);
+  --color-ember: var(--ember);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.6);
+  --radius-2xl: calc(var(--radius) * 2.4);
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display), ui-serif, Georgia, serif;
+  --font-mono: var(--font-utility), ui-monospace, monospace;
+
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+  --font-utility: var(--font-utility), ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  ::selection {
+    background: var(--amber);
+    color: #17110a;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-utility {
+    font-family: var(--font-utility);
+    font-feature-settings: 'tnum' 1;
+  }
+  /* Condensed technical eyebrow / label */
+  .eyebrow {
+    font-family: var(--font-utility);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+  .duotone-ink-amber {
+    filter: grayscale(1) contrast(1.05);
+    mix-blend-mode: luminosity;
+  }
+}
+
+/* Chevron drift keyframe used by the >>> motion motif */
+@keyframes chevron-drift {
+  0% {
+    transform: translateX(-0.35rem);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0.35rem);
+    opacity: 0.25;
+  }
+}

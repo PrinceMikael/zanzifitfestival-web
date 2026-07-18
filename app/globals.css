@@ -54,10 +54,14 @@
   --font-body: var(--font-inter);
 }
 
-/* Light theme — remaps only the semantic (shadcn-style) tokens that
-   body/bg-background/text-foreground consume. Section components that
-   reference brand tokens directly (bg-ink, text-bone, bg-deep-teal) are
-   unaffected by this block and are handled per-section in later work. */
+/* Light theme — remaps the semantic (shadcn-style) tokens that
+   body/bg-background/text-foreground consume, plus the surface-dark-*
+   tokens that page-body sections use for their dark-banded look
+   (bg-surface-dark, bg-surface-dark-soft, text-surface-dark-foreground).
+   Raw brand tokens (bg-ink, text-bone, bg-deep-teal) are deliberately
+   left unaffected: they mark surfaces that stay dark regardless of
+   theme (site-header, site-footer, photo-overlay scrims, the fixed
+   deep-teal accent bands) and must not flip. */
 :root[data-theme='light'] {
   --background: var(--bone);
   --foreground: var(--ink);

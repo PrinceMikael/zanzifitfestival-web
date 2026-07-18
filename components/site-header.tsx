@@ -12,6 +12,8 @@ import { ThemeToggle } from '@/components/theme-toggle'
 const NAV = [
   { href: '/about', label: 'About' },
   { href: '/festival', label: 'The Festival' },
+  { href: '/experience', label: 'Experience Zanzibar' },
+  { href: '/accommodation', label: 'Accommodation' },
   { href: '/partnership', label: 'Partnership' },
   { href: '/leadership', label: 'Leadership' },
   { href: '/gallery', label: 'Gallery' },

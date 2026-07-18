@@ -144,6 +144,7 @@ export default function AccommodationPage() {
         eyebrow="Accommodation"
         title={<>We&apos;re not a hotel. We&apos;re your local connection.</>}
         intro="ZanziFit doesn't run properties — we know them. Tell us what you're after and we'll help you find and book a place to stay for race weekend, from beachfront resorts to budget guesthouses."
+        image={{ src: '/images/festival-village.png', alt: 'The ZanziFit festival village and expo at golden hour' }}
       />
 
       {TIERS.map((tier) => (

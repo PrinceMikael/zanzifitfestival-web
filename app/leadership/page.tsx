@@ -55,6 +55,7 @@ export default function LeadershipPage() {
         eyebrow="The team"
         title={<>The people behind the horizon.</>}
         intro="ZanziFit is run by a team that lives at the intersection of endurance sport, world-class event operations and Zanzibari hospitality."
+        image={{ src: '/images/leader-1.png', alt: 'ZanziFit Festival leadership on the Zanzibar coast' }}
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">

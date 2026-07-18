@@ -53,6 +53,7 @@ export default function FestivalPage() {
         eyebrow="The festival"
         title={<>Two disciplines. One coastline. One weekend.</>}
         intro="6–8 November 2026 in Fumba Town, Zanzibar. Race the discipline you love — or take on both — then recover on the same sand you started from."
+        image={{ src: '/images/cycling.png', alt: 'The peloton racing along the coastal road' }}
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/register" className="inline-flex items-center gap-2 rounded-sm bg-amber px-6 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5">

@@ -113,6 +113,7 @@ export default function ExperiencePage() {
         eyebrow="Experience Zanzibar"
         title={<>Race here. Stay a while.</>}
         intro="ZanziFit is based in Fumba Town, on Zanzibar's west coast — a short ride from Stone Town's old city and the island's best-known beaches. Here's what to see beyond the finish line."
+        image={{ src: '/images/zanzibar-coast.png', alt: 'A traditional dhow sailing off the Zanzibar coast at golden hour' }}
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">

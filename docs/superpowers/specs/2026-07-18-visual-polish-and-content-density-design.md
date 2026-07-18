@@ -256,3 +256,73 @@ plan with per-file verification, not a single sweeping find-replace —
 some of those files may have other literal (correctly-unconditional)
 uses of the same classes mixed in with the section uses that should
 migrate, and each needs a quick eyeball check, not a blind regex.
+
+## Migration audit — resolved KEEP LITERAL / MIGRATE calls
+
+A full-codebase audit (Explore agent + call-site greps) resolved every
+ambiguous case below. This is the authoritative list the implementation
+plan is built from.
+
+**KEEP LITERAL (confirmed always-dark by call-site check):**
+- `components/site-header.tsx`, `components/site-footer.tsx`,
+  `components/hero.tsx` — already-known always-dark surfaces.
+- `components/custom-cursor.tsx` — cursor chrome, not a page section.
+- `components/countdown.tsx` (`bg-ink/60`, `text-bone/55`) — `<Countdown
+  />` has exactly one call site, `components/hero.tsx:75`, inside the
+  always-dark homepage hero. Not a general-purpose widget in practice.
+- `components/newsletter-form.tsx` (`bg-ink-soft`, `text-bone`,
+  `placeholder:text-bone/40`) — `<NewsletterForm />` has exactly one
+  call site, `components/site-footer.tsx:96`, inside the always-dark
+  footer.
+- `components/theme-toggle.tsx` (`text-bone`) — `<ThemeToggle />` has
+  exactly one call site, `components/site-header.tsx:99`, inside the
+  always-dark header.
+- All photo-overlay scrims/badges (`bg-ink/70`, `bg-ink/80` combined
+  with `absolute` + `backdrop-blur` + sitting over an `<Image>`):
+  `components/disciplines.tsx:53`, `components/expandable-card.tsx:42`,
+  `components/gallery-grid.tsx:57`, `app/festival/page.tsx:75`. These
+  stay dark for legibility over a photo regardless of page theme.
+  Their paired gradient stops (`from-ink`/`from-ink-soft` on the same
+  element) stay literal too, for the same reason.
+- `bg-deep-teal` sections and any `text-bone`/`text-bone/70`/
+  `text-bone/80` foreground text inside them (`app/about/page.tsx:103`,
+  `app/partnership/page.tsx:63,68`, `components/stats-band.tsx:16,21,24`)
+  — `--deep-teal` is a single fixed accent color, not a dark/light
+  pair, and doesn't change between themes (confirmed: no
+  `[data-theme='light']` override exists for it, same "later work"
+  gap named in `globals.css:54`, but out of scope here — the section
+  itself will look like a deliberate teal accent band in either theme,
+  same as an amber accent would, so its `text-bone` foreground stays
+  literal to remain legible against that constant-dark teal).
+
+**MIGRATE (page-body/section content, confirmed via call-site check
+or context):**
+- `components/cta-band.tsx`, `components/disciplines.tsx` (outer
+  section + card, not the badge), `components/why-zanzibar.tsx`,
+  `components/partner-strip.tsx`, `components/page-hero.tsx`,
+  `components/expandable-card.tsx` (card body, not the badge),
+  `components/section-heading.tsx` (`tone !== 'light'` branch only),
+  `components/accordion-item.tsx` (its only call site,
+  `components/faq-accordion.tsx`, renders on `/faq`'s plain
+  `bg-background` section — themed correctly today only by accident,
+  since `text-bone` happens to render fine on dark `--ink` in dark
+  mode but would break in light mode exactly like the rest of this
+  bug class), `components/enquiry-link.tsx`, `components/contact-form.tsx`,
+  `components/register-form.tsx`, `components/partnership-inquiry.tsx`
+  (all three share the same bug: `bg-background` already flips per
+  theme, but their `text-bone` field/heading text doesn't — a second,
+  independently-discovered instance of the same root cause), plus the
+  page files: `app/about/page.tsx` (all matches except line 103's
+  deep-teal section), `app/festival/page.tsx` (all matches except line
+  75's photo badge), `app/leadership/page.tsx`, `app/partnership/page.tsx`
+  (all matches except lines 63/68's deep-teal section),
+  `app/experience/page.tsx`, `app/accommodation/page.tsx`.
+
+**`section-heading.tsx`'s mirror-image note:** the audit also flagged
+`tone === 'light'` branch (`text-ink`, `text-ink/70`) as a possible
+parallel bug. Checked: `tone="light"` has zero call sites anywhere in
+the codebase today (grepped `tone="light"`, `tone={`, `tone:` —
+no matches) — the branch is currently dead code. No action needed;
+noted so a future change introducing a `tone="light"` usage knows to
+verify it against a semantic (theme-aware) background, not a raw dark
+one.

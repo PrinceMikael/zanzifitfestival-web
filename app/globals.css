@@ -21,6 +21,11 @@
   --bone-muted: rgba(237, 231, 216, 0.62);
   --ink-muted: rgba(11, 14, 18, 0.62);
 
+  --surface-dark: var(--ink);
+  --surface-dark-soft: var(--ink-soft);
+  --surface-dark-foreground: var(--bone);
+  --surface-dark-foreground-muted: var(--bone-muted);
+
   /* Mapped semantic tokens (dark-first brand theme) */
   --background: var(--ink);
   --foreground: var(--bone);
@@ -65,6 +70,10 @@
   --muted-foreground: rgba(11, 14, 18, 0.62);
   --border: rgba(11, 14, 18, 0.12);
   --input: rgba(11, 14, 18, 0.16);
+  --surface-dark: var(--bone);
+  --surface-dark-soft: #e4ddc9;
+  --surface-dark-foreground: var(--ink);
+  --surface-dark-foreground-muted: rgba(11, 14, 18, 0.62);
 }
 
 @theme inline {
@@ -95,6 +104,9 @@
   --color-amber: var(--amber);
   --color-deep-teal: var(--deep-teal);
   --color-ember: var(--ember);
+  --color-surface-dark: var(--surface-dark);
+  --color-surface-dark-soft: var(--surface-dark-soft);
+  --color-surface-dark-foreground: var(--surface-dark-foreground);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);

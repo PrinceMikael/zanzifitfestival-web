@@ -20,7 +20,7 @@ const THINGS_TO_DO = [
     summary:
       'The UNESCO-listed old town: narrow alleys, carved wooden doors, and centuries of Swahili, Omani and Indian history.',
     details: [
-      'House of Wonders — former Sultan\'s palace, now a museum of Swahili and Zanzibar history',
+      'House of Wonders — former Sultan’s palace, now a museum of Swahili and Zanzibar history',
       'Guided spice tours run daily from the Old Fort area',
       'Forodhani Gardens waterfront, best visited at sunset',
     ],
@@ -30,10 +30,10 @@ const THINGS_TO_DO = [
     badge: 'Stone Town',
     image: '/images/festival-village.png',
     summary:
-      'Every evening the seafront gardens turn into an open-air food market — grilled seafood skewers, samosas and Zanzibar "pizza" cooked to order.',
+      'Every evening the seafront gardens turn into an open-air food market — grilled seafood skewers, samosas and Zanzibar “pizza” cooked to order.',
     details: [
       'Best visited 6–9pm as vendors set up for the evening',
-      'Try urojo, Zanzibar\'s tangy spiced soup, alongside the grills',
+      'Try urojo, Zanzibar’s tangy spiced soup, alongside the grills',
       'A five-minute walk from most Stone Town accommodation',
     ],
   },
@@ -42,7 +42,7 @@ const THINGS_TO_DO = [
     badge: '~10 min from Fumba',
     image: '/images/zanzibar-coast.png',
     summary:
-      'The conservation area right on Fumba\'s doorstep — dolphin encounters, snorkeling and sandbank boat trips.',
+      'The conservation area right on Fumba’s doorstep — dolphin encounters, snorkeling and sandbank boat trips.',
     details: [
       'Boat trips typically depart from Fumba and nearby jetties',
       'Snorkeling over the reef is best at low tide',
@@ -54,9 +54,9 @@ const THINGS_TO_DO = [
     badge: '~70–80 min from Fumba',
     image: '/images/zanzibar-coast.png',
     summary:
-      'The island\'s north-tip beaches — turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
+      'The island’s north-tip beaches — turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
     details: [
-      'Kendwa\'s beach stays swimmable at every tide, unlike much of the east coast',
+      'Kendwa’s beach stays swimmable at every tide, unlike much of the east coast',
       'A popular day-trip or stay-over add-on after race weekend',
     ],
   },
@@ -65,7 +65,7 @@ const THINGS_TO_DO = [
     badge: '~50 min from Fumba',
     image: '/images/festival-village.png',
     summary:
-      'Zanzibar\'s only national park — home to the red colobus monkey, found nowhere else on Earth.',
+      'Zanzibar’s only national park — home to the red colobus monkey, found nowhere else on Earth.',
     details: [
       'Guided forest walks last roughly 45 minutes to an hour',
       'Combine with the adjacent mangrove boardwalk',
@@ -88,7 +88,7 @@ const THINGS_TO_DO = [
     badge: '~40 min from Fumba',
     image: '/images/festival-village.png',
     summary:
-      'A fishing village on the south coast, known for wild dolphin encounters and one of East Africa\'s oldest mosques.',
+      'A fishing village on the south coast, known for wild dolphin encounters and one of East Africa’s oldest mosques.',
     details: [
       'Boat trips have a strong chance of dolphin sightings, though they are wild and not guaranteed',
       'The 12th-century mosque holds early Kufic script inscriptions, among the earliest evidence of Islam in East Africa',
@@ -120,7 +120,7 @@ const THINGS_TO_DO = [
 
 const CULTURE_FACTS = [
   'Zanzibar sits on the historic Swahili Coast, shaped by centuries of Arab, Persian, Indian and European trade and, later, Omani Sultanate rule.',
-  'Stone Town\'s carved wooden doors are a signature craft — each pattern historically signalled the wealth and trade of the household.',
+  'Stone Town’s carved wooden doors are a signature craft — each pattern historically signalled the wealth and trade of the household.',
   'The islands are predominantly Muslim, so modest dress (shoulders and knees covered) is appreciated away from the beach, particularly in Stone Town.',
   'Taarab, a musical style blending Swahili, Arab and Indian influences, remains a living tradition across the islands.',
   'Stone Town hosts Sauti za Busara, a four-day pan-African music festival held every February.',
@@ -150,11 +150,11 @@ const FOOD_HIGHLIGHTS = [
   },
   {
     name: 'Biryani',
-    detail: 'A saffron-spiced layered rice dish with marinated meat and fried onions, reflecting the island\'s Indian Ocean trade history.',
+    detail: 'A saffron-spiced layered rice dish with marinated meat and fried onions, reflecting the island’s Indian Ocean trade history.',
   },
   {
     name: 'Kashata',
-    detail: 'A coconut and sesame sweet, sold across Stone Town\'s markets and street stalls.',
+    detail: 'A coconut and sesame sweet, sold across Stone Town’s markets and street stalls.',
   },
   {
     name: 'Mandazi',

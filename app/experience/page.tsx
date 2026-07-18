@@ -127,7 +127,7 @@ export default function ExperiencePage() {
         </p>
       </section>
 
-      <section id="things-to-do" className="scroll-mt-24 border-y border-border bg-ink-soft py-20 md:py-28">
+      <section id="things-to-do" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading eyebrow="Things to Do" title="Beyond race day." />
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -173,13 +173,13 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-ink-soft py-20 md:py-28">
+      <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading eyebrow="Food & Cuisine" title="Eat your way around the island." />
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
             {FOOD_HIGHLIGHTS.map((f) => (
               <div key={f.name} className="rounded-lg border border-border bg-background p-6">
-                <h3 className="font-display text-xl font-semibold text-bone">{f.name}</h3>
+                <h3 className="font-display text-xl font-semibold text-surface-dark-foreground">{f.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.detail}</p>
               </div>
             ))}
@@ -191,7 +191,7 @@ export default function ExperiencePage() {
         <SectionHeading eyebrow="Travel Information" title="Plan your trip." />
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {TRAVEL_INFO.map((i) => (
-            <li key={i} className="flex items-center gap-3 rounded-sm border border-border bg-ink-soft px-4 py-3 text-sm text-bone">
+            <li key={i} className="flex items-center gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-3 text-sm text-surface-dark-foreground">
               <Chevrons className="shrink-0 text-amber" count={1} />
               {i}
             </li>

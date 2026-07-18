@@ -150,7 +150,7 @@ export default function AccommodationPage() {
         <section
           key={tier.id}
           id={tier.id}
-          className="scroll-mt-24 border-b border-border px-6 py-20 md:py-28 odd:bg-ink-soft"
+          className="scroll-mt-24 border-b border-border px-6 py-20 md:py-28 odd:bg-surface-dark-soft"
         >
           <div className="mx-auto max-w-6xl">
             <SectionHeading eyebrow={tier.eyebrow} title={tier.title} />
@@ -177,9 +177,9 @@ export default function AccommodationPage() {
         <SectionHeading eyebrow="Booking Info" title="How booking through us works." />
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {BOOKING_STEPS.map((s) => (
-            <div key={s.step} className="rounded-lg border border-border bg-ink-soft p-8">
+            <div key={s.step} className="rounded-lg border border-border bg-surface-dark-soft p-8">
               <div className="font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber">{s.step}</div>
-              <h3 className="mt-2 font-display text-2xl font-semibold text-bone">{s.title}</h3>
+              <h3 className="mt-2 font-display text-2xl font-semibold text-surface-dark-foreground">{s.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.detail}</p>
             </div>
           ))}

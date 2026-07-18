@@ -58,7 +58,7 @@ export default function FestivalPage() {
           <Link href="/register" className="inline-flex items-center gap-2 rounded-sm bg-amber px-6 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5">
             Register <Chevrons />
           </Link>
-          <a href="#schedule" className="inline-flex items-center gap-2 rounded-sm border border-border px-6 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-bone transition-colors hover:border-amber hover:text-amber">
+          <a href="#schedule" className="inline-flex items-center gap-2 rounded-sm border border-border px-6 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber">
             View schedule
           </a>
         </div>
@@ -68,21 +68,21 @@ export default function FestivalPage() {
         <SectionHeading eyebrow="Choose your start line" title="Pick your lane — or take on both." />
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {DISCIPLINES.map((d) => (
-            <article key={d.name} className="overflow-hidden rounded-lg border border-border bg-ink-soft">
+            <article key={d.name} className="overflow-hidden rounded-lg border border-border bg-surface-dark-soft">
               <div className="group relative aspect-[16/10]">
                 <Image src={d.image} alt={`${d.name} at ZanziFit Festival`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 100vw, 50vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-soft via-ink-soft/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-dark-soft via-surface-dark-soft/20 to-transparent" />
                 <span className="absolute left-5 top-5 rounded-sm bg-ink/80 px-3 py-1.5 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber backdrop-blur">
                   {d.tag}
                 </span>
               </div>
               <div className="p-8">
-                <h3 className="font-display text-3xl font-semibold text-bone">{d.name}</h3>
+                <h3 className="font-display text-3xl font-semibold text-surface-dark-foreground">{d.name}</h3>
                 <p className="mt-3 leading-relaxed text-muted-foreground">{d.blurb}</p>
                 <ul className="mt-6 divide-y divide-border border-t border-border">
                   {d.categories.map((c) => (
                     <li key={c.name} className="flex items-baseline justify-between gap-4 py-3">
-                      <span className="font-utility text-sm font-semibold uppercase tracking-[0.1em] text-bone">{c.name}</span>
+                      <span className="font-utility text-sm font-semibold uppercase tracking-[0.1em] text-surface-dark-foreground">{c.name}</span>
                       <span className="text-right text-sm text-muted-foreground">{c.detail}</span>
                     </li>
                   ))}
@@ -93,14 +93,14 @@ export default function FestivalPage() {
         </div>
       </section>
 
-      <section id="schedule" className="scroll-mt-24 border-y border-border bg-ink-soft py-20 md:py-28">
+      <section id="schedule" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading eyebrow="Race weekend" title="Three days on the coast." />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {SCHEDULE.map((s) => (
               <div key={s.day} className="rounded-lg border border-border bg-background p-8">
                 <div className="font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber">{s.day}</div>
-                <h3 className="mt-2 font-display text-2xl font-semibold text-bone">{s.title}</h3>
+                <h3 className="mt-2 font-display text-2xl font-semibold text-surface-dark-foreground">{s.title}</h3>
                 <ul className="mt-5 space-y-3">
                   {s.items.map((i) => (
                     <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
@@ -121,7 +121,7 @@ export default function FestivalPage() {
             <SectionHeading eyebrow="Your entry includes" title="Everything but the effort." align="left" />
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {INCLUDED.map((i) => (
-                <li key={i} className="flex items-center gap-3 rounded-sm border border-border bg-ink-soft px-4 py-3 text-sm text-bone">
+                <li key={i} className="flex items-center gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-3 text-sm text-surface-dark-foreground">
                   <Chevrons className="shrink-0 text-amber" count={1} />
                   {i}
                 </li>

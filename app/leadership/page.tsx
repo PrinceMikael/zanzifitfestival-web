@@ -72,7 +72,7 @@ export default function LeadershipPage() {
                 />
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink to-transparent" />
               </div>
-              <h3 className="mt-5 font-display text-xl font-semibold text-bone">{m.name}</h3>
+              <h3 className="mt-5 font-display text-xl font-semibold text-surface-dark-foreground">{m.name}</h3>
               <div className="mt-1 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber">{m.role}</div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
             </article>
@@ -80,7 +80,7 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-ink-soft py-20 md:py-28">
+      <section className="border-t border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <SectionHeading
             eyebrow="Governance"

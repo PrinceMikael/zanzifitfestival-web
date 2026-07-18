@@ -78,14 +78,14 @@ export default function PartnershipPage() {
             <div
               key={t.name}
               className={`flex flex-col rounded-lg border p-8 ${
-                t.highlight ? 'border-amber bg-ink-soft ring-1 ring-amber/40' : 'border-border bg-ink-soft'
+                t.highlight ? 'border-amber bg-surface-dark-soft ring-1 ring-amber/40' : 'border-border bg-surface-dark-soft'
               }`}
             >
               <div className="flex items-center justify-between">
                 <span className="font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber">{t.price}</span>
                 {t.highlight ? <span className="rounded-sm bg-amber px-2.5 py-1 font-utility text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-primary-foreground">Flagship</span> : null}
               </div>
-              <h3 className="mt-4 font-display text-2xl font-semibold text-bone">{t.name}</h3>
+              <h3 className="mt-4 font-display text-2xl font-semibold text-surface-dark-foreground">{t.name}</h3>
               <ul className="mt-6 flex-1 space-y-3">
                 {t.perks.map((p) => (
                   <li key={p} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
@@ -94,7 +94,7 @@ export default function PartnershipPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="#inquiry" className="mt-8 inline-flex items-center justify-center gap-2 rounded-sm border border-border py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-bone transition-colors hover:border-amber hover:text-amber">
+              <Link href="#inquiry" className="mt-8 inline-flex items-center justify-center gap-2 rounded-sm border border-border py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber">
                 Enquire
               </Link>
             </div>
@@ -102,7 +102,7 @@ export default function PartnershipPage() {
         </div>
       </section>
 
-      <section id="inquiry" className="scroll-mt-24 border-t border-border bg-ink-soft py-20 md:py-28">
+      <section id="inquiry" className="scroll-mt-24 border-t border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-start">
           <div>
             <SectionHeading eyebrow="Start the conversation" title="Let’s build a partnership." align="left" />

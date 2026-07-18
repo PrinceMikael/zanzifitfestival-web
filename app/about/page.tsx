@@ -70,14 +70,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-ink-soft py-20 md:py-28">
+      <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading eyebrow="What we stand for" title="The principles behind ZanziFit." />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {VALUES.map((v) => (
               <div key={v.title} className="rounded-lg border border-border bg-background p-8">
                 <Chevrons className="mb-5 text-amber" />
-                <h3 className="font-display text-2xl font-semibold text-bone">{v.title}</h3>
+                <h3 className="font-display text-2xl font-semibold text-surface-dark-foreground">{v.title}</h3>
                 <p className="mt-4 leading-relaxed text-muted-foreground">{v.body}</p>
               </div>
             ))}
@@ -93,7 +93,7 @@ export default function AboutPage() {
               <div className="font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber">
                 {t.year}
               </div>
-              <div className="mt-3 font-display text-xl font-semibold text-bone">{t.label}</div>
+              <div className="mt-3 font-display text-xl font-semibold text-surface-dark-foreground">{t.label}</div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
             </div>
           ))}

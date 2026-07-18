@@ -11,7 +11,10 @@ conventions:
 
 1. Inner pages (via the shared `PageHero`) feel sparse/empty on wide
    viewports — text-only, no visual fill, unlike the homepage's
-   full-bleed animated hero.
+   full-bleed animated hero. Confirmed by the user as a site-wide
+   complaint, not limited to the two new pages — the fix scope matches
+   the light-mode fix below (item 3): applied everywhere the pattern
+   appears, judged per-page rather than as a blind mechanical change.
 2. `/experience`'s "About Zanzibar" section is a single narrow text
    column with no companion visual, unlike the Culture & Heritage
    section right below it.
@@ -122,13 +125,26 @@ pattern). When omitted, today's text-only single-column layout is
 unchanged — so pages that don't pass an image (any not touched below)
 render identically to before.
 
-**Pages updated to pass an image:** `/experience` (reuse
-`zanzibar-coast.png`) and `/accommodation` (reuse
-`festival-village.png`) — the two pages this feedback round is about.
-Other `PageHero` consumers (`/about`, `/festival`, `/leadership`,
-`/partnership`, `/gallery`, `/faq`, `/contact`) are left as-is (no
-`image` prop passed) since they weren't part of the complaint and
-adding art to them would need its own content decisions.
+**Scope widened to site-wide** (per user follow-up: the emptiness
+complaint applies to the whole site, not just the two new pages,
+matching the light-mode fix's scope). `PageHero` consumers and their
+assigned image:
+
+| Page | Image | Rationale |
+|---|---|---|
+| `/experience` | `zanzibar-coast.png` | Already planned above |
+| `/accommodation` | `festival-village.png` | Already planned above |
+| `/festival` | `cycling.png` | Distinct from the page's own `hyrox-arena.png`/`festival-village.png` used further down |
+| `/about` | *(none)* | Already immediately followed by its own full-width 2-column image+text section (`app/about/page.tsx:45-71`) — adding a second image in the hero would be redundant, not a fix |
+| `/leadership` | `leader-1.png` | Distinct from the team grid's individual portraits below |
+| `/partnership` | `finish-line.png` | Not otherwise used on this page; conveys the event's energy for a sponsor-facing page |
+| `/gallery` | *(none)* | A photo grid immediately follows the hero (`app/gallery/page.tsx`) — a hero image would duplicate that content, not fix emptiness |
+| `/faq` | *(none)* | No natural image exists for this content (an accordion of practical Q&A) without inventing a stock-photo-style placeholder that adds no information |
+| `/contact` | *(none)* | Same reasoning as `/faq` — a contact form has no natural companion image |
+
+Pages with *(none)* keep today's text-only single-column hero
+unchanged — the component's backward-compatible `image?` prop means
+this is a deliberate per-page choice, not a limitation.
 
 ## 3. `/experience` "About Zanzibar" section
 

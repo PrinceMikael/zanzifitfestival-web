@@ -34,6 +34,28 @@ const HOTELS = [
       'Straightforward rooms, good for a no-frills race-weekend base',
     ],
   },
+  {
+    title: 'Melia Zanzibar',
+    area: 'Kiwengwa',
+    badge: '~65 min from Fumba',
+    image: '/images/zanzibar-coast.png',
+    summary: 'A full-service resort hotel on a 40-acre estate on the north-east coast, with multiple restaurants and three pools.',
+    details: [
+      'Seven on-site restaurants spanning international, Mediterranean and local cuisine',
+      'A good fit for travellers who want an all-inclusive-style resort experience',
+    ],
+  },
+  {
+    title: 'Turaco Nungwi Resort, a Tribute Portfolio Hotel',
+    area: 'Nungwi',
+    badge: '~75 min from Fumba',
+    image: '/images/festival-village.png',
+    summary: 'A newer full-service hotel on Nungwi’s beachfront, part of Marriott’s Tribute Portfolio.',
+    details: [
+      'Beachfront location on one of Zanzibar’s most popular stretches of sand',
+      'International hotel-brand standards and service',
+    ],
+  },
 ]
 
 const RESORTS = [
@@ -71,6 +93,28 @@ const RESORTS = [
       'Best for travellers extending their trip beyond race weekend',
     ],
   },
+  {
+    title: 'Baraza Resort & Spa',
+    area: 'Bwejuu',
+    badge: '~70 min from Fumba',
+    image: '/images/zanzibar-coast.png',
+    summary: 'An east-coast luxury resort with villas blending Swahili, Arabic and Indian architectural influences.',
+    details: [
+      '30 villas with hand-carved furniture and private plunge pools',
+      'On-site Frangipani Spa',
+    ],
+  },
+  {
+    title: 'Matemwe Beach Village',
+    area: 'Matemwe',
+    badge: '~65 min from Fumba',
+    image: '/images/festival-village.png',
+    summary: 'A relaxed north-east coast beach retreat close to Mnemba Atoll, with a five-star PADI dive centre on site.',
+    details: [
+      'Simple bungalow-style accommodation',
+      'A strong choice for travellers prioritising diving and snorkeling',
+    ],
+  },
 ]
 
 const BOUTIQUE_STAYS = [
@@ -97,6 +141,28 @@ const BOUTIQUE_STAYS = [
       'Good base for combining race weekend with kite-surfing or a beach-town stay',
     ],
   },
+  {
+    title: 'Emerson on Hurumzi',
+    area: 'Stone Town',
+    badge: '~45 min from Fumba',
+    image: '/images/zanzibar-coast.png',
+    summary: 'A historic Stone Town boutique hotel with traditionally furnished rooms and Zanzibar’s highest rooftop restaurant.',
+    details: [
+      'Rooftop tea house restaurant known for sunset views and live music at dinner',
+      'A deeply immersive, historic alternative to a standard hotel stay',
+    ],
+  },
+  {
+    title: 'Bamboo Zanzibar',
+    area: 'Jambiani',
+    badge: '~55 min from Fumba',
+    image: '/images/festival-village.png',
+    summary: 'A sustainable boutique hotel on the Jambiani coastline, built from locally sourced timber, bamboo and stone.',
+    details: [
+      'Bungalows arranged around a pool set within surrounding forest',
+      'A distinct architectural style blending African and Asian design influences',
+    ],
+  },
 ]
 
 const BUDGET_STAYS = [
@@ -120,6 +186,28 @@ const BUDGET_STAYS = [
     details: [
       'The most affordable tier covered here',
       'Popular with solo travellers and the kite-surfing crowd',
+    ],
+  },
+  {
+    title: 'Lost & Found Hostel',
+    area: 'Stone Town',
+    badge: '~45 min from Fumba',
+    image: '/images/zanzibar-coast.png',
+    summary: 'Zanzibar’s first premium hostel, in a renovated heritage building in central Stone Town.',
+    details: [
+      '36 air-conditioned rooms with free Wi-Fi',
+      'Walking distance to Nakupenda Beach and the Freddie Mercury Museum',
+    ],
+  },
+  {
+    title: 'Flamingo Guest House',
+    area: 'Stone Town',
+    badge: '~45 min from Fumba',
+    image: '/images/festival-village.png',
+    summary: 'A simple, centrally located Stone Town guesthouse with breakfast included.',
+    details: [
+      'Good value for a central Stone Town base',
+      'Breakfast and Wi-Fi included in the room rate',
     ],
   },
 ]

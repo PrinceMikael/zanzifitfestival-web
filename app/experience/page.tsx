@@ -117,15 +117,28 @@ export default function ExperiencePage() {
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <SectionHeading eyebrow="About Zanzibar" title="An island shaped by centuries of trade." />
-        <p className="mt-8 max-w-3xl text-pretty leading-relaxed text-muted-foreground">
-          Zanzibar is an archipelago off the coast of mainland Tanzania, its culture
-          layered by Swahili, Arab, Persian, Indian and European influence over
-          hundreds of years of Indian Ocean trade. ZanziFit races out of Fumba Town,
-          a quiet stretch of the west coast on Menai Bay — close enough to Stone
-          Town for an afternoon of sightseeing, far enough to still feel like your
-          own stretch of coastline.
-        </p>
+        <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          <div>
+            <SectionHeading eyebrow="About Zanzibar" title="An island shaped by centuries of trade." align="left" />
+            <p className="mt-8 text-pretty leading-relaxed text-muted-foreground">
+              Zanzibar is an archipelago off the coast of mainland Tanzania, its culture
+              layered by Swahili, Arab, Persian, Indian and European influence over
+              hundreds of years of Indian Ocean trade. ZanziFit races out of Fumba Town,
+              a quiet stretch of the west coast on Menai Bay — close enough to Stone
+              Town for an afternoon of sightseeing, far enough to still feel like your
+              own stretch of coastline.
+            </p>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
+            <Image
+              src="/images/festival-village.png"
+              alt="The ZanziFit festival village on the Zanzibar coast"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       <section id="things-to-do" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">

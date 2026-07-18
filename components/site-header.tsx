@@ -71,7 +71,7 @@ export function SiteHeader() {
             // Header always renders over a dark surface (bg-ink/85 when scrolled,
             // transparent-over-dark-hero otherwise) in both themes, so logo invert
             // stays unconditional.
-            className="h-8 w-auto invert lg:h-9"
+            className="h-10 w-auto invert lg:h-12"
           />
         </Link>
 

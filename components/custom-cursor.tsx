@@ -45,7 +45,7 @@ export function CustomCursor() {
       className="pointer-events-none fixed left-0 top-0 z-[100] -translate-x-1/2 -translate-y-1/2 will-change-transform"
     >
       <div
-        className={`flex items-center justify-center rounded-full border border-amber bg-ink/40 backdrop-blur-sm transition-all duration-200 ease-out ${
+        className={`flex items-center justify-center rounded-full border border-amber bg-ink/40 shadow-[0_0_0_1.5px_rgba(237,231,216,0.9)] backdrop-blur-sm transition-all duration-200 ease-out ${
           active ? 'h-16 w-16 border-amber' : 'h-3 w-3 border-transparent bg-amber'
         }`}
       >

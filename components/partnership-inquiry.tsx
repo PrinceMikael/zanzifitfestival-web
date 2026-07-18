@@ -8,7 +8,7 @@ type Fields = { name: string; company: string; email: string; message: string }
 type Errors = Partial<Record<keyof Fields, FieldError>>
 
 const FIELD =
-  'w-full rounded-sm border border-input bg-background px-4 py-3 text-bone placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-amber'
+  'w-full rounded-sm border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-amber'
 const FIELD_INVALID = 'border-destructive focus:border-destructive'
 
 export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
@@ -57,7 +57,7 @@ export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
     return (
       <div className="flex h-full min-h-[24rem] flex-col items-center justify-center rounded-lg border border-amber/40 bg-background p-10 text-center">
         <Chevrons className="text-amber" />
-        <h3 className="mt-4 font-display text-2xl font-semibold text-bone">Thank you.</h3>
+        <h3 className="mt-4 font-display text-2xl font-semibold text-foreground">Thank you.</h3>
         <p className="mt-3 max-w-sm text-muted-foreground">
           Your enquiry is in. Our partnerships team will be in touch within two business days with the full deck.
         </p>

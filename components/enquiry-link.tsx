@@ -27,7 +27,7 @@ export function EnquiryLink({
       rel="noopener noreferrer"
       data-cursor-label="Chat"
       className={cn(
-        'inline-flex items-center gap-2 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber transition-colors hover:text-bone',
+        'inline-flex items-center gap-2 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber transition-colors hover:text-surface-dark-foreground',
         className,
       )}
     >

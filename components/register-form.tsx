@@ -17,7 +17,7 @@ type Fields = { name: string; email: string; category: string }
 type Errors = Partial<Record<'name' | 'email', FieldError>>
 
 const FIELD =
-  'w-full rounded-sm border border-input bg-background px-4 py-3 text-bone placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-amber'
+  'w-full rounded-sm border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-amber'
 const FIELD_INVALID = 'border-destructive focus:border-destructive'
 
 export function RegisterForm() {
@@ -61,7 +61,7 @@ export function RegisterForm() {
     return (
       <div className="flex h-full min-h-[20rem] flex-col items-center justify-center rounded-lg border border-amber/40 bg-background p-10 text-center">
         <Chevrons className="text-amber" />
-        <h3 className="mt-4 font-display text-2xl font-semibold text-bone">You&apos;re on the list.</h3>
+        <h3 className="mt-4 font-display text-2xl font-semibold text-foreground">You&apos;re on the list.</h3>
         <p className="mt-3 max-w-sm text-muted-foreground">
           We&apos;ll email you the moment registration opens for {values.category}, with pricing and category cutoffs.
         </p>

@@ -45,7 +45,7 @@ export function SectionHeading({
       <h2
         className={cn(
           'mt-4 text-balance font-display text-4xl leading-[1.05] tracking-[-0.01em] sm:text-5xl lg:text-6xl',
-          tone === 'light' ? 'text-ink' : 'text-bone',
+          tone === 'light' ? 'text-ink' : 'text-surface-dark-foreground',
         )}
       >
         {title}
@@ -54,7 +54,7 @@ export function SectionHeading({
         <p
           className={cn(
             'mt-5 text-pretty text-lg leading-relaxed',
-            tone === 'light' ? 'text-ink/70' : 'text-bone/65',
+            tone === 'light' ? 'text-ink/70' : 'text-surface-dark-foreground/65',
           )}
         >
           {intro}

@@ -15,7 +15,7 @@ export function AccordionItem({ question, answer }: { question: string; answer: 
         data-cursor-label={open ? 'Close' : 'Open'}
         className="flex w-full items-center justify-between gap-4 py-6 text-left"
       >
-        <span className="font-display text-lg font-semibold text-bone sm:text-xl">{question}</span>
+        <span className="font-display text-lg font-semibold text-surface-dark-foreground sm:text-xl">{question}</span>
         <ChevronDown
           className={`size-5 shrink-0 text-amber transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
         />

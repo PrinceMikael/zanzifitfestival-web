@@ -28,7 +28,7 @@ export function ExpandableCard({
   const [open, setOpen] = useState(false)
 
   return (
-    <article className="overflow-hidden rounded-lg border border-border bg-ink-soft">
+    <article className="overflow-hidden rounded-lg border border-border bg-surface-dark-soft">
       <div className="group relative aspect-[16/10]">
         <Image
           src={image}
@@ -37,7 +37,7 @@ export function ExpandableCard({
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 1024px) 100vw, 33vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-soft via-ink-soft/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-dark-soft via-surface-dark-soft/10 to-transparent" />
         {badge ? (
           <span className="absolute left-4 top-4 rounded-sm bg-ink/80 px-3 py-1.5 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber backdrop-blur">
             {badge}
@@ -46,7 +46,7 @@ export function ExpandableCard({
       </div>
 
       <div className="p-6">
-        <h3 className="font-display text-xl font-semibold text-bone">{title}</h3>
+        <h3 className="font-display text-xl font-semibold text-surface-dark-foreground">{title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
 
         <button
@@ -54,7 +54,7 @@ export function ExpandableCard({
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           data-cursor-label={open ? 'Close' : 'Open'}
-          className="mt-4 flex items-center gap-2 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-bone/70 transition-colors hover:text-amber"
+          className="mt-4 flex items-center gap-2 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground/70 transition-colors hover:text-amber"
         >
           {open ? 'View less' : 'View more'}
           <ChevronDown

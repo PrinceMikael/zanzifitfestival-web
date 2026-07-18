@@ -13,7 +13,7 @@ export function PageHero({
   children?: ReactNode
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-border bg-ink-soft">
+    <section className="relative overflow-hidden border-b border-border bg-surface-dark-soft">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -27,7 +27,7 @@ export function PageHero({
           <Chevrons className="text-amber" />
           <span className="eyebrow text-amber">{eyebrow}</span>
         </div>
-        <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-bone text-balance md:text-6xl">
+        <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-surface-dark-foreground text-balance md:text-6xl">
           {title}
         </h1>
         {intro ? (

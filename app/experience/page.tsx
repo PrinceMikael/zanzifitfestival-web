@@ -20,7 +20,7 @@ const THINGS_TO_DO = [
     summary:
       'The UNESCO-listed old town: narrow alleys, carved wooden doors, and centuries of Swahili, Omani and Indian history.',
     details: [
-      'House of Wonders — former Sultan’s palace, now a museum of Swahili and Zanzibar history',
+      'House of Wonders — former Sultan\'s palace, now a museum of Swahili and Zanzibar history',
       'Guided spice tours run daily from the Old Fort area',
       'Forodhani Gardens waterfront, best visited at sunset',
     ],
@@ -30,10 +30,10 @@ const THINGS_TO_DO = [
     badge: 'Stone Town',
     image: '/images/festival-village.png',
     summary:
-      'Every evening the seafront gardens turn into an open-air food market — grilled seafood skewers, samosas and Zanzibar “pizza” cooked to order.',
+      'Every evening the seafront gardens turn into an open-air food market — grilled seafood skewers, samosas and Zanzibar "pizza" cooked to order.',
     details: [
       'Best visited 6–9pm as vendors set up for the evening',
-      'Try urojo, Zanzibar’s tangy spiced soup, alongside the grills',
+      'Try urojo, Zanzibar\'s tangy spiced soup, alongside the grills',
       'A five-minute walk from most Stone Town accommodation',
     ],
   },
@@ -42,7 +42,7 @@ const THINGS_TO_DO = [
     badge: '~10 min from Fumba',
     image: '/images/zanzibar-coast.png',
     summary:
-      'The conservation area right on Fumba’s doorstep — dolphin encounters, snorkeling and sandbank boat trips.',
+      'The conservation area right on Fumba\'s doorstep — dolphin encounters, snorkeling and sandbank boat trips.',
     details: [
       'Boat trips typically depart from Fumba and nearby jetties',
       'Snorkeling over the reef is best at low tide',
@@ -54,9 +54,9 @@ const THINGS_TO_DO = [
     badge: '~70–80 min from Fumba',
     image: '/images/zanzibar-coast.png',
     summary:
-      'The island’s north-tip beaches — turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
+      'The island\'s north-tip beaches — turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
     details: [
-      'Kendwa’s beach stays swimmable at every tide, unlike much of the east coast',
+      'Kendwa\'s beach stays swimmable at every tide, unlike much of the east coast',
       'A popular day-trip or stay-over add-on after race weekend',
     ],
   },
@@ -65,18 +65,66 @@ const THINGS_TO_DO = [
     badge: '~50 min from Fumba',
     image: '/images/festival-village.png',
     summary:
-      'Zanzibar’s only national park — home to the red colobus monkey, found nowhere else on Earth.',
+      'Zanzibar\'s only national park — home to the red colobus monkey, found nowhere else on Earth.',
     details: [
       'Guided forest walks last roughly 45 minutes to an hour',
       'Combine with the adjacent mangrove boardwalk',
+    ],
+  },
+  {
+    title: 'Mnemba Atoll',
+    badge: '~2 hrs incl. boat',
+    image: '/images/zanzibar-coast.png',
+    summary:
+      'A marine conservation area off the north-east coast — some of the clearest water in Zanzibar for snorkeling and diving.',
+    details: [
+      'Visibility typically ranges 15–30 metres',
+      'A relaxed drive plus a short boat transfer from most of the island',
+      'Best combined with a full-day excursion given the distance from Fumba',
+    ],
+  },
+  {
+    title: 'Kizimkazi',
+    badge: '~40 min from Fumba',
+    image: '/images/festival-village.png',
+    summary:
+      'A fishing village on the south coast, known for wild dolphin encounters and one of East Africa\'s oldest mosques.',
+    details: [
+      'Boat trips have a strong chance of dolphin sightings, though they are wild and not guaranteed',
+      'The 12th-century mosque holds early Kufic script inscriptions, among the earliest evidence of Islam in East Africa',
+    ],
+  },
+  {
+    title: 'Prison Island (Changuu)',
+    badge: '~50 min incl. boat',
+    image: '/images/zanzibar-coast.png',
+    summary:
+      'A short boat ride from Stone Town, now home to giant Aldabra tortoises brought over from Seychelles in the 1820s.',
+    details: [
+      'Some resident tortoises are recorded as over 100 years old',
+      'The island also has a beach and snorkeling spot alongside the tortoise sanctuary',
+    ],
+  },
+  {
+    title: 'Michamvi Peninsula',
+    badge: '~75 min from Fumba',
+    image: '/images/festival-village.png',
+    summary:
+      'A quiet east-coast peninsula known for a walkable sandbank that appears at low tide.',
+    details: [
+      'The sandbank is a popular sunset spot, reachable on foot at low tide',
+      'Less developed than Nungwi or Kendwa — a quieter alternative for a day trip',
     ],
   },
 ]
 
 const CULTURE_FACTS = [
   'Zanzibar sits on the historic Swahili Coast, shaped by centuries of Arab, Persian, Indian and European trade and, later, Omani Sultanate rule.',
-  'Stone Town’s carved wooden doors are a signature craft — each pattern historically signalled the wealth and trade of the household.',
+  'Stone Town\'s carved wooden doors are a signature craft — each pattern historically signalled the wealth and trade of the household.',
   'The islands are predominantly Muslim, so modest dress (shoulders and knees covered) is appreciated away from the beach, particularly in Stone Town.',
+  'Taarab, a musical style blending Swahili, Arab and Indian influences, remains a living tradition across the islands.',
+  'Stone Town hosts Sauti za Busara, a four-day pan-African music festival held every February.',
+  'Swahili is the language of daily life alongside English, which is widely spoken in tourism and business.',
 ]
 
 const FOOD_HIGHLIGHTS = [
@@ -96,6 +144,22 @@ const FOOD_HIGHLIGHTS = [
     name: 'Forodhani Seafood Grills',
     detail: 'Fresh-caught skewers of octopus, prawn and reef fish, grilled to order every evening.',
   },
+  {
+    name: 'Mchuzi wa Pweza',
+    detail: 'Octopus curry — tender octopus simmered in a coconut sauce with garlic, ginger and turmeric.',
+  },
+  {
+    name: 'Biryani',
+    detail: 'A saffron-spiced layered rice dish with marinated meat and fried onions, reflecting the island\'s Indian Ocean trade history.',
+  },
+  {
+    name: 'Kashata',
+    detail: 'A coconut and sesame sweet, sold across Stone Town\'s markets and street stalls.',
+  },
+  {
+    name: 'Mandazi',
+    detail: 'Lightly sweetened Swahili doughnuts, flavoured with cardamom — a common breakfast snack with tea or coffee.',
+  },
 ]
 
 const TRAVEL_INFO = [
@@ -104,6 +168,9 @@ const TRAVEL_INFO = [
   'Arrive via Abeid Amani Karume International Airport (ZNZ), Zanzibar Town',
   'Visa on arrival is available for most nationalities — confirm your requirement before you fly',
   'Fumba Town is roughly 30–45 minutes by road from the airport and Stone Town',
+  'Currency: Tanzanian Shilling (TZS) — US dollars are widely accepted at hotels and tour operators',
+  'Time zone: East Africa Time (EAT, UTC+3) year-round',
+  'Power: UK-style three-pin plugs, 230V',
 ]
 
 export default function ExperiencePage() {

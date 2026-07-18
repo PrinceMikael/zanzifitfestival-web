@@ -87,21 +87,33 @@ Expose as Tailwind utilities in the `@theme inline` block:
 New utility classes: `bg-surface-dark`, `bg-surface-dark-soft`,
 `text-surface-dark-foreground`.
 
-**Migration scope:** every page-body / section usage of `bg-ink`,
-`bg-ink-soft`, and `text-bone` gets swapped to the new tokens —
+**Migration scope resolved via call-site verification (superseding an
+earlier draft of this section):** initially it looked like the
+homepage (`app/page.tsx`: `Hero`, `Disciplines`, `StatsBand`,
+`WhyZanzibar`, `PartnerStrip`, `CtaBand` — every section on it, and
+none of these 5 components render anywhere else) might be a
+deliberately always-dark cinematic page, like the header/footer.
+Confirmed with the user: no — the homepage should also respect the
+theme toggle, same as every inner page. So the migration scope is
+actually the whole site's page-body content:
+
 `app/about/page.tsx`, `app/festival/page.tsx`, `app/leadership/page.tsx`,
 `app/partnership/page.tsx`, `app/experience/page.tsx`,
-`app/accommodation/page.tsx`, and the shared components they render
-through (`why-zanzibar.tsx`, `disciplines.tsx`, `stats-band.tsx`,
-`cta-band.tsx`, `partner-strip.tsx`, `gallery-grid.tsx`,
+`app/accommodation/page.tsx`, `app/page.tsx` (via its rendered
+components: `hero.tsx`, `disciplines.tsx`, `stats-band.tsx`,
+`why-zanzibar.tsx`, `partner-strip.tsx`, `cta-band.tsx`,
+`countdown.tsx` — all previously assumed always-dark, now confirmed
+in scope), plus the cross-page shared components: `gallery-grid.tsx`,
 `expandable-card.tsx`, `page-hero.tsx`, `section-heading.tsx`,
-`accordion-item.tsx`). **Explicitly excluded:** `site-header.tsx` and
-`site-footer.tsx` keep their literal `bg-ink`/`text-bone`/`invert`
-exactly as-is (both have code comments explaining why).
+`accordion-item.tsx`, `enquiry-link.tsx`, `contact-form.tsx`,
+`register-form.tsx`, `partnership-inquiry.tsx`.
 
-`components/hero.tsx` (homepage) also stays as literal `bg-ink` — it's
-a full-bleed dark cinematic section by design, not a body/content
-section, and isn't part of the reported complaint.
+**Explicitly excluded — the only two files that stay literal/always-dark:**
+`site-header.tsx` and `site-footer.tsx`. Both have code comments
+explaining why (persistent nav chrome that must stay legible
+regardless of page theme, not page content) and neither was included
+in the "should the whole site theme" question — they're structurally
+different from page content (fixed navigation, not a page section).
 
 ## 2. `PageHero` visual fill
 
@@ -264,12 +276,11 @@ ambiguous case below. This is the authoritative list the implementation
 plan is built from.
 
 **KEEP LITERAL (confirmed always-dark by call-site check):**
-- `components/site-header.tsx`, `components/site-footer.tsx`,
-  `components/hero.tsx` — already-known always-dark surfaces.
+- `components/site-header.tsx`, `components/site-footer.tsx` — the
+  only two files confirmed to stay always-dark (persistent nav chrome,
+  each with a code comment explaining why; explicitly not part of the
+  "should the whole site theme" scope the user approved).
 - `components/custom-cursor.tsx` — cursor chrome, not a page section.
-- `components/countdown.tsx` (`bg-ink/60`, `text-bone/55`) — `<Countdown
-  />` has exactly one call site, `components/hero.tsx:75`, inside the
-  always-dark homepage hero. Not a general-purpose widget in practice.
 - `components/newsletter-form.tsx` (`bg-ink-soft`, `text-bone`,
   `placeholder:text-bone/40`) — `<NewsletterForm />` has exactly one
   call site, `components/site-footer.tsx:96`, inside the always-dark
@@ -281,9 +292,20 @@ plan is built from.
   with `absolute` + `backdrop-blur` + sitting over an `<Image>`):
   `components/disciplines.tsx:53`, `components/expandable-card.tsx:42`,
   `components/gallery-grid.tsx:57`, `app/festival/page.tsx:75`. These
-  stay dark for legibility over a photo regardless of page theme.
+  stay dark for legibility over a photo regardless of page theme —
+  this reasoning is about the photo underneath, not the page it's on,
+  so it's unaffected by the homepage-scope correction below.
   Their paired gradient stops (`from-ink`/`from-ink-soft` on the same
   element) stay literal too, for the same reason.
+
+**Corrected from an earlier draft:** `components/hero.tsx` and
+`components/countdown.tsx` (`<Countdown />`'s only call site is
+`hero.tsx:75`) were first assumed always-dark like the header/footer.
+The user confirmed the homepage should also respect the theme toggle
+top to bottom, so both move to MIGRATE below — the countdown tiles
+(`bg-ink/60`, `text-bone/55`) are ordinary page-body chrome, not a
+photo scrim, so this doesn't conflict with the badge/scrim exclusions
+above.
 - `bg-deep-teal` sections and any `text-bone`/`text-bone/70`/
   `text-bone/80` foreground text inside them (`app/about/page.tsx:103`,
   `app/partnership/page.tsx:63,68`, `components/stats-band.tsx:16,21,24`)
@@ -297,7 +319,11 @@ plan is built from.
 
 **MIGRATE (page-body/section content, confirmed via call-site check
 or context):**
-- `components/cta-band.tsx`, `components/disciplines.tsx` (outer
+- `components/hero.tsx` and `components/countdown.tsx` (homepage-scope
+  correction — see above), `components/cta-band.tsx`,
+  `components/stats-band.tsx` (all matches except the deep-teal
+  foreground text noted above, which stays literal),
+  `components/disciplines.tsx` (outer
   section + card, not the badge), `components/why-zanzibar.tsx`,
   `components/partner-strip.tsx`, `components/page-hero.tsx`,
   `components/expandable-card.tsx` (card body, not the badge),

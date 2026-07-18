@@ -26,7 +26,7 @@ const DISCIPLINES = [
 
 export function Disciplines() {
   return (
-    <section className="border-t border-border bg-ink py-20 lg:py-28">
+    <section className="border-t border-border bg-surface-dark py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Two disciplines, one festival"
@@ -39,7 +39,7 @@ export function Disciplines() {
             <Link
               key={d.title}
               href={d.href}
-              className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-ink-soft transition-colors hover:border-amber/50"
+              className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-surface-dark-soft transition-colors hover:border-amber/50"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
@@ -49,7 +49,7 @@ export function Disciplines() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-soft via-ink-soft/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-dark-soft via-surface-dark-soft/20 to-transparent" />
                 <span className="absolute left-5 top-5 eyebrow rounded-sm bg-ink/70 px-3 py-1.5 text-amber backdrop-blur-sm">
                   {d.tag}
                 </span>
@@ -57,12 +57,12 @@ export function Disciplines() {
 
               <div className="flex flex-1 flex-col p-6 lg:p-8">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-display text-3xl text-bone lg:text-4xl">
+                  <h3 className="font-display text-3xl text-surface-dark-foreground lg:text-4xl">
                     {d.title}
                   </h3>
-                  <ArrowUpRight className="size-6 shrink-0 text-bone/40 transition-colors group-hover:text-amber" />
+                  <ArrowUpRight className="size-6 shrink-0 text-surface-dark-foreground/40 transition-colors group-hover:text-amber" />
                 </div>
-                <p className="mt-4 text-pretty leading-relaxed text-bone/65">
+                <p className="mt-4 text-pretty leading-relaxed text-surface-dark-foreground/65">
                   {d.copy}
                 </p>
 
@@ -70,7 +70,7 @@ export function Disciplines() {
                   {d.categories.map((c) => (
                     <span
                       key={c}
-                      className="rounded-sm border border-border px-3 py-1.5 font-utility text-xs uppercase tracking-[0.12em] text-bone/70"
+                      className="rounded-sm border border-border px-3 py-1.5 font-utility text-xs uppercase tracking-[0.12em] text-surface-dark-foreground/70"
                     >
                       {c}
                     </span>
@@ -82,11 +82,11 @@ export function Disciplines() {
                     <div className="font-utility text-3xl font-semibold text-amber">
                       {d.stat.value}
                     </div>
-                    <div className="mt-1 font-utility text-xs uppercase tracking-[0.16em] text-bone/50">
+                    <div className="mt-1 font-utility text-xs uppercase tracking-[0.16em] text-surface-dark-foreground/50">
                       {d.stat.label}
                     </div>
                   </div>
-                  <span className="font-utility text-xs uppercase tracking-[0.16em] text-bone/70 group-hover:text-amber">
+                  <span className="font-utility text-xs uppercase tracking-[0.16em] text-surface-dark-foreground/70 group-hover:text-amber">
                     Explore format
                   </span>
                 </div>

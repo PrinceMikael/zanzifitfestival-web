@@ -20,15 +20,15 @@ export function PartnerStrip({ partners = [] as Partner[] }: { partners?: Partne
   const hasPartners = partners.length > 0
 
   return (
-    <section className="border-t border-border bg-ink py-16 lg:py-20">
+    <section className="border-t border-border bg-surface-dark py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-          <p className="eyebrow text-bone/55">
+          <p className="eyebrow text-surface-dark-foreground/55">
             {hasPartners ? 'Proudly partnered with' : 'Partnership slots open'}
           </p>
           <Link
             href="/partnership"
-            className="font-utility text-xs uppercase tracking-[0.14em] text-amber transition-colors hover:text-bone"
+            className="font-utility text-xs uppercase tracking-[0.14em] text-amber transition-colors hover:text-surface-dark-foreground"
           >
             Become a partner
           </Link>
@@ -51,7 +51,7 @@ export function PartnerStrip({ partners = [] as Partner[] }: { partners?: Partne
             {SLOT_LABELS.map((label) => (
               <div
                 key={label}
-                className="flex h-24 items-center justify-center rounded-sm border border-dashed border-border/70 px-4 text-center font-utility text-xs uppercase tracking-[0.14em] text-bone/40"
+                className="flex h-24 items-center justify-center rounded-sm border border-dashed border-border/70 px-4 text-center font-utility text-xs uppercase tracking-[0.14em] text-surface-dark-foreground/40"
               >
                 {label}
               </div>

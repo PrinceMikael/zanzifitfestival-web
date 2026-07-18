@@ -40,12 +40,12 @@ export function Countdown({ className }: { className?: string }) {
       {units.map((u) => (
         <div
           key={u.label}
-          className="flex min-w-[3.75rem] flex-col items-center rounded-sm border border-border bg-ink/60 px-2 py-2.5 backdrop-blur-sm sm:min-w-[4.5rem] sm:px-3"
+          className="flex min-w-[3.75rem] flex-col items-center rounded-sm border border-border bg-surface-dark/60 px-2 py-2.5 backdrop-blur-sm sm:min-w-[4.5rem] sm:px-3"
         >
           <span className="font-utility text-2xl font-semibold tabular-nums text-ember sm:text-3xl">
             {u.value === undefined ? '––' : String(u.value).padStart(2, '0')}
           </span>
-          <span className="mt-1 font-utility text-[0.6rem] uppercase tracking-[0.2em] text-bone/55">
+          <span className="mt-1 font-utility text-[0.6rem] uppercase tracking-[0.2em] text-surface-dark-foreground/55">
             {u.label}
           </span>
         </div>

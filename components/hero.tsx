@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink pt-16 lg:pt-20"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-surface-dark pt-16 lg:pt-20"
       aria-label="ZanziFit Festival hero"
     >
       {/* Layer 1 — horizon + sails + palms (slowest) */}
@@ -43,7 +43,7 @@ export function Hero() {
       </motion.div>
 
       {/* Gradient scrim for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/45 to-surface-dark/20" />
 
       {/* Layer 3 — foreground content (fastest, sharpest) */}
       <motion.div
@@ -53,25 +53,25 @@ export function Hero() {
         <div className="max-w-3xl">
           <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
-            <span className="eyebrow text-bone/80">
+            <span className="eyebrow text-surface-dark-foreground/80">
               Zanzibar, Tanzania · 6 November 2026
             </span>
           </div>
 
-          <h1 className="mt-6 text-balance font-display text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-bone sm:text-7xl lg:text-[6.5rem]">
+          <h1 className="mt-6 text-balance font-display text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[6.5rem]">
             ZanziFit
             <br />
             <span className="text-amber">Festival</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-bone/75 lg:text-xl">
+          <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:text-xl">
             Where the ocean horizon meets the start line. A hybrid road-cycling
             and HYROX-style functional fitness festival on the coast of Fumba
             Town, Zanzibar.
           </p>
 
           <div className="mt-8">
-            <p className="eyebrow mb-3 text-bone/55">Countdown to race day</p>
+            <p className="eyebrow mb-3 text-surface-dark-foreground/55">Countdown to race day</p>
             <Countdown />
           </div>
 
@@ -85,7 +85,7 @@ export function Hero() {
             </Link>
             <Link
               href="/partnership"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-bone/30 px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-bone transition-colors hover:border-amber hover:text-amber"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-surface-dark-foreground/30 px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber"
             >
               Become a Partner
             </Link>
@@ -95,7 +95,7 @@ export function Hero() {
 
       {/* Scroll cue */}
       <div className="absolute inset-x-0 bottom-6 z-10 flex justify-center">
-        <div className="flex rotate-90 items-center gap-1 font-utility text-[0.65rem] uppercase tracking-[0.3em] text-bone/45">
+        <div className="flex rotate-90 items-center gap-1 font-utility text-[0.65rem] uppercase tracking-[0.3em] text-surface-dark-foreground/45">
           <span className="-rotate-90">Scroll</span>
           <Chevrons count={3} className="text-amber" animate />
         </div>

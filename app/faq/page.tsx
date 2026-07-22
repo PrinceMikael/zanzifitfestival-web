@@ -4,14 +4,14 @@ import { FaqAccordion } from '@/components/faq-accordion'
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: 'Travel, visas, accommodation and spectator information for ZanziFit Festival, 6 November 2026, Fumba Town, Zanzibar.',
+  description: 'Travel, visas, accommodation and spectator information for ZanziFit Festival, 6 November 2026, Zanzibar.',
 }
 
 const FAQS = [
   {
     question: 'How do I get to Zanzibar?',
     answer:
-      'Zanzibar is served by Abeid Amani Karume International Airport (ZNZ), with regular connections via mainland Tanzania and regional hubs. Fumba Town, the festival venue, is roughly 30–45 minutes from the airport by road — exact transfer options will be published closer to race day.',
+      'Zanzibar is served by Abeid Amani Karume International Airport (ZNZ), with regular connections via mainland Tanzania and regional hubs. The festival venue is roughly 30–45 minutes from the airport by road — exact transfer options will be published closer to race day.',
   },
   {
     question: 'Do I need a visa to travel to Tanzania?',
@@ -21,7 +21,7 @@ const FAQS = [
   {
     question: 'Where should I stay?',
     answer:
-      'Fumba Town and the wider Zanzibar coast offer accommodation from beach resorts to guesthouses. Recommended accommodation partners and athlete rate codes will be announced ahead of the registration window.',
+      'Zanzibar\'s coast offers accommodation from beach resorts to guesthouses. Recommended accommodation partners and athlete rate codes will be announced ahead of the registration window.',
   },
   {
     question: 'What should I bring?',

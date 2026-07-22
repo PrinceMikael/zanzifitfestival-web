@@ -14,7 +14,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Gallery"
         title={<>The horizon, in motion.</>}
-        intro="Road cycling, HYROX-style competition, and the festival village along the Fumba peninsula — filter by discipline below."
+        intro="Road cycling, HYROX-style competition, and the festival village on the Zanzibar coast — filter by discipline below."
       />
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <GalleryGrid />

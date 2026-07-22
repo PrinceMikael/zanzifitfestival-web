@@ -9,7 +9,7 @@ const DISCIPLINES = [
     title: 'Road Cycling',
     href: '/festival#cycling',
     image: '/images/cycling.png',
-    copy: 'Coastal road racing on closed circuits along the Fumba peninsula — from a fast community sprint to a punishing elite endurance loop.',
+    copy: 'Coastal road racing on closed circuits along the Zanzibar coastline — from a fast community sprint to a punishing elite endurance loop.',
     categories: ['Elite Road Race', 'Open 60km', 'Community 20km'],
     stat: { value: '80km', label: 'Longest elite loop' },
   },

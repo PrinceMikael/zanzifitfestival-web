@@ -9,13 +9,13 @@ import { EnquiryLink } from '@/components/enquiry-link'
 export const metadata: Metadata = {
   title: 'Experience Zanzibar',
   description:
-    'What to see, taste and understand on the island that hosts ZanziFit — Stone Town, the coast, the culture and the food, all a short ride from Fumba Town.',
+    'What to see, taste and understand on the island that hosts ZanziFit — Stone Town, the coast, the culture and the food, all a short ride from the festival venue.',
 }
 
 const THINGS_TO_DO = [
   {
     title: 'Stone Town',
-    badge: '~45 min from Fumba',
+    badge: '~45 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary:
       'The UNESCO-listed old town: narrow alleys, carved wooden doors, and centuries of Swahili, Omani and Indian history.',
@@ -39,19 +39,19 @@ const THINGS_TO_DO = [
   },
   {
     title: 'Menai Bay',
-    badge: '~10 min from Fumba',
+    badge: '~10 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary:
-      'The conservation area right on Fumba’s doorstep — dolphin encounters, snorkeling and sandbank boat trips.',
+      'The conservation area right on the festival venue\'s doorstep — dolphin encounters, snorkeling and sandbank boat trips.',
     details: [
-      'Boat trips typically depart from Fumba and nearby jetties',
+      'Boat trips typically depart from nearby jetties close to the festival venue',
       'Snorkeling over the reef is best at low tide',
       'The closest of these excursions to the festival village',
     ],
   },
   {
     title: 'Nungwi & Kendwa Beaches',
-    badge: '~70–80 min from Fumba',
+    badge: '~70–80 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary:
       'The island’s north-tip beaches — turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
@@ -62,7 +62,7 @@ const THINGS_TO_DO = [
   },
   {
     title: 'Jozani-Chwaka Bay National Park',
-    badge: '~50 min from Fumba',
+    badge: '~50 min from the festival venue',
     image: '/images/festival-village.png',
     summary:
       'Zanzibar’s only national park — home to the red colobus monkey, found nowhere else on Earth.',
@@ -80,12 +80,12 @@ const THINGS_TO_DO = [
     details: [
       'Visibility typically ranges 15–30 metres',
       'A relaxed drive plus a short boat transfer from most of the island',
-      'Best combined with a full-day excursion given the distance from Fumba',
+      'Best combined with a full-day excursion given the distance from the festival venue',
     ],
   },
   {
     title: 'Kizimkazi',
-    badge: '~40 min from Fumba',
+    badge: '~40 min from the festival venue',
     image: '/images/festival-village.png',
     summary:
       'A fishing village on the south coast, known for wild dolphin encounters and one of East Africa’s oldest mosques.',
@@ -107,7 +107,7 @@ const THINGS_TO_DO = [
   },
   {
     title: 'Michamvi Peninsula',
-    badge: '~75 min from Fumba',
+    badge: '~75 min from the festival venue',
     image: '/images/festival-village.png',
     summary:
       'A quiet east-coast peninsula known for a walkable sandbank that appears at low tide.',
@@ -167,7 +167,7 @@ const TRAVEL_INFO = [
   'Rains: mid-March–May and November bring heavier showers',
   'Arrive via Abeid Amani Karume International Airport (ZNZ), Zanzibar Town',
   'Visa on arrival is available for most nationalities — confirm your requirement before you fly',
-  'Fumba Town is roughly 30–45 minutes by road from the airport and Stone Town',
+  'The festival venue is roughly 30–45 minutes by road from the airport and Stone Town',
   'Currency: Tanzanian Shilling (TZS) — US dollars are widely accepted at hotels and tour operators',
   'Time zone: East Africa Time (EAT, UTC+3) year-round',
   'Power: UK-style three-pin plugs, 230V',
@@ -179,7 +179,7 @@ export default function ExperiencePage() {
       <PageHero
         eyebrow="Experience Zanzibar"
         title={<>Race here. Stay a while.</>}
-        intro="ZanziFit is based in Fumba Town, on Zanzibar's west coast — a short ride from Stone Town's old city and the island's best-known beaches. Here's what to see beyond the finish line."
+        intro="ZanziFit is based on Zanzibar's west coast — a short ride from Stone Town's old city and the island's best-known beaches. Here's what to see beyond the finish line."
         image={{ src: '/images/zanzibar-coast.png', alt: 'A traditional dhow sailing off the Zanzibar coast at golden hour' }}
       />
 
@@ -190,8 +190,8 @@ export default function ExperiencePage() {
             <p className="mt-8 text-pretty leading-relaxed text-muted-foreground">
               Zanzibar is an archipelago off the coast of mainland Tanzania, its culture
               layered by Swahili, Arab, Persian, Indian and European influence over
-              hundreds of years of Indian Ocean trade. ZanziFit races out of Fumba Town,
-              a quiet stretch of the west coast on Menai Bay — close enough to Stone
+              hundreds of years of Indian Ocean trade. ZanziFit races on a quiet stretch
+              of the west coast on Menai Bay — close enough to Stone
               Town for an afternoon of sightseeing, far enough to still feel like your
               own stretch of coastline.
             </p>

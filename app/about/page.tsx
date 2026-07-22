@@ -28,8 +28,8 @@ const VALUES = [
 
 const TIMELINE = [
   { year: '2024', label: 'The idea', body: 'A group of endurance athletes and Zanzibari operators sketch a festival that treats the island as the arena.' },
-  { year: '2025', label: 'Foundations', body: 'Courses mapped along the Fumba peninsula, timing and medical partners secured, first sponsors on board.' },
-  { year: '2026', label: 'Race day', body: 'Inaugural edition — 6 November, Fumba Town. 1,500+ athletes across 15 countries.' },
+  { year: '2025', label: 'Foundations', body: 'Courses mapped along the Zanzibar coastline, timing and medical partners secured, first sponsors on board.' },
+  { year: '2026', label: 'Race day', body: 'Inaugural edition — 6 November. 1,500+ athletes across 15 countries.' },
   { year: '2027', label: 'The horizon', body: 'A recurring fixture on the global hybrid-fitness calendar, with qualifying pathways for African athletes.' },
 ]
 
@@ -39,7 +39,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About the festival"
         title={<>Where the ocean horizon meets the start line.</>}
-        intro="ZanziFit is a hybrid endurance festival on the coast of Zanzibar — road cycling and HYROX-style functional fitness racing across one unforgettable weekend in Fumba Town."
+        intro="ZanziFit is a hybrid endurance festival on the coast of Zanzibar — road cycling and HYROX-style functional fitness racing across one unforgettable weekend."
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
@@ -62,7 +62,7 @@ export default function AboutPage() {
               </p>
               <p>
                 We took two of the fastest-growing sports in the world — road cycling and HYROX-style functional
-                racing — and set them against the turquoise water and closed coastal roads of the Fumba peninsula.
+                racing — and set them against the turquoise water and closed coastal roads of Zanzibar.
                 The result is equal parts competition and celebration.
               </p>
             </div>

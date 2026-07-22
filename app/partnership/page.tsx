@@ -113,7 +113,7 @@ export default function PartnershipPage() {
             </p>
             <div className="mt-8 space-y-3 text-sm text-muted-foreground">
               <p className="flex items-center gap-3"><Chevrons className="text-amber" count={1} /> partners@zanzifit.com</p>
-              <p className="flex items-center gap-3"><Chevrons className="text-amber" count={1} /> Fumba Town, Zanzibar, Tanzania</p>
+              <p className="flex items-center gap-3"><Chevrons className="text-amber" count={1} /> Zanzibar, Tanzania</p>
             </div>
           </div>
           <PartnershipInquiry tiers={TIERS.map((t) => t.name)} />

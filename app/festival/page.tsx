@@ -17,7 +17,7 @@ const DISCIPLINES = [
     name: 'Road Cycling',
     image: '/images/cycling.png',
     blurb:
-      'Closed-road coastal racing along the Fumba peninsula, from a fast community sprint to a punishing elite endurance loop.',
+      'Closed-road coastal racing along the Zanzibar coastline, from a fast community sprint to a punishing elite endurance loop.',
     categories: [
       { name: 'Elite Road Race', detail: '120 km · closed circuit · UCI-style timing' },
       { name: 'Open 60 km', detail: 'Competitive amateurs · chip-timed' },
@@ -52,7 +52,7 @@ export default function FestivalPage() {
       <PageHero
         eyebrow="The festival"
         title={<>Two disciplines. One coastline. One weekend.</>}
-        intro="6–8 November 2026 in Fumba Town, Zanzibar. Race the discipline you love — or take on both — then recover on the same sand you started from."
+        intro="6–8 November 2026 in Zanzibar. Race the discipline you love — or take on both — then recover on the same sand you started from."
         image={{ src: '/images/cycling.png', alt: 'The peloton racing along the coastal road' }}
       >
         <div className="flex flex-wrap gap-3">

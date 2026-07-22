@@ -66,8 +66,8 @@ export function Hero() {
 
           <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:text-xl">
             Where the ocean horizon meets the start line. A hybrid road-cycling
-            and HYROX-style functional fitness festival on the coast of Fumba
-            Town, Zanzibar.
+            and HYROX-style functional fitness festival on the coast of
+            Zanzibar.
           </p>
 
           <div className="mt-8">

@@ -63,7 +63,7 @@ export function SiteFooter() {
             <p className="mt-5 font-utility text-sm uppercase tracking-[0.16em] text-bone/80">
               6 November 2026
               <span className="mx-2 text-amber">/</span>
-              Fumba Town, Zanzibar
+              Zanzibar, Tanzania
             </p>
           </div>
 

@@ -7,14 +7,14 @@ import { ExpandableCard } from '@/components/expandable-card'
 export const metadata: Metadata = {
   title: 'Accommodation',
   description:
-    'Where to stay for ZanziFit Festival — hotels, resorts, boutique stays and budget options around Fumba Town, Zanzibar. We help you book.',
+    'Where to stay for ZanziFit Festival — hotels, resorts, boutique stays and budget options around Zanzibar. We help you book.',
 }
 
 const HOTELS = [
   {
     title: 'DoubleTree by Hilton Nungwi',
     area: 'Nungwi',
-    badge: '~75 min from Fumba',
+    badge: '~75 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'A full-service international hotel on the island’s northern tip, with multiple restaurants and a spa.',
     details: [
@@ -25,10 +25,10 @@ const HOTELS = [
   },
   {
     title: 'Green Turaco',
-    area: 'Fumba',
-    badge: '~5 min from Fumba',
+    area: 'Near the festival venue',
+    badge: '~5 min from the festival venue',
     image: '/images/festival-village.png',
-    summary: 'A simple, business-friendly hotel right in Fumba — the shortest possible commute to the start line.',
+    summary: 'A simple, business-friendly hotel close to the festival venue — the shortest possible commute to the start line.',
     details: [
       'Walkable or a short ride to the festival village',
       'Straightforward rooms, good for a no-frills race-weekend base',
@@ -37,7 +37,7 @@ const HOTELS = [
   {
     title: 'Melia Zanzibar',
     area: 'Kiwengwa',
-    badge: '~65 min from Fumba',
+    badge: '~65 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'A full-service resort hotel on a 40-acre estate on the north-east coast, with multiple restaurants and three pools.',
     details: [
@@ -48,7 +48,7 @@ const HOTELS = [
   {
     title: 'Turaco Nungwi Resort, a Tribute Portfolio Hotel',
     area: 'Nungwi',
-    badge: '~75 min from Fumba',
+    badge: '~75 min from the festival venue',
     image: '/images/festival-village.png',
     summary: 'A newer full-service hotel on Nungwi’s beachfront, part of Marriott’s Tribute Portfolio.',
     details: [
@@ -61,8 +61,8 @@ const HOTELS = [
 const RESORTS = [
   {
     title: 'Fumba Beach Lodge',
-    area: 'Fumba',
-    badge: '~5 min from Fumba',
+    area: 'Near the festival venue',
+    badge: '~5 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'A secluded beach lodge inside the Menai Bay Conservation Area — the closest resort stay to the festival village.',
     details: [
@@ -74,7 +74,7 @@ const RESORTS = [
   {
     title: 'Essque Zalu Zanzibar',
     area: 'Nungwi',
-    badge: '~75 min from Fumba',
+    badge: '~75 min from the festival venue',
     image: '/images/festival-village.png',
     summary: 'A five-star resort on Zanzibar’s northern point, known for dramatic ocean views and full-service spa.',
     details: [
@@ -85,7 +85,7 @@ const RESORTS = [
   {
     title: 'Zuri Zanzibar',
     area: 'Kendwa',
-    badge: '~80 min from Fumba',
+    badge: '~80 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'An eco-conscious resort with chic bungalows and a private stretch of Kendwa beach.',
     details: [
@@ -96,7 +96,7 @@ const RESORTS = [
   {
     title: 'Baraza Resort & Spa',
     area: 'Bwejuu',
-    badge: '~70 min from Fumba',
+    badge: '~70 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'An east-coast luxury resort with villas blending Swahili, Arabic and Indian architectural influences.',
     details: [
@@ -107,7 +107,7 @@ const RESORTS = [
   {
     title: 'Matemwe Beach Village',
     area: 'Matemwe',
-    badge: '~65 min from Fumba',
+    badge: '~65 min from the festival venue',
     image: '/images/festival-village.png',
     summary: 'A relaxed north-east coast beach retreat close to Mnemba Atoll, with a five-star PADI dive centre on site.',
     details: [
@@ -121,7 +121,7 @@ const BOUTIQUE_STAYS = [
   {
     title: 'Sharazād Wonders Boutique Hotel',
     area: 'Stone Town',
-    badge: '~45 min from Fumba',
+    badge: '~45 min from the festival venue',
     image: '/images/festival-village.png',
     summary: 'A small, historic courtyard hotel in the heart of Stone Town’s old city.',
     details: [
@@ -133,7 +133,7 @@ const BOUTIQUE_STAYS = [
   {
     title: 'Mwezi Boutique Resort',
     area: 'Paje',
-    badge: '~55 min from Fumba',
+    badge: '~55 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'An artistic, eco-conscious boutique resort on Zanzibar’s east coast, near Paje’s kite-surfing scene.',
     details: [
@@ -144,7 +144,7 @@ const BOUTIQUE_STAYS = [
   {
     title: 'Emerson on Hurumzi',
     area: 'Stone Town',
-    badge: '~45 min from Fumba',
+    badge: '~45 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'A historic Stone Town boutique hotel with traditionally furnished rooms and Zanzibar’s highest rooftop restaurant.',
     details: [
@@ -155,7 +155,7 @@ const BOUTIQUE_STAYS = [
   {
     title: 'Bamboo Zanzibar',
     area: 'Jambiani',
-    badge: '~55 min from Fumba',
+    badge: '~55 min from the festival venue',
     image: '/images/festival-village.png',
     summary: 'A sustainable boutique hotel on the Jambiani coastline, built from locally sourced timber, bamboo and stone.',
     details: [
@@ -169,7 +169,7 @@ const BUDGET_STAYS = [
   {
     title: 'Jambo Guesthouse',
     area: 'Stone Town',
-    badge: '~45 min from Fumba',
+    badge: '~45 min from the festival venue',
     image: '/images/festival-village.png',
     summary: 'A family-run guesthouse in Stone Town with rooftop breakfast views — simple, friendly and central.',
     details: [
@@ -180,7 +180,7 @@ const BUDGET_STAYS = [
   {
     title: 'Drifters Backpackers',
     area: 'Paje',
-    badge: '~55 min from Fumba',
+    badge: '~55 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'A few steps from Paje beach — dorms and private bandas, communal kitchen and on-site bar.',
     details: [
@@ -191,7 +191,7 @@ const BUDGET_STAYS = [
   {
     title: 'Lost & Found Hostel',
     area: 'Stone Town',
-    badge: '~45 min from Fumba',
+    badge: '~45 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary: 'Zanzibar’s first premium hostel, in a renovated heritage building in central Stone Town.',
     details: [
@@ -202,7 +202,7 @@ const BUDGET_STAYS = [
   {
     title: 'Flamingo Guest House',
     area: 'Stone Town',
-    badge: '~45 min from Fumba',
+    badge: '~45 min from the festival venue',
     image: '/images/festival-village.png',
     summary: 'A simple, centrally located Stone Town guesthouse with breakfast included.',
     details: [

@@ -6,7 +6,7 @@ import { ContactForm } from '@/components/contact-form'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Get in touch with ZanziFit Festival — Fumba Town, Zanzibar.',
+  description: 'Get in touch with ZanziFit Festival — Zanzibar, Tanzania.',
 }
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <SectionHeading eyebrow="Get in touch" title="We're based in Fumba Town." align="left" />
+            <SectionHeading eyebrow="Get in touch" title="We're based in Zanzibar." align="left" />
             <div className="mt-8 space-y-3 text-sm text-muted-foreground">
               <p className="flex items-center gap-3">
                 <Chevrons className="text-amber" count={1} />
@@ -34,7 +34,7 @@ export default function ContactPage() {
               </p>
               <p className="flex items-center gap-3">
                 <Chevrons className="text-amber" count={1} />
-                Fumba Town, Zanzibar, Tanzania
+                Zanzibar, Tanzania
               </p>
               <p className="flex items-center gap-3">
                 <Chevrons className="text-amber" count={1} />

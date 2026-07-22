@@ -31,13 +31,12 @@ export const metadata: Metadata = {
     template: '%s · ZanziFit Festival',
   },
   description:
-    'A hybrid road-cycling and HYROX-style functional fitness festival on the coast of Zanzibar, Tanzania. 6 November 2026, Fumba Town. 1,500+ athletes, 15 countries, one horizon.',
+    'A hybrid road-cycling and HYROX-style functional fitness festival on the coast of Zanzibar, Tanzania. 6 November 2026. 1,500+ athletes, 15 countries, one horizon.',
   keywords: [
     'ZanziFit',
     'Zanzibar fitness festival',
     'HYROX Africa',
     'road cycling Zanzibar',
-    'Fumba Town',
     'endurance festival Tanzania',
   ],
   icons: {

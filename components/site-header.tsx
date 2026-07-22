@@ -48,7 +48,7 @@ export function SiteHeader() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
         scrolled
-          ? 'border-b border-border bg-ink/85 backdrop-blur-md'
+          ? 'border-b border-border bg-background/85 backdrop-blur-md'
           : 'bg-transparent',
       )}
     >
@@ -68,10 +68,11 @@ export function SiteHeader() {
             width={132}
             height={44}
             priority
-            // Header always renders over a dark surface (bg-ink/85 when scrolled,
-            // transparent-over-dark-hero otherwise) in both themes, so logo invert
-            // stays unconditional.
-            className="h-10 w-auto invert lg:h-12"
+            // Theme toggling sets `data-theme` on <html> (no `.dark` class), so
+            // `dark:` variants never match here. Invert by default (correct for
+            // the dark theme, the site default), and cancel the invert in light
+            // mode via an explicit data-theme attribute selector.
+            className="h-10 w-auto invert lg:h-12 [:root[data-theme='light']_&]:invert-0"
           />
         </Link>
 
@@ -86,7 +87,7 @@ export function SiteHeader() {
                   'font-utility text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
                   active
                     ? 'text-amber'
-                    : 'text-bone/70 hover:text-bone',
+                    : 'text-foreground/70 hover:text-foreground',
                 )}
               >
                 {item.label}
@@ -107,7 +108,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex size-10 items-center justify-center rounded-sm border border-border text-bone lg:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-sm border border-border text-foreground lg:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
@@ -118,13 +119,13 @@ export function SiteHeader() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-border bg-ink/95 backdrop-blur-md lg:hidden">
+        <div className="border-t border-border bg-background/95 backdrop-blur-md lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6" aria-label="Mobile">
             {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center justify-between border-b border-border/60 py-3 font-utility text-sm uppercase tracking-[0.14em] text-bone/80"
+                className="flex items-center justify-between border-b border-border/60 py-3 font-utility text-sm uppercase tracking-[0.14em] text-foreground/80"
               >
                 {item.label}
                 <Chevrons count={1} className="text-amber" />

@@ -13,8 +13,8 @@ const CATEGORIES = [
   'HYROX-Style — Corporate Teams',
 ]
 
-type Fields = { name: string; email: string; category: string }
-type Errors = Partial<Record<'name' | 'email', FieldError>>
+type Fields = { name: string; email: string; phone: string; category: string }
+type Errors = Partial<Record<'name' | 'email' | 'phone', FieldError>>
 
 const FIELD =
   'w-full rounded-sm border border-input bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-amber'
@@ -22,21 +22,22 @@ const FIELD_INVALID = 'border-destructive focus:border-destructive'
 
 export function RegisterForm() {
   const [sent, setSent] = useState(false)
-  const [values, setValues] = useState<Fields>({ name: '', email: '', category: CATEGORIES[0] })
+  const [values, setValues] = useState<Fields>({ name: '', email: '', phone: '+255 ', category: CATEGORIES[0] })
   const [errors, setErrors] = useState<Errors>({})
-  const [touched, setTouched] = useState<{ name?: boolean; email?: boolean }>({})
+  const [touched, setTouched] = useState<{ name?: boolean; email?: boolean; phone?: boolean }>({})
 
-  function validate(field: 'name' | 'email', value: string): FieldError {
+  function validate(field: 'name' | 'email' | 'phone', value: string): FieldError {
     if (field === 'name') return validateField('required', value, { label: 'Name' })
-    return validateField('email', value, { label: 'Email' })
+    if (field === 'email') return validateField('email', value, { label: 'Email' })
+    return validateField('phone', value, { label: 'Phone number' })
   }
 
-  function handleChange(field: 'name' | 'email', value: string) {
+  function handleChange(field: 'name' | 'email' | 'phone', value: string) {
     setValues((v) => ({ ...v, [field]: value }))
     if (touched[field]) setErrors((e) => ({ ...e, [field]: validate(field, value) }))
   }
 
-  function handleBlur(field: 'name' | 'email') {
+  function handleBlur(field: 'name' | 'email' | 'phone') {
     setTouched((t) => ({ ...t, [field]: true }))
     setErrors((e) => ({ ...e, [field]: validate(field, values[field]) }))
   }
@@ -46,10 +47,11 @@ export function RegisterForm() {
     const nextErrors: Errors = {
       name: validate('name', values.name),
       email: validate('email', values.email),
+      phone: validate('phone', values.phone),
     }
     setErrors(nextErrors)
-    setTouched({ name: true, email: true })
-    const firstInvalid = (Object.keys(nextErrors) as ('name' | 'email')[]).find((k) => nextErrors[k])
+    setTouched({ name: true, email: true, phone: true })
+    const firstInvalid = (Object.keys(nextErrors) as ('name' | 'email' | 'phone')[]).find((k) => nextErrors[k])
     if (firstInvalid) {
       document.getElementById(`register-${firstInvalid}`)?.focus()
       return
@@ -99,6 +101,21 @@ export function RegisterForm() {
           placeholder="you@email.com"
         />
         {errors.email ? <p id="register-email-error" role="alert" className="mt-1.5 text-xs text-destructive">{errors.email}</p> : null}
+      </label>
+      <label className="mt-4 block">
+        <span className="mb-1.5 block font-utility text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Phone number</span>
+        <input
+          id="register-phone"
+          type="tel"
+          value={values.phone}
+          onChange={(e) => handleChange('phone', e.target.value)}
+          onBlur={() => handleBlur('phone')}
+          aria-invalid={!!errors.phone}
+          aria-describedby={errors.phone ? 'register-phone-error' : undefined}
+          className={`${FIELD} ${errors.phone ? FIELD_INVALID : ''}`}
+          placeholder="+255 686 915 587"
+        />
+        {errors.phone ? <p id="register-phone-error" role="alert" className="mt-1.5 text-xs text-destructive">{errors.phone}</p> : null}
       </label>
       <label className="mt-4 block">
         <span className="mb-1.5 block font-utility text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Category</span>

@@ -41,7 +41,7 @@ const TEAM = [
     bio: 'Contributes to board-level direction and oversight across the festival\'s core operations.',
   },
   {
-    name: 'Walter Mwach',
+    name: 'Walter Mwacha',
     role: 'Board Secretary',
     image: '/images/leadership/walter-mwach.jpg',
     bio: 'Maintains board governance records and supports the formal decision-making process behind the festival.',
@@ -54,16 +54,15 @@ export default function LeadershipPage() {
       <PageHero
         eyebrow="The team"
         title={<>The people behind the horizon.</>}
-        intro="ZanziFit is run by a team that lives at the intersection of endurance sport, world-class event operations and Zanzibari hospitality."
-        image={{ src: '/images/leader-1.png', alt: 'ZanziFit Festival leadership on the Zanzibar coast' }}
+        intro="ZanziFit's core team is the group of six who hold direct operating and governing responsibility for the festival — spanning event delivery, athlete and venue operations, and Zanzibari hospitality partnerships. Every decision on the festival's direction runs through this group."
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <SectionHeading eyebrow="Leadership" title="Meet the core team." />
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m) => (
-            <article key={m.name} className="group">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border">
+            <article key={m.name}>
+              <div className="group relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={m.image}
                   alt={`Portrait of ${m.name}, ${m.role}`}
@@ -71,28 +70,12 @@ export default function LeadershipPage() {
                   className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink to-transparent" />
               </div>
               <h3 className="mt-5 font-display text-xl font-semibold text-surface-dark-foreground">{m.name}</h3>
               <div className="mt-1 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber">{m.role}</div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="border-t border-border bg-surface-dark-soft py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <SectionHeading
-            eyebrow="Governance"
-            title="One board, full accountability."
-            align="center"
-          />
-          <p className="mx-auto mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            The six leaders above make up ZanziFit Festival&apos;s complete governing board —
-            there is no separate advisory layer. As the festival grows, formal advisory and
-            sanctioning partnerships (destination, sporting, medical) will be announced here.
-          </p>
         </div>
       </section>
     </main>

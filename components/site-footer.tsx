@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { MessageCircle } from 'lucide-react'
 import { NewsletterForm } from '@/components/newsletter-form'
 import { Chevrons } from '@/components/chevrons'
+import { InstagramIcon, FacebookIcon, YoutubeIcon } from '@/components/social-icons'
 
 const COLUMNS = [
   {
@@ -33,10 +35,10 @@ const COLUMNS = [
 ]
 
 const SOCIALS = [
-  { href: '#', label: 'Instagram', short: 'IG' },
-  { href: '#', label: 'Facebook', short: 'FB' },
-  { href: '#', label: 'YouTube', short: 'YT' },
-  { href: '#', label: 'WhatsApp', short: 'WA' },
+  { href: '#', label: 'Instagram', Icon: InstagramIcon },
+  { href: '#', label: 'Facebook', Icon: FacebookIcon },
+  { href: '#', label: 'YouTube', Icon: YoutubeIcon },
+  { href: 'https://wa.me/255686915587', label: 'WhatsApp', Icon: MessageCircle },
 ]
 
 export function SiteFooter() {
@@ -98,14 +100,16 @@ export function SiteFooter() {
 
           <div className="flex flex-col gap-6 lg:items-end">
             <div className="flex gap-3">
-              {SOCIALS.map(({ href, label, short }) => (
+              {SOCIALS.map(({ href, label, Icon }) => (
                 <a
                   key={label}
                   href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   aria-label={label}
-                  className="inline-flex size-11 items-center justify-center rounded-sm border border-border font-utility text-xs font-semibold tracking-[0.08em] text-bone/70 transition-colors hover:border-amber hover:text-amber"
+                  className="inline-flex size-11 items-center justify-center rounded-sm border border-border text-bone/70 transition-colors hover:border-amber hover:text-amber"
                 >
-                  {short}
+                  <Icon className="size-4" aria-hidden="true" />
                 </a>
               ))}
             </div>

@@ -48,6 +48,9 @@ export function ContactForm() {
       document.getElementById(`contact-${firstInvalid}`)?.focus()
       return
     }
+    const subject = `Website enquiry from ${values.name}`
+    const body = `${values.message}\n\n— ${values.name} (${values.email})`
+    window.location.href = `mailto:info@zanzifit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSent(true)
   }
 

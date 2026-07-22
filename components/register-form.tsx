@@ -56,6 +56,9 @@ export function RegisterForm() {
       document.getElementById(`register-${firstInvalid}`)?.focus()
       return
     }
+    const subject = `Registration interest — ${values.category}`
+    const body = `Name: ${values.name}\nEmail: ${values.email}\nPhone: ${values.phone}\nCategory: ${values.category}`
+    window.location.href = `mailto:info@zanzifit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSent(true)
   }
 

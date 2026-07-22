@@ -264,11 +264,11 @@ export default function AccommodationPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <SectionHeading eyebrow="Booking Info" title="How booking through us works." />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-10 md:grid-cols-3">
           {BOOKING_STEPS.map((s) => (
-            <div key={s.step} className="rounded-lg border border-border bg-surface-dark-soft p-8">
-              <div className="font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber">{s.step}</div>
-              <h3 className="mt-2 font-display text-2xl font-semibold text-surface-dark-foreground">{s.title}</h3>
+            <div key={s.step}>
+              <div className="font-utility text-4xl font-semibold text-amber">{s.step}</div>
+              <h3 className="mt-3 font-display text-2xl font-semibold text-surface-dark-foreground">{s.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.detail}</p>
             </div>
           ))}

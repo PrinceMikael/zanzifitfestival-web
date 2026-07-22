@@ -97,9 +97,9 @@ export default function FestivalPage() {
       <section id="schedule" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading eyebrow="Race weekend" title="Three days on the coast." />
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {SCHEDULE.map((s) => (
-              <div key={s.day} className="rounded-lg border border-border bg-background p-8">
+          <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
+            {SCHEDULE.map((s, i) => (
+              <div key={s.day} className={i > 0 ? 'md:border-l md:border-border md:pl-6' : ''}>
                 <div className="font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber">{s.day}</div>
                 <h3 className="mt-2 font-display text-2xl font-semibold text-surface-dark-foreground">{s.title}</h3>
                 <ul className="mt-5 space-y-3">

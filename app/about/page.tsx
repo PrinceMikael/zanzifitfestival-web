@@ -73,11 +73,11 @@ export default function AboutPage() {
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading eyebrow="What we stand for" title="The principles behind ZanziFit." />
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {VALUES.map((v) => (
-              <div key={v.title} className="rounded-lg border border-border bg-background p-8">
-                <Chevrons className="mb-5 text-amber" />
-                <h3 className="font-display text-2xl font-semibold text-surface-dark-foreground">{v.title}</h3>
+          <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3">
+            {VALUES.map((v, i) => (
+              <div key={v.title} className="border-t-2 border-amber pt-6">
+                <span className="font-utility text-sm font-semibold text-amber">0{i + 1}</span>
+                <h3 className="mt-3 font-display text-2xl font-semibold text-surface-dark-foreground">{v.title}</h3>
                 <p className="mt-4 leading-relaxed text-muted-foreground">{v.body}</p>
               </div>
             ))}
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <SectionHeading eyebrow="The road here" title="From idea to start line." />
         <div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
           {TIMELINE.map((t) => (

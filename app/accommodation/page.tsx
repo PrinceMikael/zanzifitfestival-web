@@ -277,7 +277,9 @@ export default function AccommodationPage() {
         <div className="mt-14 space-y-3 border-t border-border pt-10 text-sm text-muted-foreground">
           <p className="flex items-center gap-3">
             <Chevrons className="text-amber" count={1} />
-            info@zanzifitfestival.com
+            <a href="mailto:info@zanzifit.com" className="transition-colors hover:text-amber">
+              info@zanzifit.com
+            </a>
           </p>
           <p className="flex items-center gap-3">
             <Chevrons className="text-amber" count={1} />

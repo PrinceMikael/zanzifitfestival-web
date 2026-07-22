@@ -109,9 +109,12 @@ export function SiteFooter() {
                 </a>
               ))}
             </div>
-            <p className="font-utility text-xs uppercase tracking-[0.16em] text-bone/45">
-              hello@zanzifit.com
-            </p>
+            <a
+              href="mailto:info@zanzifit.com"
+              className="font-utility text-xs uppercase tracking-[0.16em] text-bone/45 transition-colors hover:text-amber"
+            >
+              info@zanzifit.com
+            </a>
           </div>
         </div>
 

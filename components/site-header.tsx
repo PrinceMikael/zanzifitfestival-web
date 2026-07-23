@@ -64,14 +64,14 @@ export function SiteHeader() {
           <Image
             src="/zfit-logo.svg"
             alt="ZFit Festival"
-            width={132}
-            height={44}
+            width={220}
+            height={76}
             priority
             // Theme toggling sets `data-theme` on <html> (no `.dark` class), so
             // `dark:` variants never match here. Invert by default (correct for
             // the dark theme, the site default), and cancel the invert in light
             // mode via an explicit data-theme attribute selector.
-            className="h-10 w-auto invert lg:h-12 [:root[data-theme='light']_&]:invert-0"
+            className="h-12 w-auto invert lg:h-16 [:root[data-theme='light']_&]:invert-0"
           />
         </Link>
 

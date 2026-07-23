@@ -49,11 +49,11 @@ export function SiteFooter() {
             <Image
               src="/zfit-logo.svg"
               alt="ZFit Festival"
-              width={150}
-              height={50}
+              width={240}
+              height={82}
               // Footer always renders on bg-ink (literal brand-dark), unaffected
               // by the light/dark toggle — logo invert stays unconditional.
-              className="h-9 w-auto invert"
+              className="h-14 w-auto invert"
             />
             <p className="mt-5 text-pretty leading-relaxed text-bone/65">
               A hybrid road-cycling and HYROX-style functional fitness festival

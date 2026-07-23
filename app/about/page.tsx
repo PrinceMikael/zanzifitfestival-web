@@ -99,7 +99,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-deep-teal py-16 text-bone">
+      <section className="border-t border-border bg-ink py-16 text-bone">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
           <h2 className="font-display text-3xl font-semibold text-balance md:text-4xl">
             Be part of the first edition.

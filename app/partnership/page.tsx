@@ -60,7 +60,7 @@ export default function PartnershipPage() {
         </Link>
       </PageHero>
 
-      <section className="border-b border-border bg-deep-teal py-14 text-bone">
+      <section className="border-b border-border bg-ink py-14 text-bone">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
           {REACH.map((r) => (
             <div key={r.label}>

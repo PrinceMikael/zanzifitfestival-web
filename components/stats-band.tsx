@@ -9,7 +9,7 @@ const STATS = [
 
 export function StatsBand() {
   return (
-    <section className="bg-deep-teal py-16 lg:py-20">
+    <section className="bg-ink py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
           <Chevrons count={3} className="text-amber" />

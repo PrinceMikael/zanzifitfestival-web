@@ -53,7 +53,7 @@ export function NewsletterForm() {
           type="submit"
           disabled={done}
           data-cursor-label="Join"
-          className="inline-flex h-12 items-center gap-2 rounded-sm bg-bone px-5 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-ink transition-colors hover:bg-amber disabled:cursor-default disabled:bg-deep-teal disabled:text-bone"
+          className="inline-flex h-12 items-center gap-2 rounded-sm bg-bone px-5 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-ink transition-colors hover:bg-amber disabled:cursor-default disabled:bg-ink-soft disabled:text-bone"
         >
           {done ? (
             <>

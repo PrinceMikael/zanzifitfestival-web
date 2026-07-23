@@ -9,7 +9,7 @@ const DISCIPLINES = [
     title: 'Road Cycling',
     href: '/festival#cycling',
     image: '/images/cycling.png',
-    copy: 'Coastal road racing on closed circuits along the Zanzibar coastline — from a fast community sprint to a punishing elite endurance loop.',
+    copy: 'Coastal road racing on closed circuits along the Zanzibar coastline, from a fast community sprint to a punishing elite endurance loop.',
     categories: ['Elite Road Race', 'Open 60km', 'Community 20km'],
     stat: { value: '80km', label: 'Longest elite loop' },
   },
@@ -18,7 +18,7 @@ const DISCIPLINES = [
     title: 'HYROX-Style',
     href: '/festival#hyrox',
     image: '/images/hyrox-arena.png',
-    copy: 'Eight functional stations against the clock — sled push, sled pull, rowing, burpee broad jumps and the wall-ball finish. Run. Work. Repeat.',
+    copy: 'Eight functional stations against the clock: sled push, sled pull, rowing, burpee broad jumps and the wall-ball finish. Run. Work. Repeat.',
     categories: ['Elite', 'Open', 'Corporate Teams'],
     stat: { value: '8', label: 'Timed stations' },
   },
@@ -30,7 +30,7 @@ export function Disciplines() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Choose your start line."
-          intro="ZanziFit runs two competitions across one weekend on the same coastline — pick your lane, or take on both."
+          intro="ZanziFit runs two competitions across one weekend on the same coastline. Pick your lane, or take on both."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">

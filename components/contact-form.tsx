@@ -60,7 +60,7 @@ export function ContactForm() {
         <Chevrons className="text-amber" />
         <h3 className="mt-4 font-display text-2xl font-semibold text-foreground">Message sent.</h3>
         <p className="mt-3 max-w-sm text-muted-foreground">
-          Thanks for reaching out — we typically reply within two business days.
+          Thanks for reaching out. We typically reply within two business days.
         </p>
       </div>
     )

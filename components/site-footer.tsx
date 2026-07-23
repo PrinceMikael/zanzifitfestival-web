@@ -91,7 +91,7 @@ export function SiteFooter() {
               Stay on the start line.
             </h3>
             <p className="mt-2 max-w-md text-sm leading-relaxed text-bone/60">
-              Registration windows, category cutoffs and travel updates —
+              Registration windows, category cutoffs and travel updates,
               straight to your inbox. No noise.
             </p>
             <NewsletterForm />

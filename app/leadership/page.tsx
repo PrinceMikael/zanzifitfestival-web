@@ -6,7 +6,7 @@ import { SectionHeading } from '@/components/section-heading'
 export const metadata: Metadata = {
   title: 'Leadership',
   description:
-    'Meet the team behind ZanziFit Festival — endurance athletes, event operators and Zanzibari hospitality leaders.',
+    'Meet the team behind ZanziFit Festival: endurance athletes, event operators and Zanzibari hospitality leaders.',
 }
 
 const TEAM = [
@@ -53,7 +53,7 @@ export default function LeadershipPage() {
     <main>
       <PageHero
         title={<>The people behind the horizon.</>}
-        intro="ZanziFit's core team is the group of six who hold direct operating and governing responsibility for the festival — spanning event delivery, athlete and venue operations, and Zanzibari hospitality partnerships. Every decision on the festival's direction runs through this group."
+        intro="ZanziFit's core team is the group of six who hold direct operating and governing responsibility for the festival, spanning event delivery, athlete and venue operations, and Zanzibari hospitality partnerships. Every decision on the festival's direction runs through this group."
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">

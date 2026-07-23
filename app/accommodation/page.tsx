@@ -7,7 +7,7 @@ import { ExpandableCard } from '@/components/expandable-card'
 export const metadata: Metadata = {
   title: 'Accommodation',
   description:
-    'Where to stay for ZanziFit Festival — hotels, resorts, boutique stays and budget options around Zanzibar. We help you book.',
+    'Where to stay for ZanziFit Festival: hotels, resorts, boutique stays and budget options around Zanzibar. We help you book.',
 }
 
 const HOTELS = [
@@ -20,7 +20,7 @@ const HOTELS = [
     details: [
       'Ocean-view rooms and suites, on-site pool and fitness centre',
       'Best for travellers who want a familiar hotel-brand experience',
-      'A longer transfer from the festival village — plan race-morning logistics ahead',
+      'A longer transfer from the festival village, so plan race-morning logistics ahead',
     ],
   },
   {
@@ -28,7 +28,7 @@ const HOTELS = [
     area: 'Near the festival venue',
     badge: '~5 min from the festival venue',
     image: '/images/festival-village.png',
-    summary: 'A simple, business-friendly hotel close to the festival venue — the shortest possible commute to the start line.',
+    summary: 'A simple, business-friendly hotel close to the festival venue, the shortest possible commute to the start line.',
     details: [
       'Walkable or a short ride to the festival village',
       'Straightforward rooms, good for a no-frills race-weekend base',
@@ -64,7 +64,7 @@ const RESORTS = [
     area: 'Near the festival venue',
     badge: '~5 min from the festival venue',
     image: '/images/zanzibar-coast.png',
-    summary: 'A secluded beach lodge inside the Menai Bay Conservation Area — the closest resort stay to the festival village.',
+    summary: 'A secluded beach lodge inside the Menai Bay Conservation Area, the closest resort stay to the festival village.',
     details: [
       'Cottage and suite rooms with private terraces and ocean views',
       'On-site dive centre for reef trips and sandbank excursions',
@@ -171,7 +171,7 @@ const BUDGET_STAYS = [
     area: 'Stone Town',
     badge: '~45 min from the festival venue',
     image: '/images/festival-village.png',
-    summary: 'A family-run guesthouse in Stone Town with rooftop breakfast views — simple, friendly and central.',
+    summary: 'A family-run guesthouse in Stone Town with rooftop breakfast views. Simple, friendly and central.',
     details: [
       'Private rooms at guesthouse rates',
       'Central to Stone Town’s old-city sights',
@@ -182,7 +182,7 @@ const BUDGET_STAYS = [
     area: 'Paje',
     badge: '~55 min from the festival venue',
     image: '/images/zanzibar-coast.png',
-    summary: 'A few steps from Paje beach — dorms and private bandas, communal kitchen and on-site bar.',
+    summary: 'A few steps from Paje beach, with dorms and private bandas, a communal kitchen and an on-site bar.',
     details: [
       'The most affordable tier covered here',
       'Popular with solo travellers and the kite-surfing crowd',
@@ -222,7 +222,7 @@ const TIERS = [
 const BOOKING_STEPS = [
   { step: '01', title: 'Tell us your dates & budget', detail: 'Message us your race-weekend dates, group size and the tier of stay you’re after.' },
   { step: '02', title: 'We check availability', detail: 'We reach out to the property on your behalf and confirm what’s open for your dates.' },
-  { step: '03', title: 'You confirm', detail: 'Book directly with the property or let us handle the confirmation — either way, we stay in the loop.' },
+  { step: '03', title: 'You confirm', detail: 'Book directly with the property or let us handle the confirmation. Either way, we stay in the loop.' },
 ]
 
 export default function AccommodationPage() {
@@ -230,7 +230,7 @@ export default function AccommodationPage() {
     <main>
       <PageHero
         title={<>We&apos;re not a hotel. We&apos;re your local connection.</>}
-        intro="ZanziFit doesn't run properties — we know them. Tell us what you're after and we'll help you find and book a place to stay for race weekend, from beachfront resorts to budget guesthouses."
+        intro="ZanziFit doesn't run properties. We know them. Tell us what you're after and we'll help you find and book a place to stay for race weekend, from beachfront resorts to budget guesthouses."
         image={{ src: '/images/festival-village.png', alt: 'The ZanziFit festival village and expo at golden hour' }}
       />
 
@@ -250,7 +250,7 @@ export default function AccommodationPage() {
                   alt={item.title}
                   title={item.title}
                   badge={item.badge}
-                  summary={`${item.area} — ${item.summary}`}
+                  summary={`${item.area}: ${item.summary}`}
                   details={item.details}
                   enquiryLabel={item.title}
                   enquiryContext="accommodation"

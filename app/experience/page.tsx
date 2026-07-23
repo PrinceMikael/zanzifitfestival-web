@@ -9,7 +9,7 @@ import { EnquiryLink } from '@/components/enquiry-link'
 export const metadata: Metadata = {
   title: 'Experience Zanzibar',
   description:
-    'What to see, taste and understand on the island that hosts ZanziFit — Stone Town, the coast, the culture and the food, all a short ride from the festival venue.',
+    'What to see, taste and understand on the island that hosts ZanziFit: Stone Town, the coast, the culture and the food, all a short ride from the festival venue.',
 }
 
 const THINGS_TO_DO = [
@@ -20,7 +20,7 @@ const THINGS_TO_DO = [
     summary:
       'The UNESCO-listed old town: narrow alleys, carved wooden doors, and centuries of Swahili, Omani and Indian history.',
     details: [
-      'House of Wonders — former Sultan’s palace, now a museum of Swahili and Zanzibar history',
+      'House of Wonders: a former Sultan’s palace, now a museum of Swahili and Zanzibar history',
       'Guided spice tours run daily from the Old Fort area',
       'Forodhani Gardens waterfront, best visited at sunset',
     ],
@@ -30,7 +30,7 @@ const THINGS_TO_DO = [
     badge: 'Stone Town',
     image: '/images/festival-village.png',
     summary:
-      'Every evening the seafront gardens turn into an open-air food market — grilled seafood skewers, samosas and Zanzibar “pizza” cooked to order.',
+      'Every evening the seafront gardens turn into an open-air food market, with grilled seafood skewers, samosas and Zanzibar “pizza” cooked to order.',
     details: [
       'Best visited 6–9pm as vendors set up for the evening',
       'Try urojo, Zanzibar’s tangy spiced soup, alongside the grills',
@@ -42,7 +42,7 @@ const THINGS_TO_DO = [
     badge: '~10 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary:
-      'The conservation area right on the festival venue\'s doorstep — dolphin encounters, snorkeling and sandbank boat trips.',
+      'The conservation area right on the festival venue\'s doorstep, with dolphin encounters, snorkeling and sandbank boat trips.',
     details: [
       'Boat trips typically depart from nearby jetties close to the festival venue',
       'Snorkeling over the reef is best at low tide',
@@ -54,7 +54,7 @@ const THINGS_TO_DO = [
     badge: '~70–80 min from the festival venue',
     image: '/images/zanzibar-coast.png',
     summary:
-      'The island’s north-tip beaches — turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
+      'The island’s north-tip beaches: turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
     details: [
       'Kendwa’s beach stays swimmable at every tide, unlike much of the east coast',
       'A popular day-trip or stay-over add-on after race weekend',
@@ -65,7 +65,7 @@ const THINGS_TO_DO = [
     badge: '~50 min from the festival venue',
     image: '/images/festival-village.png',
     summary:
-      'Zanzibar’s only national park — home to the red colobus monkey, found nowhere else on Earth.',
+      'Zanzibar’s only national park, home to the red colobus monkey found nowhere else on Earth.',
     details: [
       'Guided forest walks last roughly 45 minutes to an hour',
       'Combine with the adjacent mangrove boardwalk',
@@ -76,7 +76,7 @@ const THINGS_TO_DO = [
     badge: '~2 hrs incl. boat',
     image: '/images/zanzibar-coast.png',
     summary:
-      'A marine conservation area off the north-east coast — some of the clearest water in Zanzibar for snorkeling and diving.',
+      'A marine conservation area off the north-east coast, with some of the clearest water in Zanzibar for snorkeling and diving.',
     details: [
       'Visibility typically ranges 15–30 metres',
       'A relaxed drive plus a short boat transfer from most of the island',
@@ -113,14 +113,14 @@ const THINGS_TO_DO = [
       'A quiet east-coast peninsula known for a walkable sandbank that appears at low tide.',
     details: [
       'The sandbank is a popular sunset spot, reachable on foot at low tide',
-      'Less developed than Nungwi or Kendwa — a quieter alternative for a day trip',
+      'Less developed than Nungwi or Kendwa, a quieter alternative for a day trip',
     ],
   },
 ]
 
 const CULTURE_FACTS = [
   'Zanzibar sits on the historic Swahili Coast, shaped by centuries of Arab, Persian, Indian and European trade and, later, Omani Sultanate rule.',
-  'Stone Town’s carved wooden doors are a signature craft — each pattern historically signalled the wealth and trade of the household.',
+  'Stone Town’s carved wooden doors are a signature craft. Each pattern historically signalled the wealth and trade of the household.',
   'The islands are predominantly Muslim, so modest dress (shoulders and knees covered) is appreciated away from the beach, particularly in Stone Town.',
   'Taarab, a musical style blending Swahili, Arab and Indian influences, remains a living tradition across the islands.',
   'Stone Town hosts Sauti za Busara, a four-day pan-African music festival held every February.',
@@ -134,7 +134,7 @@ const FOOD_HIGHLIGHTS = [
   },
   {
     name: 'Urojo',
-    detail: 'A tangy, spiced soup with cassava, potato fritters and mango — a Stone Town staple.',
+    detail: 'A tangy, spiced soup with cassava, potato fritters and mango. A Stone Town staple.',
   },
   {
     name: 'Spice Coffee',
@@ -146,7 +146,7 @@ const FOOD_HIGHLIGHTS = [
   },
   {
     name: 'Mchuzi wa Pweza',
-    detail: 'Octopus curry — tender octopus simmered in a coconut sauce with garlic, ginger and turmeric.',
+    detail: 'Octopus curry: tender octopus simmered in a coconut sauce with garlic, ginger and turmeric.',
   },
   {
     name: 'Biryani',
@@ -158,17 +158,17 @@ const FOOD_HIGHLIGHTS = [
   },
   {
     name: 'Mandazi',
-    detail: 'Lightly sweetened Swahili doughnuts, flavoured with cardamom — a common breakfast snack with tea or coffee.',
+    detail: 'Lightly sweetened Swahili doughnuts, flavoured with cardamom. A common breakfast snack with tea or coffee.',
   },
 ]
 
 const TRAVEL_INFO = [
-  'Dry season: June–October and January–February — the best window for racing and sightseeing',
+  'Dry season: June–October and January–February, the best window for racing and sightseeing',
   'Rains: mid-March–May and November bring heavier showers',
   'Arrive via Abeid Amani Karume International Airport (ZNZ), Zanzibar Town',
-  'Visa on arrival is available for most nationalities — confirm your requirement before you fly',
+  'Visa on arrival is available for most nationalities. Confirm your requirement before you fly',
   'The festival venue is roughly 30–45 minutes by road from the airport and Stone Town',
-  'Currency: Tanzanian Shilling (TZS) — US dollars are widely accepted at hotels and tour operators',
+  'Currency: Tanzanian Shilling (TZS). US dollars are widely accepted at hotels and tour operators',
   'Time zone: East Africa Time (EAT, UTC+3) year-round',
   'Power: UK-style three-pin plugs, 230V',
 ]
@@ -178,7 +178,7 @@ export default function ExperiencePage() {
     <main>
       <PageHero
         title={<>Race here. Stay a while.</>}
-        intro="ZanziFit is based on Zanzibar's west coast — a short ride from Stone Town's old city and the island's best-known beaches. Here's what to see beyond the finish line."
+        intro="ZanziFit is based on Zanzibar's west coast, a short ride from Stone Town's old city and the island's best-known beaches. Here's what to see beyond the finish line."
         image={{ src: '/images/zanzibar-coast.png', alt: 'A traditional dhow sailing off the Zanzibar coast at golden hour' }}
       />
 
@@ -190,7 +190,7 @@ export default function ExperiencePage() {
               Zanzibar is an archipelago off the coast of mainland Tanzania, its culture
               layered by Swahili, Arab, Persian, Indian and European influence over
               hundreds of years of Indian Ocean trade. ZanziFit races on a quiet stretch
-              of the west coast on Menai Bay — close enough to Stone
+              of the west coast on Menai Bay, close enough to Stone
               Town for an afternoon of sightseeing, far enough to still feel like your
               own stretch of coastline.
             </p>

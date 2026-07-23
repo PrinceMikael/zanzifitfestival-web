@@ -30,7 +30,7 @@ export function WhyZanzibar() {
             Race on closed coastal roads, recover on white sand, and celebrate
             under the same sky that has guided dhows for centuries. ZanziFit
             pairs competition-grade organisation with the hospitality of one of
-            East Africa&apos;s most iconic destinations — so athletes arrive to
+            East Africa&apos;s most iconic destinations, so athletes arrive to
             compete and leave having travelled.
           </p>
           <Link

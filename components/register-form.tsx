@@ -8,9 +8,9 @@ const CATEGORIES = [
   'Elite Road Race',
   'Open 60 km (Cycling)',
   'Community 20 km (Cycling)',
-  'HYROX-Style — Elite',
-  'HYROX-Style — Open',
-  'HYROX-Style — Corporate Teams',
+  'HYROX-Style: Elite',
+  'HYROX-Style: Open',
+  'HYROX-Style: Corporate Teams',
 ]
 
 type Fields = { name: string; email: string; phone: string; category: string }

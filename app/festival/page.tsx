@@ -29,7 +29,7 @@ const DISCIPLINES = [
     name: 'HYROX-Style',
     image: '/images/hyrox-arena.png',
     blurb:
-      'Eight functional stations against the clock — sled push, sled pull, rowing, burpee broad jumps and the wall-ball finish. Run. Work. Repeat.',
+      'Eight functional stations against the clock: sled push, sled pull, rowing, burpee broad jumps and the wall-ball finish. Run. Work. Repeat.',
     categories: [
       { name: 'Elite', detail: 'Individual · full competition weight' },
       { name: 'Open', detail: 'Individual · scaled weights available' },
@@ -40,7 +40,7 @@ const DISCIPLINES = [
 
 const SCHEDULE = [
   { day: 'Fri 6 Nov', title: 'Registration & Expo', items: ['Athlete check-in opens', 'Partner expo village', 'Course briefings', 'Welcome sundowner'] },
-  { day: 'Sat 7 Nov', title: 'Race Day', items: ['Elite road race — dawn start', 'HYROX-style waves all day', 'Community 20 km ride', 'Live finish-line coverage'] },
+  { day: 'Sat 7 Nov', title: 'Race Day', items: ['Elite road race, dawn start', 'HYROX-style waves all day', 'Community 20 km ride', 'Live finish-line coverage'] },
   { day: 'Sun 8 Nov', title: 'Awards & Recovery', items: ['Podium ceremony', 'Beach recovery sessions', 'Closing celebration', 'Departures'] },
 ]
 
@@ -51,7 +51,7 @@ export default function FestivalPage() {
     <main>
       <PageHero
         title={<>Two disciplines. One coastline. One weekend.</>}
-        intro="6–8 November 2026 in Zanzibar. Race the discipline you love — or take on both — then recover on the same sand you started from."
+        intro="6–8 November 2026 in Zanzibar. Race the discipline you love, or take on both, then recover on the same sand you started from."
         image={{ src: '/images/cycling.png', alt: 'The peloton racing along the coastal road' }}
       >
         <div className="flex flex-wrap gap-3">
@@ -65,7 +65,7 @@ export default function FestivalPage() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <SectionHeading title="Pick your lane — or take on both." />
+        <SectionHeading title="Pick your lane, or take on both." />
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {DISCIPLINES.map((d) => (
             <article key={d.name} className="overflow-hidden rounded-lg border border-border bg-surface-dark-soft">

@@ -6,7 +6,7 @@ import { ContactForm } from '@/components/contact-form'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Get in touch with ZanziFit Festival — Zanzibar, Tanzania.',
+  description: 'Get in touch with ZanziFit Festival in Zanzibar, Tanzania.',
 }
 
 export default function ContactPage() {
@@ -14,7 +14,7 @@ export default function ContactPage() {
     <main>
       <PageHero
         title={<>Talk to the team.</>}
-        intro="Questions about the festival, your category, or partnering with us — reach out and we'll get back to you."
+        intro="Questions about the festival, your category, or partnering with us? Reach out and we'll get back to you."
       />
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">

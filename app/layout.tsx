@@ -27,7 +27,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ZanziFit Festival — Zanzibar, 6 November 2026',
+    default: 'ZanziFit Festival, Zanzibar, 6 November 2026',
     template: '%s · ZanziFit Festival',
   },
   description:

@@ -52,7 +52,7 @@ export default function PartnershipPage() {
     <main>
       <PageHero
         title={<>Put your brand on the horizon.</>}
-        intro="ZanziFit gives partners category exclusivity at a premium destination event — reaching an engaged, affluent, health-focused audience across 15 countries."
+        intro="ZanziFit gives partners category exclusivity at a premium destination event, reaching an engaged, affluent, health-focused audience across 15 countries."
         image={{ src: '/images/finish-line.png', alt: 'An athlete crossing the ZanziFit finish line at sunset on the Zanzibar coast' }}
       >
         <Link href="#inquiry" className="inline-flex items-center gap-2 rounded-sm bg-amber px-7 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5">

@@ -11,7 +11,6 @@ export default function RegisterPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Register your interest"
         title={<>Claim your place on the start line.</>}
         intro="Official registration hasn't opened yet. Tell us which category you want, and we'll email you the moment entries go live — with pricing, cutoffs and early-bird windows."
       />

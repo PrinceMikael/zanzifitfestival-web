@@ -29,7 +29,6 @@ export function Disciplines() {
     <section className="border-t border-border bg-surface-dark py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Two disciplines, one festival"
           title="Choose your start line."
           intro="ZanziFit runs two competitions across one weekend on the same coastline — pick your lane, or take on both."
         />

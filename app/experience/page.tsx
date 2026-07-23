@@ -177,7 +177,6 @@ export default function ExperiencePage() {
   return (
     <main>
       <PageHero
-        eyebrow="Experience Zanzibar"
         title={<>Race here. Stay a while.</>}
         intro="ZanziFit is based on Zanzibar's west coast — a short ride from Stone Town's old city and the island's best-known beaches. Here's what to see beyond the finish line."
         image={{ src: '/images/zanzibar-coast.png', alt: 'A traditional dhow sailing off the Zanzibar coast at golden hour' }}
@@ -186,7 +185,7 @@ export default function ExperiencePage() {
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <SectionHeading eyebrow="About Zanzibar" title="An island shaped by centuries of trade." align="left" />
+            <SectionHeading title="An island shaped by centuries of trade." align="left" />
             <p className="mt-8 text-pretty leading-relaxed text-muted-foreground">
               Zanzibar is an archipelago off the coast of mainland Tanzania, its culture
               layered by Swahili, Arab, Persian, Indian and European influence over
@@ -210,7 +209,7 @@ export default function ExperiencePage() {
 
       <section id="things-to-do" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow="Things to Do" title="Beyond race day." />
+          <SectionHeading title="Beyond race day." />
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {THINGS_TO_DO.map((item) => (
               <ExpandableCard
@@ -232,7 +231,7 @@ export default function ExperiencePage() {
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <SectionHeading eyebrow="Culture & Heritage" title="A crossroads of the Indian Ocean." align="left" />
+            <SectionHeading title="A crossroads of the Indian Ocean." align="left" />
             <ul className="mt-8 space-y-4">
               {CULTURE_FACTS.map((fact) => (
                 <li key={fact} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
@@ -256,7 +255,7 @@ export default function ExperiencePage() {
 
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow="Food & Cuisine" title="Eat your way around the island." />
+          <SectionHeading title="Eat your way around the island." />
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
             {FOOD_HIGHLIGHTS.map((f) => (
               <div key={f.name} className="rounded-lg border border-border bg-background p-6">
@@ -269,7 +268,7 @@ export default function ExperiencePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <SectionHeading eyebrow="Travel Information" title="Plan your trip." />
+        <SectionHeading title="Plan your trip." />
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {TRAVEL_INFO.map((i) => (
             <li key={i} className="flex items-center gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-3 text-sm text-surface-dark-foreground">

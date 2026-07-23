@@ -39,7 +39,6 @@ export default function FaqPage() {
   return (
     <main>
       <PageHero
-        eyebrow="FAQ"
         title={<>Everything before the start line.</>}
         intro="Travel, visas, accommodation and what to expect as a spectator — the practical details for race weekend."
       />

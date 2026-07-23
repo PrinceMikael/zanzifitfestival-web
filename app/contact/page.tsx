@@ -13,14 +13,13 @@ export default function ContactPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Contact"
         title={<>Talk to the team.</>}
         intro="Questions about the festival, your category, or partnering with us — reach out and we'll get back to you."
       />
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <SectionHeading eyebrow="Get in touch" title="We're based in Zanzibar." align="left" />
+            <SectionHeading title="We're based in Zanzibar." align="left" />
             <div className="mt-8 space-y-3 text-sm text-muted-foreground">
               <p className="flex items-center gap-3">
                 <Chevrons className="text-amber" count={1} />

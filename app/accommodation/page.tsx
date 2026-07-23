@@ -229,7 +229,6 @@ export default function AccommodationPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Accommodation"
         title={<>We&apos;re not a hotel. We&apos;re your local connection.</>}
         intro="ZanziFit doesn't run properties — we know them. Tell us what you're after and we'll help you find and book a place to stay for race weekend, from beachfront resorts to budget guesthouses."
         image={{ src: '/images/festival-village.png', alt: 'The ZanziFit festival village and expo at golden hour' }}
@@ -242,7 +241,7 @@ export default function AccommodationPage() {
           className="scroll-mt-24 border-b border-border px-6 py-20 md:py-28 odd:bg-surface-dark-soft"
         >
           <div className="mx-auto max-w-6xl">
-            <SectionHeading eyebrow={tier.eyebrow} title={tier.title} />
+            <SectionHeading title={tier.title} />
             <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {tier.items.map((item) => (
                 <ExpandableCard
@@ -263,7 +262,7 @@ export default function AccommodationPage() {
       ))}
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <SectionHeading eyebrow="Booking Info" title="How booking through us works." />
+        <SectionHeading title="How booking through us works." />
         <div className="mt-14 grid gap-10 md:grid-cols-3">
           {BOOKING_STEPS.map((s) => (
             <div key={s.step}>

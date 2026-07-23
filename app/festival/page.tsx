@@ -50,7 +50,6 @@ export default function FestivalPage() {
   return (
     <main>
       <PageHero
-        eyebrow="The festival"
         title={<>Two disciplines. One coastline. One weekend.</>}
         intro="6–8 November 2026 in Zanzibar. Race the discipline you love — or take on both — then recover on the same sand you started from."
         image={{ src: '/images/cycling.png', alt: 'The peloton racing along the coastal road' }}
@@ -66,7 +65,7 @@ export default function FestivalPage() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <SectionHeading eyebrow="Choose your start line" title="Pick your lane — or take on both." />
+        <SectionHeading title="Pick your lane — or take on both." />
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {DISCIPLINES.map((d) => (
             <article key={d.name} className="overflow-hidden rounded-lg border border-border bg-surface-dark-soft">
@@ -96,7 +95,7 @@ export default function FestivalPage() {
 
       <section id="schedule" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow="Race weekend" title="Three days on the coast." />
+          <SectionHeading title="Three days on the coast." />
           <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
             {SCHEDULE.map((s, i) => (
               <div key={s.day} className={i > 0 ? 'md:border-l md:border-border md:pl-6' : ''}>
@@ -119,7 +118,7 @@ export default function FestivalPage() {
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <SectionHeading eyebrow="Your entry includes" title="Everything but the effort." align="left" />
+            <SectionHeading title="Everything but the effort." align="left" />
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {INCLUDED.map((i) => (
                 <li key={i} className="flex items-center gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-3 text-sm text-surface-dark-foreground">

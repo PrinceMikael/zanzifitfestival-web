@@ -52,13 +52,12 @@ export default function LeadershipPage() {
   return (
     <main>
       <PageHero
-        eyebrow="The team"
         title={<>The people behind the horizon.</>}
         intro="ZanziFit's core team is the group of six who hold direct operating and governing responsibility for the festival — spanning event delivery, athlete and venue operations, and Zanzibari hospitality partnerships. Every decision on the festival's direction runs through this group."
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <SectionHeading eyebrow="Leadership" title="Meet the core team." />
+        <SectionHeading title="Meet the core team." />
         <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m) => (
             <article key={m.name}>

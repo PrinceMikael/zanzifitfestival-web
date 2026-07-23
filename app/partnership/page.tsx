@@ -51,7 +51,6 @@ export default function PartnershipPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Partner with us"
         title={<>Put your brand on the horizon.</>}
         intro="ZanziFit gives partners category exclusivity at a premium destination event — reaching an engaged, affluent, health-focused audience across 15 countries."
         image={{ src: '/images/finish-line.png', alt: 'An athlete crossing the ZanziFit finish line at sunset on the Zanzibar coast' }}
@@ -73,7 +72,7 @@ export default function PartnershipPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <SectionHeading eyebrow="Partnership tiers" title="Category-exclusive slots, filling now." />
+        <SectionHeading title="Category-exclusive slots, filling now." />
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {TIERS.map((t) => (
             <div
@@ -106,7 +105,7 @@ export default function PartnershipPage() {
       <section id="inquiry" className="scroll-mt-24 border-t border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-start">
           <div>
-            <SectionHeading eyebrow="Start the conversation" title="Let’s build a partnership." align="left" />
+            <SectionHeading title="Let’s build a partnership." align="left" />
             <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
               Tell us about your brand and the tier you’re interested in. We’ll send the full partnership deck with
               audience data, activation ideas and pricing.

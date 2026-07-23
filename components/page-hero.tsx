@@ -1,15 +1,12 @@
 import type { ReactNode } from 'react'
 import Image from 'next/image'
-import { Chevrons } from '@/components/chevrons'
 
 export function PageHero({
-  eyebrow,
   title,
   intro,
   image,
   children,
 }: {
-  eyebrow: string
   title: ReactNode
   intro?: string
   image?: { src: string; alt: string }
@@ -22,7 +19,7 @@ export function PageHero({
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 15% 20%, var(--amber), transparent 45%), radial-gradient(circle at 85% 80%, var(--deep-teal), transparent 50%)',
+            'radial-gradient(circle at 15% 20%, var(--amber), transparent 45%), radial-gradient(circle at 85% 80%, var(--ink), transparent 50%)',
         }}
       />
       <div
@@ -31,10 +28,6 @@ export function PageHero({
         }`}
       >
         <div>
-          <div className="mb-5 flex items-center gap-3">
-            <Chevrons className="text-amber" />
-            <span className="eyebrow text-amber">{eyebrow}</span>
-          </div>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-surface-dark-foreground text-balance md:text-6xl">
             {title}
           </h1>

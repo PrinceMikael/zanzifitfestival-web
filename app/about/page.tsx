@@ -37,7 +37,6 @@ export default function AboutPage() {
   return (
     <main>
       <PageHero
-        eyebrow="About the festival"
         title={<>Where the ocean horizon meets the start line.</>}
         intro="ZanziFit is a hybrid endurance festival on the coast of Zanzibar — road cycling and HYROX-style functional fitness racing across one unforgettable weekend."
       />
@@ -54,7 +53,7 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <SectionHeading eyebrow="Our story" title="A festival, not just a race." align="left" />
+            <SectionHeading title="A festival, not just a race." align="left" />
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
               <p>
                 Most endurance events ask you to fly somewhere grey, suffer, and fly home. ZanziFit was built on the
@@ -72,7 +71,7 @@ export default function AboutPage() {
 
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow="What we stand for" title="The principles behind ZanziFit." />
+          <SectionHeading title="The principles behind ZanziFit." />
           <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3">
             {VALUES.map((v, i) => (
               <div key={v.title} className="border-t-2 border-amber pt-6">
@@ -86,7 +85,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <SectionHeading eyebrow="The road here" title="From idea to start line." />
+        <SectionHeading title="From idea to start line." />
         <div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
           {TIMELINE.map((t) => (
             <div key={t.year} className="bg-background p-8">

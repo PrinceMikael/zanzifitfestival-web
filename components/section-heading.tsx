@@ -1,15 +1,12 @@
 import { cn } from '@/lib/utils'
-import { Chevrons } from '@/components/chevrons'
 
 export function SectionHeading({
-  eyebrow,
   title,
   intro,
   align = 'left',
   tone = 'dark',
   className,
 }: {
-  eyebrow?: string
   title: React.ReactNode
   intro?: React.ReactNode
   align?: 'left' | 'center'
@@ -24,27 +21,9 @@ export function SectionHeading({
         className,
       )}
     >
-      {eyebrow && (
-        <div
-          className={cn(
-            'flex items-center gap-2',
-            align === 'center' && 'justify-center',
-          )}
-        >
-          <Chevrons count={3} className="text-amber" />
-          <span
-            className={cn(
-              'eyebrow',
-              tone === 'light' ? 'text-deep-teal' : 'text-amber',
-            )}
-          >
-            {eyebrow}
-          </span>
-        </div>
-      )}
       <h2
         className={cn(
-          'mt-4 text-balance font-display text-4xl leading-[1.05] tracking-[-0.01em] sm:text-5xl lg:text-6xl',
+          'text-balance font-display text-4xl leading-[1.05] tracking-[-0.01em] sm:text-5xl lg:text-6xl',
           tone === 'light' ? 'text-ink' : 'text-surface-dark-foreground',
         )}
       >

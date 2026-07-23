@@ -76,7 +76,7 @@ export function SiteHeader() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-4 lg:flex xl:gap-7" aria-label="Primary">
           {NAV.map((item) => {
             const active = pathname === item.href
             return (
@@ -84,7 +84,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'font-utility text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
+                  'whitespace-nowrap font-utility text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
                   active
                     ? 'text-amber'
                     : 'text-foreground/70 hover:text-foreground',

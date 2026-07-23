@@ -48,7 +48,7 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <Image
-              src="/zfit-logo.png"
+              src="/zfit-logo.svg"
               alt="ZFit Festival"
               width={150}
               height={50}

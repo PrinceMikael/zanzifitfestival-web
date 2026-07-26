@@ -4,6 +4,8 @@ const THEME_SCRIPT = `
     var stored = localStorage.getItem('zanzifit-theme');
     var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
     document.documentElement.setAttribute('data-theme', theme);
+    var meta = document.querySelector('meta[name="color-scheme"]');
+    if (meta) meta.setAttribute('content', theme === 'light' ? 'light' : 'dark');
   } catch (e) {}
 })();
 `

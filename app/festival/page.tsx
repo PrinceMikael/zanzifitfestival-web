@@ -56,7 +56,7 @@ export default function FestivalPage() {
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/register" className="inline-flex items-center gap-2 rounded-sm bg-amber px-6 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5">
-            Register <Chevrons />
+            Join the Waitlist <Chevrons />
           </Link>
           <a href="#schedule" className="inline-flex items-center gap-2 rounded-sm border border-border px-6 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber">
             View schedule

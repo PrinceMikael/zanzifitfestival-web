@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
-const EVENT_DATE = new Date('2026-11-06T08:00:00+03:00') // EAT
+// Race day is Saturday 7 Nov (see app/festival/page.tsx SCHEDULE); the
+// festival runs Fri 6 - Sun 8 Nov overall.
+const EVENT_DATE = new Date('2026-11-07T06:00:00+03:00') // EAT, dawn start
 
 function diff() {
   const now = Date.now()

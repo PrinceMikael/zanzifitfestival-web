@@ -54,7 +54,7 @@ export function Hero() {
           <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
             <span className="eyebrow text-surface-dark-foreground/80">
-              Zanzibar, Tanzania · 6 November 2026
+              Zanzibar, Tanzania · 6-8 November 2026
             </span>
           </div>
 
@@ -80,7 +80,7 @@ export function Hero() {
               href="/register"
               className="group inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"
             >
-              Register Your Category
+              Join the Waitlist
               <Chevrons count={3} className="text-primary-foreground/80" animate />
             </Link>
             <Link

@@ -14,3 +14,8 @@ node_modules
 .next/
 .DS_Store
 .worktrees/
+*.tsbuildinfo
+
+# Claude Code / Impeccable local tooling
+.claude/
+.impeccable/

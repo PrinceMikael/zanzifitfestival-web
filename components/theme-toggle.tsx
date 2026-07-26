@@ -15,6 +15,7 @@ export function ThemeToggle() {
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)
     document.documentElement.setAttribute('data-theme', next)
+    document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', next)
     localStorage.setItem('zanzifit-theme', next)
   }
 

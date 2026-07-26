@@ -13,6 +13,8 @@ const FIELD_INVALID = 'border-destructive focus:border-destructive'
 
 export function ContactForm() {
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const [values, setValues] = useState<Fields>({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState<Errors>({})
   const [touched, setTouched] = useState<Partial<Record<keyof Fields, boolean>>>({})
@@ -34,7 +36,7 @@ export function ContactForm() {
     setErrors((e) => ({ ...e, [field]: validate(field, values[field]) }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     const nextErrors: Errors = {
       name: validate('name', values.name),
@@ -48,10 +50,25 @@ export function ContactForm() {
       document.getElementById(`contact-${firstInvalid}`)?.focus()
       return
     }
-    const subject = `Website enquiry from ${values.name}`
-    const body = `${values.message}\n\n— ${values.name} (${values.email})`
-    window.location.href = `mailto:info@zanzifit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    setSent(true)
+
+    setSubmitting(true)
+    setSubmitError(null)
+    try {
+      const res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ kind: 'contact', ...values }),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error ?? 'Something went wrong. Please try again.')
+      }
+      setSent(true)
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (sent) {
@@ -112,12 +129,18 @@ export function ContactForm() {
         />
         {errors.message ? <p id="contact-message-error" role="alert" className="mt-1.5 text-xs text-destructive">{errors.message}</p> : null}
       </label>
+      {submitError ? (
+        <p role="alert" className="mt-4 text-sm text-destructive">
+          {submitError}
+        </p>
+      ) : null}
       <button
         type="submit"
+        disabled={submitting}
         data-cursor-label="Send"
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-amber px-6 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-amber px-6 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70"
       >
-        Send message <Chevrons />
+        {submitting ? 'Sending…' : <>Send message <Chevrons /></>}
       </button>
     </form>
   )

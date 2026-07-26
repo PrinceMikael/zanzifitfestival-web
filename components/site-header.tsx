@@ -1,15 +1,28 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Chevrons } from '@/components/chevrons'
 import { ThemeToggle } from '@/components/theme-toggle'
 
-const NAV = [
+const PRIMARY_NAV = [
+  { href: '/about', label: 'About' },
+  { href: '/festival', label: 'The Festival' },
+  { href: '/experience', label: 'Experience Zanzibar' },
+  { href: '/accommodation', label: 'Accommodation' },
+]
+
+const MORE_NAV = [
+  { href: '/partnership', label: 'Partnership' },
+  { href: '/leadership', label: 'Leadership' },
+  { href: '/faq', label: 'FAQ' },
+]
+
+const MOBILE_NAV = [
   { href: '/about', label: 'About' },
   { href: '/festival', label: 'The Festival' },
   { href: '/experience', label: 'Experience Zanzibar' },
@@ -25,6 +38,8 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [progress, setProgress] = useState(0)
   const [open, setOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
+  const moreRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => {
@@ -40,27 +55,46 @@ export function SiteHeader() {
 
   useEffect(() => {
     setOpen(false)
+    setMoreOpen(false)
   }, [pathname])
+
+  useEffect(() => {
+    if (!moreOpen) return
+    function onPointerDown(e: PointerEvent) {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) setMoreOpen(false)
+    }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setMoreOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [moreOpen])
+
+  const moreActive = MORE_NAV.some((item) => item.href === pathname)
 
   return (
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
         scrolled
-          ? 'border-b border-border bg-background/85 backdrop-blur-md'
-          : 'bg-transparent',
+          ? 'border-b border-border bg-background/90 backdrop-blur-md'
+          : 'bg-gradient-to-b from-ink/70 to-transparent',
       )}
     >
-      {/* Chevron scroll-progress indicator */}
-      <div className="absolute inset-x-0 bottom-0 h-px bg-border">
+      {/* Chevron scroll-progress band — the ">>>" motif carried into the chrome itself */}
+      <div className="absolute inset-x-0 bottom-0 h-[3px] bg-border/60">
         <div
-          className="h-px bg-amber transition-[width] duration-150"
-          style={{ width: `${progress * 100}%` }}
+          className="h-full bg-amber shadow-[0_0_12px_rgba(223,162,59,0.65)] transition-[width] duration-150"
+          style={{ width: `${Math.max(progress * 100, 2)}%` }}
         />
       </div>
 
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
-        <Link href="/" className="flex items-center gap-2" aria-label="ZanziFit Festival home">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-8">
+        <Link href="/" className="group flex items-center gap-3" aria-label="ZanziFit Festival home">
           <Image
             src="/zfit-logo.svg"
             alt="ZFit Festival"
@@ -71,37 +105,76 @@ export function SiteHeader() {
             // `dark:` variants never match here. Invert by default (correct for
             // the dark theme, the site default), and cancel the invert in light
             // mode via an explicit data-theme attribute selector.
-            className="h-12 w-auto invert lg:h-16 [:root[data-theme='light']_&]:invert-0"
+            className="h-12 w-auto invert transition-transform duration-300 group-hover:scale-[1.03] lg:h-[4.5rem] [:root[data-theme='light']_&]:invert-0"
           />
+          <span className="hidden flex-col border-l border-border/70 pl-3 leading-none sm:flex lg:hidden">
+            <span className="font-utility text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-amber">
+              Zanzibar
+            </span>
+            <span className="mt-1 font-utility text-[0.62rem] uppercase tracking-[0.2em] text-foreground/50">
+              6&ndash;8 Nov 2026
+            </span>
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-4 lg:flex xl:gap-7" aria-label="Primary">
-          {NAV.map((item) => {
-            const active = pathname === item.href
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'whitespace-nowrap font-utility text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
-                  active
-                    ? 'text-amber'
-                    : 'text-foreground/70 hover:text-foreground',
-                )}
+        <nav className="hidden items-center gap-7 lg:flex xl:gap-9" aria-label="Primary">
+          {PRIMARY_NAV.map((item) => (
+            <NavLink key={item.href} href={item.href} active={pathname === item.href}>
+              {item.label}
+            </NavLink>
+          ))}
+
+          <div className="relative" ref={moreRef}>
+            <button
+              type="button"
+              onClick={() => setMoreOpen((v) => !v)}
+              aria-expanded={moreOpen}
+              aria-haspopup="menu"
+              className={cn(
+                'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
+                moreActive ? 'text-amber' : 'text-foreground/70 hover:text-foreground',
+              )}
+            >
+              More
+              <ChevronDown className={cn('size-3.5 transition-transform', moreOpen && 'rotate-180')} />
+            </button>
+            {moreOpen && (
+              <div
+                role="menu"
+                className="absolute left-1/2 top-full mt-4 w-48 -translate-x-1/2 rounded-sm border border-border bg-background/95 p-2 shadow-xl backdrop-blur-md"
               >
-                {item.label}
-              </Link>
-            )
-          })}
+                {MORE_NAV.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    role="menuitem"
+                    className={cn(
+                      'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
+                      pathname === item.href
+                        ? 'text-amber'
+                        : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
+                    )}
+                  >
+                    {item.label}
+                    <Chevrons count={1} className="text-amber" />
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <NavLink href="/contact" active={pathname === '/contact'}>
+            Contact
+          </NavLink>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <ThemeToggle />
           <Link
             href="/register"
-            className="group hidden items-center gap-2 rounded-sm bg-amber px-5 py-2.5 font-utility text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5 sm:inline-flex"
+            className="group hidden items-center gap-2.5 rounded-sm bg-amber px-6 py-3 font-utility text-[0.82rem] font-bold uppercase tracking-[0.16em] text-primary-foreground shadow-[0_0_0_1px_rgba(223,162,59,0.4)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(223,162,59,0.7)] sm:inline-flex"
           >
-            Register
+            Join Waitlist
             <Chevrons count={3} className="text-primary-foreground/80" animate />
           </Link>
           <button
@@ -119,8 +192,16 @@ export function SiteHeader() {
       {/* Mobile menu */}
       {open && (
         <div className="border-t border-border bg-background/95 backdrop-blur-md lg:hidden">
+          <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+            <div className="flex items-center gap-2">
+              <Chevrons count={3} className="text-amber" animate />
+              <span className="font-display text-2xl font-semibold text-foreground">
+                Zanzibar <span className="text-amber">·</span> 6&ndash;8 Nov 2026
+              </span>
+            </div>
+          </div>
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6" aria-label="Mobile">
-            {NAV.map((item) => (
+            {MOBILE_NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -132,14 +213,29 @@ export function SiteHeader() {
             ))}
             <Link
               href="/register"
-              className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-5 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground"
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-5 py-3.5 font-utility text-sm font-bold uppercase tracking-[0.14em] text-primary-foreground"
             >
-              Register Your Category
+              Join the Waitlist
               <Chevrons count={3} className="text-primary-foreground/80" />
             </Link>
           </nav>
         </div>
       )}
     </header>
+  )
+}
+
+function NavLink({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        'relative flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
+        active ? 'text-amber' : 'text-foreground/70 hover:text-foreground',
+      )}
+    >
+      {children}
+      {active && <Chevrons count={1} className="text-amber" />}
+    </Link>
   )
 }

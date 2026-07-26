@@ -17,18 +17,18 @@ export function CtaBand() {
           <Chevrons count={3} className="text-amber" animate />
         </div>
         <h2 className="mt-6 text-balance font-display text-4xl leading-[1.02] text-surface-dark-foreground sm:text-6xl lg:text-7xl">
-          The horizon is set for 6 November 2026.
+          The horizon is set for 6-8 November 2026.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/65">
-          Categories are limited and fill fast. Lock in your place on the start
-          line in Zanzibar.
+          Categories are limited and expected to fill fast once entries open.
+          Join the waitlist to be first in line.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/register"
             className="inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-8 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"
           >
-            Register Your Category
+            Join the Waitlist
             <Chevrons count={3} className="text-primary-foreground/80" />
           </Link>
           <Link

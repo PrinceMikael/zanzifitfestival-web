@@ -4,7 +4,7 @@ import { FaqAccordion } from '@/components/faq-accordion'
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: 'Travel, visas, accommodation and spectator information for ZanziFit Festival, 6 November 2026, Zanzibar.',
+  description: 'Travel, visas, accommodation and spectator information for ZanziFit Festival, 6-8 November 2026, Zanzibar.',
 }
 
 const FAQS = [

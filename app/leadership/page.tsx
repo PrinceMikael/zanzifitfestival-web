@@ -32,13 +32,13 @@ const TEAM = [
     name: 'Mohamed Sharif',
     role: 'Director & Board Member',
     image: '/images/leadership/mohamed-sharif.jpg',
-    bio: 'Contributes to board-level direction and oversight across the festival\'s core operations.',
+    bio: 'Brings a background in athlete and venue operations, focused on race-day logistics and on-site safety.',
   },
   {
     name: 'Hassan Ali',
     role: 'Director & Board Member',
     image: '/images/leadership/hassan-ali.jpg',
-    bio: 'Contributes to board-level direction and oversight across the festival\'s core operations.',
+    bio: 'Leads engagement with Zanzibari hospitality and tourism partners, from accommodation to spectator experience.',
   },
   {
     name: 'Walter Mwacha',

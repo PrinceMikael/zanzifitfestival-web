@@ -28,7 +28,6 @@ const COLUMNS = [
     links: [
       { href: '/partnership', label: 'Partnership' },
       { href: '/contact', label: 'Contact' },
-      { href: '/live', label: 'Live Leaderboard' },
     ],
   },
 ]
@@ -60,7 +59,7 @@ export function SiteFooter() {
               where the Zanzibar horizon meets the start line.
             </p>
             <p className="mt-5 font-utility text-sm uppercase tracking-[0.16em] text-bone/80">
-              6 November 2026
+              6-8 November 2026
               <span className="mx-2 text-amber">/</span>
               Zanzibar, Tanzania
             </p>

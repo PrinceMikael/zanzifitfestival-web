@@ -13,6 +13,9 @@ const FIELD_INVALID = 'border-destructive focus:border-destructive'
 
 export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [tier, setTier] = useState(tiers[0])
   const [values, setValues] = useState<Fields>({ name: '', company: '', email: '', message: '' })
   const [errors, setErrors] = useState<Errors>({})
   const [touched, setTouched] = useState<Partial<Record<keyof Fields, boolean>>>({})
@@ -36,7 +39,7 @@ export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
     setErrors((e) => ({ ...e, [field]: validate(field, values[field]) }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     const nextErrors: Errors = {
       name: validate('name', values.name),
@@ -50,7 +53,25 @@ export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
       document.getElementById(`inquiry-${firstInvalid}`)?.focus()
       return
     }
-    setSent(true)
+
+    setSubmitting(true)
+    setSubmitError(null)
+    try {
+      const res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ kind: 'partnership', ...values, tier }),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error ?? 'Something went wrong. Please try again.')
+      }
+      setSent(true)
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (sent) {
@@ -117,7 +138,7 @@ export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
       </label>
       <label className="mt-4 block">
         <span className="mb-1.5 block font-utility text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Tier of interest</span>
-        <select name="tier" className={FIELD} defaultValue={tiers[0]}>
+        <select name="tier" className={FIELD} value={tier} onChange={(e) => setTier(e.target.value)}>
           {tiers.map((t) => (
             <option key={t} value={t}>{t}</option>
           ))}
@@ -135,12 +156,18 @@ export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
           placeholder="Tell us about your brand and goals."
         />
       </label>
+      {submitError ? (
+        <p role="alert" className="mt-4 text-sm text-destructive">
+          {submitError}
+        </p>
+      ) : null}
       <button
         type="submit"
+        disabled={submitting}
         data-cursor-label="Send"
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-amber px-6 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-amber px-6 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70"
       >
-        Send enquiry <Chevrons />
+        {submitting ? 'Sending…' : <>Send enquiry <Chevrons /></>}
       </button>
     </form>
   )

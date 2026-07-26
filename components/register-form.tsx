@@ -22,7 +22,9 @@ const FIELD_INVALID = 'border-destructive focus:border-destructive'
 
 export function RegisterForm() {
   const [sent, setSent] = useState(false)
-  const [values, setValues] = useState<Fields>({ name: '', email: '', phone: '+255 ', category: CATEGORIES[0] })
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [values, setValues] = useState<Fields>({ name: '', email: '', phone: '', category: CATEGORIES[0] })
   const [errors, setErrors] = useState<Errors>({})
   const [touched, setTouched] = useState<{ name?: boolean; email?: boolean; phone?: boolean }>({})
 
@@ -42,7 +44,7 @@ export function RegisterForm() {
     setErrors((e) => ({ ...e, [field]: validate(field, values[field]) }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     const nextErrors: Errors = {
       name: validate('name', values.name),
@@ -56,10 +58,25 @@ export function RegisterForm() {
       document.getElementById(`register-${firstInvalid}`)?.focus()
       return
     }
-    const subject = `Registration interest — ${values.category}`
-    const body = `Name: ${values.name}\nEmail: ${values.email}\nPhone: ${values.phone}\nCategory: ${values.category}`
-    window.location.href = `mailto:info@zanzifit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    setSent(true)
+
+    setSubmitting(true)
+    setSubmitError(null)
+    try {
+      const res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ kind: 'register', ...values }),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error ?? 'Something went wrong. Please try again.')
+      }
+      setSent(true)
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (sent) {
@@ -132,12 +149,18 @@ export function RegisterForm() {
           ))}
         </select>
       </label>
+      {submitError ? (
+        <p role="alert" className="mt-4 text-sm text-destructive">
+          {submitError}
+        </p>
+      ) : null}
       <button
         type="submit"
+        disabled={submitting}
         data-cursor-label="Notify me"
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-amber px-6 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-amber px-6 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70"
       >
-        Register your interest <Chevrons />
+        {submitting ? 'Sending…' : <>Join the waitlist <Chevrons /></>}
       </button>
     </form>
   )

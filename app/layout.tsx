@@ -27,11 +27,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ZanziFit Festival, Zanzibar, 6 November 2026',
+    default: 'ZanziFit Festival, Zanzibar, 6-8 November 2026',
     template: '%s · ZanziFit Festival',
   },
   description:
-    'A hybrid road-cycling and HYROX-style functional fitness festival on the coast of Zanzibar, Tanzania. 6 November 2026. 1,500+ athletes, 15 countries, one horizon.',
+    'A hybrid road-cycling and HYROX-style functional fitness festival on the coast of Zanzibar, Tanzania. Race weekend 6-8 November 2026, race day 7 November. 1,500+ athletes, 15 countries, one horizon.',
   keywords: [
     'ZanziFit',
     'Zanzibar fitness festival',

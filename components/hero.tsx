@@ -49,9 +49,11 @@ export function Hero() {
         <AthleteSilhouette className="h-[42vh] w-auto max-w-none translate-y-[8%] text-ink/90 sm:h-[52vh]" />
       </motion.div>
 
-      {/* Gradient scrim for text legibility over the photograph */}
-      <div className="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/70 to-surface-dark/35" />
-      <div className="absolute inset-0 bg-gradient-to-r from-surface-dark/80 via-surface-dark/20 to-transparent" />
+      {/* Gradient scrim for text legibility — tuned to keep the photograph
+          visible; strongest low and left where the text sits, clear
+          elsewhere so the destination is still the star of the frame. */}
+      <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/95 via-surface-dark/45 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-surface-dark/65 via-surface-dark/15 to-transparent" />
 
       {/* Layer 3 — foreground content (fastest, sharpest) */}
       <motion.div

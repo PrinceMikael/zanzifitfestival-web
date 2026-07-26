@@ -51,7 +51,7 @@ export function ExpandableCard({
         featured ? 'border-amber/40 sm:col-span-2' : 'border-border',
       )}
     >
-      <div className={cn('group relative', featured ? 'aspect-[21/9]' : 'aspect-[16/10]')}>
+      <div className={cn('group relative', featured ? 'aspect-21/9' : 'aspect-16/10')}>
         {image ? (
           <Image
             src={image}
@@ -68,7 +68,7 @@ export function ExpandableCard({
             <TierIcon className="size-10 text-surface-dark-foreground/20" strokeWidth={1.25} />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-surface-dark-soft via-surface-dark-soft/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-surface-dark-soft via-surface-dark-soft/10 to-transparent" />
         {featured ? (
           <span className="absolute right-4 top-4 rounded-sm bg-amber px-3 py-1.5 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground">
             Closest to the venue

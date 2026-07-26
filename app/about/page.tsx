@@ -44,7 +44,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <Reveal className="group relative aspect-[4/5] overflow-hidden rounded-lg">
+          <Reveal className="group relative aspect-4/5 overflow-hidden rounded-lg">
             <Image
               src="/images/finish-line.jpg"
               alt="A runner celebrating with arms outstretched crossing the finish line"

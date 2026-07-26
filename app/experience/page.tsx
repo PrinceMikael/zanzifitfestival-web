@@ -209,7 +209,7 @@ export default function ExperiencePage() {
               </p>
             </Reveal>
           </div>
-          <Reveal className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
+          <Reveal className="relative aspect-4/3 overflow-hidden rounded-lg border border-border">
             <Image
               src="/images/festival-village.png"
               alt="The ZanziFit festival village on the Zanzibar coast"
@@ -258,7 +258,7 @@ export default function ExperiencePage() {
               ))}
             </RevealGroup>
           </div>
-          <Reveal delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
+          <Reveal delay={0.1} className="relative aspect-4/3 overflow-hidden rounded-lg border border-border">
             <Image
               src="/images/zanzibar-coast.png"
               alt="Traditional dhow boats off the Zanzibar coast"
@@ -292,7 +292,7 @@ export default function ExperiencePage() {
           sizes="100vw"
           className="object-cover object-[50%_30%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/95 via-surface-dark/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-surface-dark/95 via-surface-dark/40 to-transparent" />
         <Reveal className="relative z-10 mx-auto max-w-3xl px-6 py-16 text-center">
           <p className="text-balance font-display text-2xl leading-snug text-surface-dark-foreground sm:text-3xl">
             Race on Saturday. By Sunday afternoon, you could be lost in a Stone Town alley

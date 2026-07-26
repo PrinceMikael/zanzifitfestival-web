@@ -71,9 +71,9 @@ export default function FestivalPage() {
           {DISCIPLINES.map((d) => (
             <RevealItem key={d.name}>
             <article className="overflow-hidden rounded-lg border border-border bg-surface-dark-soft">
-              <div className="group relative aspect-[16/10]">
+              <div className="group relative aspect-16/10">
                 <Image src={d.image} alt={`${d.name} at ZanziFit Festival`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 100vw, 50vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface-dark-soft via-surface-dark-soft/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-surface-dark-soft via-surface-dark-soft/20 to-transparent" />
                 <span className="absolute left-5 top-5 rounded-sm bg-ink/80 px-3 py-1.5 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber backdrop-blur">
                   {d.tag}
                 </span>
@@ -84,7 +84,7 @@ export default function FestivalPage() {
                 <ul className="mt-6 divide-y divide-border border-t border-border">
                   {d.categories.map((c) => (
                     <li key={c.name} className="flex items-baseline justify-between gap-4 py-3">
-                      <span className="font-utility text-sm font-semibold uppercase tracking-[0.1em] text-surface-dark-foreground">{c.name}</span>
+                      <span className="font-utility text-sm font-semibold uppercase tracking-[.1em] text-surface-dark-foreground">{c.name}</span>
                       <span className="text-right text-sm text-muted-foreground">{c.detail}</span>
                     </li>
                   ))}
@@ -131,7 +131,7 @@ export default function FestivalPage() {
               ))}
             </RevealGroup>
           </div>
-          <Reveal className="group relative aspect-[4/3] overflow-hidden rounded-lg">
+          <Reveal className="group relative aspect-4/3 overflow-hidden rounded-lg">
             <Image src="/images/festival-village.png" alt="The ZanziFit festival village and expo at golden hour" fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
           </Reveal>
         </div>

@@ -8,7 +8,7 @@ export function WhyZanzibar() {
   return (
     <section className="border-t border-border bg-surface-dark py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <Reveal className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
+        <Reveal className="relative aspect-4/3 overflow-hidden rounded-lg border border-border">
           <Image
             src="/images/zanzibar-coast.png"
             alt="A traditional dhow sailing off the Zanzibar coast at golden hour"
@@ -16,7 +16,7 @@ export function WhyZanzibar() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-ink/50 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-tr from-ink/50 to-transparent" />
         </Reveal>
 
         <Reveal delay={0.12}>

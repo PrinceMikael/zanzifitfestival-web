@@ -57,7 +57,7 @@ export function PageHero({
         </motion.div>
         {image ? (
           <motion.div
-            className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border"
+            className="relative aspect-4/3 overflow-hidden rounded-lg border border-border"
             initial={animateIn ? { opacity: 0, scale: 0.94, y: 24 } : false}
             animate={animateIn ? { opacity: 1, scale: 1, y: 0 } : undefined}
             transition={{ duration: 0.9, delay: 0.15, ease: EASE_CONFIDENT }}

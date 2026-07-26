@@ -43,7 +43,7 @@ export function Disciplines() {
               href={d.href}
               className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface-dark-soft transition-colors hover:border-amber/50"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-16/10 overflow-hidden">
                 <Image
                   src={d.image}
                   alt={d.title}
@@ -51,7 +51,7 @@ export function Disciplines() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface-dark-soft via-surface-dark-soft/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-surface-dark-soft via-surface-dark-soft/20 to-transparent" />
                 <span className="absolute left-5 top-5 eyebrow rounded-sm bg-ink/70 px-3 py-1.5 text-amber backdrop-blur-sm">
                   {d.tag}
                 </span>

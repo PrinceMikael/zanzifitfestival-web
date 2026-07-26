@@ -67,7 +67,7 @@ export default function LeadershipPage() {
         <RevealGroup className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2">
           {LEADS.map((m) => (
             <RevealItem key={m.name} className="sm:flex sm:gap-6">
-              <div className="group relative aspect-[4/5] overflow-hidden sm:w-2/5 sm:shrink-0">
+              <div className="group relative aspect-4/5 overflow-hidden sm:w-2/5 sm:shrink-0">
                 <Image
                   src={m.image}
                   alt={`Portrait of ${m.name}, ${m.role}`}
@@ -91,7 +91,7 @@ export default function LeadershipPage() {
         <RevealGroup className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m) => (
             <RevealItem key={m.name}>
-              <div className="group relative aspect-[4/5] overflow-hidden">
+              <div className="group relative aspect-4/5 overflow-hidden">
                 <Image
                   src={m.image}
                   alt={`Portrait of ${m.name}, ${m.role}`}

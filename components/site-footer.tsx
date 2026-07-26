@@ -113,14 +113,14 @@ export function SiteFooter() {
             </div>
             <a
               href="mailto:info@zanzifit.com"
-              className="font-utility text-xs uppercase tracking-[0.16em] text-bone/45 transition-colors hover:text-amber"
+              className="font-utility text-xs uppercase tracking-[0.16em] text-bone/60 transition-colors hover:text-amber"
             >
               info@zanzifit.com
             </a>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-bone/45 sm:flex-row sm:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-bone/60 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} ZanziFit Festival. All rights reserved.</p>
           <div className="flex items-center gap-2 font-utility uppercase tracking-[0.16em]">
             <Chevrons count={3} className="text-amber/70" />

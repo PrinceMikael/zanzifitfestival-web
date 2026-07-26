@@ -42,8 +42,8 @@ export function Hero() {
       {/* Gradient scrim for text legibility — tuned to keep the photograph
           visible; strongest low and left where the text sits, clear
           elsewhere so the destination is still the star of the frame. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/95 via-surface-dark/45 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-surface-dark/65 via-surface-dark/15 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-surface-dark/95 via-surface-dark/45 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-surface-dark/65 via-surface-dark/15 to-transparent" />
 
       {/* Layer 3 — foreground content (fastest, sharpest) */}
       <motion.div

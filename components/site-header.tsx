@@ -83,7 +83,7 @@ export function SiteHeader() {
         'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
         scrolled
           ? 'border-b border-border bg-background/90 backdrop-blur-md'
-          : 'bg-gradient-to-b from-ink/70 to-transparent',
+          : 'bg-linear-to-b from-ink/70 to-transparent',
       )}
     >
       {/* Chevron scroll-progress band — the ">>>" motif carried into the chrome itself */}

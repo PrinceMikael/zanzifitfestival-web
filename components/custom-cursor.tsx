@@ -50,7 +50,7 @@ export function CustomCursor() {
         }`}
       >
         {label ? (
-          <span className="font-utility text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-bone">
+          <span className="font-utility text-[0.65rem] font-semibold uppercase tracking-[.1em] text-bone">
             {label}
           </span>
         ) : null}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
@@ -53,7 +54,7 @@ export default function PartnershipPage() {
       <PageHero
         title={<>Put your brand on the horizon.</>}
         intro="ZanziFit gives partners category exclusivity at a premium destination event, reaching an engaged, affluent, health-focused audience across 15 countries."
-        image={{ src: '/images/finish-line.jpg', alt: 'A runner celebrating with arms outstretched crossing the finish line' }}
+        image={{ src: '/images/hyrox-arena.jpg', alt: 'A HYROX-style athlete competing in front of branded sponsor boards and a packed crowd' }}
       >
         <Link href="#inquiry" className="inline-flex items-center gap-2 rounded-sm bg-amber px-7 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5">
           Request the deck <Chevrons />
@@ -94,7 +95,11 @@ export default function PartnershipPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="#inquiry" className="mt-8 inline-flex items-center justify-center gap-2 rounded-sm border border-border py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber">
+              <Link
+                href={`?tier=${encodeURIComponent(t.name)}#inquiry`}
+                scroll={true}
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-sm border border-border py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber"
+              >
                 Enquire
               </Link>
             </div>
@@ -115,7 +120,9 @@ export default function PartnershipPage() {
               <p className="flex items-center gap-3"><Chevrons className="text-amber" count={1} /> Zanzibar, Tanzania</p>
             </div>
           </div>
-          <PartnershipInquiry tiers={TIERS.map((t) => t.name)} />
+          <Suspense fallback={null}>
+            <PartnershipInquiry tiers={TIERS.map((t) => t.name)} />
+          </Suspense>
         </div>
       </section>
     </main>

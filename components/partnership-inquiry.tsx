@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Chevrons } from '@/components/chevrons'
+import { SubmitErrorNotice } from '@/components/submit-error-notice'
 import { validateField, type FieldError } from '@/lib/validation'
 
 type Fields = { name: string; company: string; email: string; message: string }
@@ -12,10 +14,14 @@ const FIELD =
 const FIELD_INVALID = 'border-destructive focus:border-destructive'
 
 export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
+  const searchParams = useSearchParams()
+  const requestedTier = searchParams.get('tier')
   const [sent, setSent] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
-  const [tier, setTier] = useState(tiers[0])
+  const [tier, setTier] = useState(
+    requestedTier && tiers.includes(requestedTier) ? requestedTier : tiers[0],
+  )
   const [values, setValues] = useState<Fields>({ name: '', company: '', email: '', message: '' })
   const [errors, setErrors] = useState<Errors>({})
   const [touched, setTouched] = useState<Partial<Record<keyof Fields, boolean>>>({})
@@ -145,7 +151,7 @@ export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
         </select>
       </label>
       <label className="mt-4 block">
-        <span className="mb-1.5 block font-utility text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Message</span>
+        <span className="mb-1.5 block font-utility text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Message (optional)</span>
         <textarea
           id="inquiry-message"
           name="message"
@@ -156,11 +162,7 @@ export function PartnershipInquiry({ tiers }: { tiers: string[] }) {
           placeholder="Tell us about your brand and goals."
         />
       </label>
-      {submitError ? (
-        <p role="alert" className="mt-4 text-sm text-destructive">
-          {submitError}
-        </p>
-      ) : null}
+      {submitError ? <SubmitErrorNotice message={submitError} /> : null}
       <button
         type="submit"
         disabled={submitting}

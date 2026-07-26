@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
@@ -13,8 +14,8 @@ export default function ContactPage() {
   return (
     <main>
       <PageHero
-        title={<>Talk to the team.</>}
-        intro="Questions about the festival, your category, or partnering with us? Reach out and we'll get back to you."
+        title={<>Talk to the ZanziFit team.</>}
+        intro="Race categories, travel logistics, or anything else about race weekend: message us directly and a member of our Zanzibar-based team will reply within two business days."
       />
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
@@ -48,6 +49,14 @@ export default function ContactPage() {
                 </a>
               </p>
             </div>
+
+            <p className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
+              Looking to sponsor the festival instead?{' '}
+              <Link href="/partnership" className="font-semibold text-amber transition-colors hover:text-surface-dark-foreground">
+                Visit our Partnership page
+              </Link>
+              .
+            </p>
           </div>
           <ContactForm />
         </div>

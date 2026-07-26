@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 export function AccordionItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false)
+  const panelId = useId()
 
   return (
     <div className="border-b border-border">
@@ -12,6 +13,7 @@ export function AccordionItem({ question, answer }: { question: string; answer: 
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
+        aria-controls={panelId}
         data-cursor-label={open ? 'Close' : 'Open'}
         className="flex w-full items-center justify-between gap-4 py-6 text-left"
       >
@@ -21,7 +23,9 @@ export function AccordionItem({ question, answer }: { question: string; answer: 
         />
       </button>
       {open ? (
-        <p className="pb-6 pr-10 text-pretty leading-relaxed text-muted-foreground">{answer}</p>
+        <p id={panelId} role="region" className="pb-6 pr-10 text-pretty leading-relaxed text-muted-foreground">
+          {answer}
+        </p>
       ) : null}
     </div>
   )

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
+import { Chevrons } from '@/components/chevrons'
 
 export const metadata: Metadata = {
   title: 'Leadership',
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
     'Meet the team behind ZanziFit Festival: endurance athletes, event operators and Zanzibari hospitality leaders.',
 }
 
-const TEAM = [
+const LEADS = [
   {
     name: 'Ally Daudi',
     role: 'Founder & Executive Director',
@@ -22,6 +24,9 @@ const TEAM = [
     image: '/images/leadership/salim-kikeke.jpg',
     bio: 'Chairs the ZanziFit board, guiding the festival\'s governance and long-term strategic direction.',
   },
+]
+
+const TEAM = [
   {
     name: 'Hassan Mussa',
     role: 'Project Manager & Board Member',
@@ -57,7 +62,31 @@ export default function LeadershipPage() {
       />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <SectionHeading title="Meet the core team." />
+        <SectionHeading title="Founder & governance." />
+        <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2">
+          {LEADS.map((m) => (
+            <article key={m.name} className="sm:flex sm:gap-6">
+              <div className="group relative aspect-[4/5] overflow-hidden sm:w-2/5 sm:shrink-0">
+                <Image
+                  src={m.image}
+                  alt={`Portrait of ${m.name}, ${m.role}`}
+                  fill
+                  className="object-cover transition-all duration-500 [@media(hover:hover)]:grayscale [@media(hover:hover)]:group-hover:grayscale-0"
+                  sizes="(max-width: 640px) 100vw, 30vw"
+                />
+              </div>
+              <div className="mt-5 sm:mt-0 sm:flex sm:flex-col sm:justify-center">
+                <h3 className="font-display text-2xl font-semibold text-surface-dark-foreground">{m.name}</h3>
+                <div className="mt-1 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber">{m.role}</div>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl border-t border-border px-6 py-20 md:py-28">
+        <SectionHeading title="Operating team." />
         <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m) => (
             <article key={m.name}>
@@ -66,7 +95,7 @@ export default function LeadershipPage() {
                   src={m.image}
                   alt={`Portrait of ${m.name}, ${m.role}`}
                   fill
-                  className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                  className="object-cover transition-all duration-500 [@media(hover:hover)]:grayscale [@media(hover:hover)]:group-hover:grayscale-0"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
@@ -75,6 +104,17 @@ export default function LeadershipPage() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-16 border-t border-border pt-10 text-center">
+          <p className="text-muted-foreground">Interested in partnering with ZanziFit?</p>
+          <Link
+            href="/partnership"
+            className="mt-3 inline-flex items-center gap-2 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber transition-colors hover:text-surface-dark-foreground"
+          >
+            Explore partnership tiers
+            <Chevrons />
+          </Link>
         </div>
       </section>
     </main>

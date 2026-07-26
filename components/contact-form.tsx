@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Chevrons } from '@/components/chevrons'
+import { SubmitErrorNotice } from '@/components/submit-error-notice'
 import { validateField, type FieldError } from '@/lib/validation'
 
 type Fields = { name: string; email: string; message: string }
@@ -129,11 +130,7 @@ export function ContactForm() {
         />
         {errors.message ? <p id="contact-message-error" role="alert" className="mt-1.5 text-xs text-destructive">{errors.message}</p> : null}
       </label>
-      {submitError ? (
-        <p role="alert" className="mt-4 text-sm text-destructive">
-          {submitError}
-        </p>
-      ) : null}
+      {submitError ? <SubmitErrorNotice message={submitError} /> : null}
       <button
         type="submit"
         disabled={submitting}

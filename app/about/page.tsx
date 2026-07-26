@@ -46,8 +46,8 @@ export default function AboutPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <Reveal className="group relative aspect-[4/5] overflow-hidden rounded-lg">
             <Image
-              src="/images/finish-line.png"
-              alt="An athlete crossing the ZanziFit finish line at sunset on the Zanzibar coast"
+              src="/images/finish-line.jpg"
+              alt="A runner celebrating with arms outstretched crossing the finish line"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"

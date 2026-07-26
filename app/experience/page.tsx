@@ -16,7 +16,7 @@ const THINGS_TO_DO = [
   {
     title: 'Stone Town',
     badge: '~45 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    image: '/images/stone-town.jpg',
     summary:
       'The UNESCO-listed old town: narrow alleys, carved wooden doors, and centuries of Swahili, Omani and Indian history.',
     details: [
@@ -28,7 +28,7 @@ const THINGS_TO_DO = [
   {
     title: 'Forodhani Gardens Night Market',
     badge: 'Stone Town',
-    image: '/images/festival-village.png',
+    image: '/images/forodhani-night.webp',
     summary:
       'Every evening the seafront gardens turn into an open-air food market, with grilled seafood skewers, samosas and Zanzibar “pizza” cooked to order.',
     details: [
@@ -52,7 +52,7 @@ const THINGS_TO_DO = [
   {
     title: 'Nungwi & Kendwa Beaches',
     badge: '~70–80 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    image: '/images/kendwa-nungwi.jpg',
     summary:
       'The island’s north-tip beaches: turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
     details: [

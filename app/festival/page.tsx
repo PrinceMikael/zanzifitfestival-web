@@ -16,7 +16,7 @@ const DISCIPLINES = [
   {
     tag: 'Discipline 01',
     name: 'Road Cycling',
-    image: '/images/cycling.png',
+    image: '/images/cycling.jpg',
     blurb:
       'Closed-road coastal racing along the Zanzibar coastline, from a fast community sprint to a punishing elite endurance loop.',
     categories: [
@@ -28,7 +28,7 @@ const DISCIPLINES = [
   {
     tag: 'Discipline 02',
     name: 'HYROX-Style',
-    image: '/images/hyrox-arena.png',
+    image: '/images/hyrox-arena.jpg',
     blurb:
       'Eight functional stations against the clock: sled push, sled pull, rowing, burpee broad jumps and the wall-ball finish. Run. Work. Repeat.',
     categories: [
@@ -53,7 +53,7 @@ export default function FestivalPage() {
       <PageHero
         title={<>Two disciplines. One coastline. One weekend.</>}
         intro="6–8 November 2026 in Zanzibar. Race the discipline you love, or take on both, then recover on the same sand you started from."
-        image={{ src: '/images/cycling.png', alt: 'The peloton racing along the coastal road' }}
+        image={{ src: '/images/cycling.jpg', alt: 'The peloton racing along the coastal road' }}
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/register" className="inline-flex items-center gap-2 rounded-sm bg-amber px-6 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5">

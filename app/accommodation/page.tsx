@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
+import { AccommodationTiers } from '@/components/accommodation-tiers'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
-import { ExpandableCard } from '@/components/expandable-card'
 
 export const metadata: Metadata = {
   title: 'Accommodation',
@@ -15,7 +15,8 @@ const HOTELS = [
     title: 'DoubleTree by Hilton Nungwi',
     area: 'Nungwi',
     badge: '~75 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 75,
+    image: null,
     summary: 'A full-service international hotel on the island’s northern tip, with multiple restaurants and a spa.',
     details: [
       'Ocean-view rooms and suites, on-site pool and fitness centre',
@@ -27,7 +28,8 @@ const HOTELS = [
     title: 'Green Turaco',
     area: 'Near the festival venue',
     badge: '~5 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 5,
+    image: null,
     summary: 'A simple, business-friendly hotel close to the festival venue, the shortest possible commute to the start line.',
     details: [
       'Walkable or a short ride to the festival village',
@@ -38,7 +40,8 @@ const HOTELS = [
     title: 'Melia Zanzibar',
     area: 'Kiwengwa',
     badge: '~65 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 65,
+    image: null,
     summary: 'A full-service resort hotel on a 40-acre estate on the north-east coast, with multiple restaurants and three pools.',
     details: [
       'Seven on-site restaurants spanning international, Mediterranean and local cuisine',
@@ -49,7 +52,8 @@ const HOTELS = [
     title: 'Turaco Nungwi Resort, a Tribute Portfolio Hotel',
     area: 'Nungwi',
     badge: '~75 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 75,
+    image: null,
     summary: 'A newer full-service hotel on Nungwi’s beachfront, part of Marriott’s Tribute Portfolio.',
     details: [
       'Beachfront location on one of Zanzibar’s most popular stretches of sand',
@@ -63,7 +67,8 @@ const RESORTS = [
     title: 'Fumba Beach Lodge',
     area: 'Near the festival venue',
     badge: '~5 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 5,
+    image: '/images/kendwa-nungwi.jpg',
     summary: 'A secluded beach lodge inside the Menai Bay Conservation Area, the closest resort stay to the festival village.',
     details: [
       'Cottage and suite rooms with private terraces and ocean views',
@@ -75,7 +80,8 @@ const RESORTS = [
     title: 'Essque Zalu Zanzibar',
     area: 'Nungwi',
     badge: '~75 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 75,
+    image: null,
     summary: 'A five-star resort on Zanzibar’s northern point, known for dramatic ocean views and full-service spa.',
     details: [
       'A good choice for a post-race, stay-longer trip extension',
@@ -86,7 +92,8 @@ const RESORTS = [
     title: 'Zuri Zanzibar',
     area: 'Kendwa',
     badge: '~80 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 80,
+    image: null,
     summary: 'An eco-conscious resort with chic bungalows and a private stretch of Kendwa beach.',
     details: [
       'Kendwa’s beach stays swimmable at every tide',
@@ -97,7 +104,8 @@ const RESORTS = [
     title: 'Baraza Resort & Spa',
     area: 'Bwejuu',
     badge: '~70 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 70,
+    image: null,
     summary: 'An east-coast luxury resort with villas blending Swahili, Arabic and Indian architectural influences.',
     details: [
       '30 villas with hand-carved furniture and private plunge pools',
@@ -108,7 +116,8 @@ const RESORTS = [
     title: 'Matemwe Beach Village',
     area: 'Matemwe',
     badge: '~65 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 65,
+    image: null,
     summary: 'A relaxed north-east coast beach retreat close to Mnemba Atoll, with a five-star PADI dive centre on site.',
     details: [
       'Simple bungalow-style accommodation',
@@ -122,7 +131,8 @@ const BOUTIQUE_STAYS = [
     title: 'Sharazād Wonders Boutique Hotel',
     area: 'Stone Town',
     badge: '~45 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 45,
+    image: '/images/stone-town.jpg',
     summary: 'A small, historic courtyard hotel in the heart of Stone Town’s old city.',
     details: [
       'Handful of rooms around a quiet private courtyard',
@@ -134,7 +144,8 @@ const BOUTIQUE_STAYS = [
     title: 'Mwezi Boutique Resort',
     area: 'Paje',
     badge: '~55 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 55,
+    image: null,
     summary: 'An artistic, eco-conscious boutique resort on Zanzibar’s east coast, near Paje’s kite-surfing scene.',
     details: [
       'Stylish bungalow-style rooms',
@@ -145,7 +156,8 @@ const BOUTIQUE_STAYS = [
     title: 'Emerson on Hurumzi',
     area: 'Stone Town',
     badge: '~45 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 45,
+    image: null,
     summary: 'A historic Stone Town boutique hotel with traditionally furnished rooms and Zanzibar’s highest rooftop restaurant.',
     details: [
       'Rooftop tea house restaurant known for sunset views and live music at dinner',
@@ -156,7 +168,8 @@ const BOUTIQUE_STAYS = [
     title: 'Bamboo Zanzibar',
     area: 'Jambiani',
     badge: '~55 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 55,
+    image: null,
     summary: 'A sustainable boutique hotel on the Jambiani coastline, built from locally sourced timber, bamboo and stone.',
     details: [
       'Bungalows arranged around a pool set within surrounding forest',
@@ -170,7 +183,8 @@ const BUDGET_STAYS = [
     title: 'Jambo Guesthouse',
     area: 'Stone Town',
     badge: '~45 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 45,
+    image: null,
     summary: 'A family-run guesthouse in Stone Town with rooftop breakfast views. Simple, friendly and central.',
     details: [
       'Private rooms at guesthouse rates',
@@ -181,7 +195,8 @@ const BUDGET_STAYS = [
     title: 'Drifters Backpackers',
     area: 'Paje',
     badge: '~55 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 55,
+    image: null,
     summary: 'A few steps from Paje beach, with dorms and private bandas, a communal kitchen and an on-site bar.',
     details: [
       'The most affordable tier covered here',
@@ -192,7 +207,8 @@ const BUDGET_STAYS = [
     title: 'Lost & Found Hostel',
     area: 'Stone Town',
     badge: '~45 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 45,
+    image: null,
     summary: 'Zanzibar’s first premium hostel, in a renovated heritage building in central Stone Town.',
     details: [
       '36 air-conditioned rooms with free Wi-Fi',
@@ -203,7 +219,8 @@ const BUDGET_STAYS = [
     title: 'Flamingo Guest House',
     area: 'Stone Town',
     badge: '~45 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 45,
+    image: null,
     summary: 'A simple, centrally located Stone Town guesthouse with breakfast included.',
     details: [
       'Good value for a central Stone Town base',
@@ -213,10 +230,10 @@ const BUDGET_STAYS = [
 ]
 
 const TIERS = [
-  { id: 'hotels', eyebrow: 'Hotels', title: 'Familiar comfort, full service.', items: HOTELS },
-  { id: 'resorts', eyebrow: 'Resorts', title: 'Beachfront, all-inclusive ease.', items: RESORTS },
-  { id: 'boutique', eyebrow: 'Boutique Stays', title: 'Small, characterful, personal.', items: BOUTIQUE_STAYS },
-  { id: 'budget', eyebrow: 'Budget Stays', title: 'Simple, friendly, affordable.', items: BUDGET_STAYS },
+  { id: 'hotels', eyebrow: 'Hotels', title: 'Familiar comfort, full service.', kind: 'hotel' as const, items: HOTELS },
+  { id: 'resorts', eyebrow: 'Resorts', title: 'Beachfront, all-inclusive ease.', kind: 'resort' as const, items: RESORTS },
+  { id: 'boutique', eyebrow: 'Boutique Stays', title: 'Small, characterful, personal.', kind: 'boutique' as const, items: BOUTIQUE_STAYS },
+  { id: 'budget', eyebrow: 'Budget Stays', title: 'Simple, friendly, affordable.', kind: 'budget' as const, items: BUDGET_STAYS },
 ]
 
 const BOOKING_STEPS = [
@@ -231,35 +248,10 @@ export default function AccommodationPage() {
       <PageHero
         title={<>We&apos;re not a hotel. We&apos;re your local connection.</>}
         intro="ZanziFit doesn't run properties. We know them. Tell us what you're after and we'll help you find and book a place to stay for race weekend, from beachfront resorts to budget guesthouses."
-        image={{ src: '/images/festival-village.png', alt: 'The ZanziFit festival village and expo at golden hour' }}
+        image={{ src: '/images/kendwa-nungwi.jpg', alt: 'An overwater thatched-roof lounge on a white-sand Zanzibar beach' }}
       />
 
-      {TIERS.map((tier) => (
-        <section
-          key={tier.id}
-          id={tier.id}
-          className="scroll-mt-24 border-b border-border px-6 py-20 md:py-28 odd:bg-surface-dark-soft"
-        >
-          <div className="mx-auto max-w-6xl">
-            <SectionHeading title={tier.title} />
-            <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {tier.items.map((item) => (
-                <ExpandableCard
-                  key={item.title}
-                  image={item.image}
-                  alt={item.title}
-                  title={item.title}
-                  badge={item.badge}
-                  summary={`${item.area}: ${item.summary}`}
-                  details={item.details}
-                  enquiryLabel={item.title}
-                  enquiryContext="accommodation"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      ))}
+      <AccommodationTiers tiers={TIERS} />
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <SectionHeading title="How booking through us works." />

@@ -16,6 +16,7 @@ const THINGS_TO_DO = [
   {
     title: 'Stone Town',
     badge: '~45 min from the festival venue',
+    distanceMins: 45,
     image: '/images/stone-town.jpg',
     summary:
       'The UNESCO-listed old town: narrow alleys, carved wooden doors, and centuries of Swahili, Omani and Indian history.',
@@ -28,6 +29,7 @@ const THINGS_TO_DO = [
   {
     title: 'Forodhani Gardens Night Market',
     badge: 'Stone Town',
+    distanceMins: 45,
     image: '/images/forodhani-night.webp',
     summary:
       'Every evening the seafront gardens turn into an open-air food market, with grilled seafood skewers, samosas and Zanzibar “pizza” cooked to order.',
@@ -40,7 +42,8 @@ const THINGS_TO_DO = [
   {
     title: 'Menai Bay',
     badge: '~10 min from the festival venue',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 10,
+    image: null,
     summary:
       'The conservation area right on the festival venue\'s doorstep, with dolphin encounters, snorkeling and sandbank boat trips.',
     details: [
@@ -52,6 +55,7 @@ const THINGS_TO_DO = [
   {
     title: 'Nungwi & Kendwa Beaches',
     badge: '~70–80 min from the festival venue',
+    distanceMins: 75,
     image: '/images/kendwa-nungwi.jpg',
     summary:
       'The island’s north-tip beaches: turquoise water, sandbars and the liveliest sunset scene in Zanzibar.',
@@ -63,7 +67,8 @@ const THINGS_TO_DO = [
   {
     title: 'Jozani-Chwaka Bay National Park',
     badge: '~50 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 50,
+    image: null,
     summary:
       'Zanzibar’s only national park, home to the red colobus monkey found nowhere else on Earth.',
     details: [
@@ -74,7 +79,8 @@ const THINGS_TO_DO = [
   {
     title: 'Mnemba Atoll',
     badge: '~2 hrs incl. boat',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 120,
+    image: null,
     summary:
       'A marine conservation area off the north-east coast, with some of the clearest water in Zanzibar for snorkeling and diving.',
     details: [
@@ -86,7 +92,8 @@ const THINGS_TO_DO = [
   {
     title: 'Kizimkazi',
     badge: '~40 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 40,
+    image: null,
     summary:
       'A fishing village on the south coast, known for wild dolphin encounters and one of East Africa’s oldest mosques.',
     details: [
@@ -97,7 +104,8 @@ const THINGS_TO_DO = [
   {
     title: 'Prison Island (Changuu)',
     badge: '~50 min incl. boat',
-    image: '/images/zanzibar-coast.png',
+    distanceMins: 50,
+    image: null,
     summary:
       'A short boat ride from Stone Town, now home to giant Aldabra tortoises brought over from Seychelles in the 1820s.',
     details: [
@@ -108,7 +116,8 @@ const THINGS_TO_DO = [
   {
     title: 'Michamvi Peninsula',
     badge: '~75 min from the festival venue',
-    image: '/images/festival-village.png',
+    distanceMins: 75,
+    image: null,
     summary:
       'A quiet east-coast peninsula known for a walkable sandbank that appears at low tide.',
     details: [
@@ -117,6 +126,8 @@ const THINGS_TO_DO = [
     ],
   },
 ]
+
+const CLOSEST_ACTIVITY = THINGS_TO_DO.reduce((min, i) => (i.distanceMins < min.distanceMins ? i : min), THINGS_TO_DO[0]).title
 
 const CULTURE_FACTS = [
   'Zanzibar sits on the historic Swahili Coast, shaped by centuries of Arab, Persian, Indian and European trade and, later, Omani Sultanate rule.',
@@ -222,6 +233,8 @@ export default function ExperiencePage() {
                 details={item.details}
                 enquiryLabel={item.title}
                 enquiryContext="experience"
+                kind="activity"
+                featured={item.title === CLOSEST_ACTIVITY}
               />
             ))}
           </div>
@@ -264,6 +277,23 @@ export default function ExperiencePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="relative flex min-h-[60vh] items-end overflow-hidden border-y border-border">
+        <Image
+          src="/images/stone-town.jpg"
+          alt="A narrow Stone Town alley with a woman in a black abaya walking past centuries-old carved-door buildings"
+          fill
+          sizes="100vw"
+          className="object-cover object-[50%_30%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/95 via-surface-dark/40 to-transparent" />
+        <div className="relative z-10 mx-auto max-w-3xl px-6 py-16 text-center">
+          <p className="text-balance font-display text-2xl leading-snug text-surface-dark-foreground sm:text-3xl">
+            Race on Saturday. By Sunday afternoon, you could be lost in a Stone Town alley
+            with nowhere to be.
+          </p>
         </div>
       </section>
 

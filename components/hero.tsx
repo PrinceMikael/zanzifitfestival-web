@@ -18,7 +18,6 @@ export function Hero() {
 
   // Depth layers move at different rates. Disabled for reduced-motion.
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '18%'])
-  const midY = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '38%'])
   const fgY = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '60%'])
   const fgOpacity = useTransform(scrollYProgress, [0, 0.7], [1, reduce ? 1 : 0])
 
@@ -38,15 +37,6 @@ export function Hero() {
           sizes="100vw"
           className="scale-[1.08] object-cover object-[65%_60%]"
         />
-      </motion.div>
-
-      {/* Layer 2 — HYROX athlete silhouette (medium) */}
-      <motion.div
-        style={{ y: midY }}
-        className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center will-change-transform"
-        aria-hidden="true"
-      >
-        <AthleteSilhouette className="h-[42vh] w-auto max-w-none translate-y-[8%] text-ink/90 sm:h-[52vh]" />
       </motion.div>
 
       {/* Gradient scrim for text legibility — tuned to keep the photograph
@@ -111,31 +101,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
-}
-
-function AthleteSilhouette({ className }: { className?: string }) {
-  // Flat HYROX sled-pull silhouette — graphic, composites over the horizon.
-  return (
-    <svg viewBox="0 0 420 260" className={className} fill="currentColor">
-      {/* sled */}
-      <rect x="12" y="212" width="86" height="20" rx="2" />
-      <rect x="30" y="176" width="10" height="40" />
-      <rect x="70" y="176" width="10" height="40" />
-      {/* rope */}
-      <path
-        d="M96 196 L214 150"
-        stroke="currentColor"
-        strokeWidth="4"
-        fill="none"
-      />
-      {/* athlete leaning into the pull */}
-      <path d="M300 232 l-26 -70 l14 -6 l30 60 z" />
-      <path d="M250 236 l-22 -58 l16 -8 l26 52 z" />
-      <path d="M236 176 c-6 -30 6 -58 30 -70 l30 40 c-16 8 -26 26 -24 44 z" />
-      <path d="M296 108 l40 30 -12 16 -44 -26 z" />
-      <path d="M270 116 l-58 30 -8 -14 56 -34 z" />
-      <circle cx="288" cy="78" r="22" />
-    </svg>
   )
 }

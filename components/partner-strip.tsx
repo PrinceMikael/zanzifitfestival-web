@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Reveal } from '@/components/reveal'
 
 /**
  * Accepts an array of partner logos. Real sponsor logos aren't secured yet,
@@ -14,7 +15,7 @@ export function PartnerStrip({ partners = [] as Partner[] }: { partners?: Partne
 
   return (
     <section className="border-t border-border bg-surface-dark py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Reveal className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {hasPartners ? (
           <>
             <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
@@ -54,7 +55,7 @@ export function PartnerStrip({ partners = [] as Partner[] }: { partners?: Partne
             </Link>
           </div>
         )}
-      </div>
+      </Reveal>
     </section>
   )
 }

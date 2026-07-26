@@ -2,12 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { Chevrons } from '@/components/chevrons'
+import { Reveal } from '@/components/reveal'
 
 export function WhyZanzibar() {
   return (
     <section className="border-t border-border bg-surface-dark py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
+        <Reveal className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
           <Image
             src="/images/zanzibar-coast.png"
             alt="A traditional dhow sailing off the Zanzibar coast at golden hour"
@@ -16,9 +17,9 @@ export function WhyZanzibar() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-ink/50 to-transparent" />
-        </div>
+        </Reveal>
 
-        <div>
+        <Reveal delay={0.12}>
           <div className="flex items-center gap-2">
             <Chevrons count={3} className="text-amber" />
             <span className="eyebrow text-amber">Why Zanzibar</span>
@@ -40,7 +41,7 @@ export function WhyZanzibar() {
             More about the festival
             <ArrowRight className="size-4" />
           </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

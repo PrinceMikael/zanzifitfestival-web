@@ -20,6 +20,7 @@ const MORE_NAV = [
   { href: '/partnership', label: 'Partnership' },
   { href: '/leadership', label: 'Leadership' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 const MOBILE_NAV = [
@@ -162,17 +163,13 @@ export function SiteHeader() {
               </div>
             )}
           </div>
-
-          <NavLink href="/contact" active={pathname === '/contact'}>
-            Contact
-          </NavLink>
         </nav>
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <Link
             href="/register"
-            className="group hidden items-center gap-2.5 rounded-sm bg-amber px-6 py-3 font-utility text-[0.82rem] font-bold uppercase tracking-[0.16em] text-primary-foreground shadow-[0_0_0_1px_rgba(223,162,59,0.4)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(223,162,59,0.7)] sm:inline-flex"
+            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm bg-amber px-5 py-2.5 font-utility text-[0.78rem] font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-[0_0_0_1px_rgba(223,162,59,0.4)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(223,162,59,0.7)] sm:inline-flex"
           >
             Join Waitlist
             <Chevrons count={3} className="text-primary-foreground/80" animate />

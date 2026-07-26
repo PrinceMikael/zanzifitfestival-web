@@ -50,8 +50,8 @@
   --radius: 0.25rem;
 
   --font-display: var(--font-fraunces);
-  --font-utility: var(--font-space-grotesk);
-  --font-body: var(--font-inter);
+  --font-utility: var(--font-ibm-plex-mono);
+  --font-body: var(--font-source-serif);
 }
 
 /* Light theme — remaps the semantic (shadcn-style) tokens that
@@ -118,7 +118,7 @@
   --radius-xl: calc(var(--radius) * 1.6);
   --radius-2xl: calc(var(--radius) * 2.4);
 
-  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body), ui-serif, Georgia, serif;
   --font-serif: var(--font-display), ui-serif, Georgia, serif;
   --font-mono: var(--font-utility), ui-monospace, monospace;
 
@@ -132,6 +132,9 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    /* Source Serif 4 reads slightly tighter than Inter did; open tracking
+       a touch to keep light-on-dark body copy comfortable. */
+    letter-spacing: 0.006em;
   }
   ::selection {
     background: var(--amber);

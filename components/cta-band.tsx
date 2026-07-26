@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Chevrons } from '@/components/chevrons'
+import { Reveal } from '@/components/reveal'
 
 export function CtaBand() {
   return (
@@ -12,7 +13,7 @@ export function CtaBand() {
         }}
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <Reveal className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <div className="flex justify-center">
           <Chevrons count={3} className="text-amber" animate />
         </div>
@@ -38,7 +39,7 @@ export function CtaBand() {
             Explore the Festival
           </Link>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

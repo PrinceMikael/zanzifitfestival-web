@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, Space_Grotesk, Inter } from 'next/font/google'
+import { Fraunces, IBM_Plex_Mono, Source_Serif_4 } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ThemeScript } from '@/components/theme-script'
@@ -14,15 +14,15 @@ const fraunces = Fraunces({
   style: ['normal'],
 })
 
-const spaceGrotesk = Space_Grotesk({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-ibm-plex-mono',
   weight: ['400', '500', '600', '700'],
 })
 
-const inter = Inter({
+const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-source-serif',
 })
 
 export const metadata: Metadata = {
@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${spaceGrotesk.variable} ${inter.variable} bg-background`}
+      className={`${fraunces.variable} ${ibmPlexMono.variable} ${sourceSerif.variable} bg-background`}
     >
       <body className="antialiased">
         <ThemeScript />

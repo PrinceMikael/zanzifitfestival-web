@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
+import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
 
 const DISCIPLINES = [
   {
@@ -28,17 +29,19 @@ export function Disciplines() {
   return (
     <section className="border-t border-border bg-surface-dark py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Choose your start line."
-          intro="ZanziFit runs two competitions across one weekend on the same coastline. Pick your lane, or take on both."
-        />
+        <Reveal>
+          <SectionHeading
+            title="Choose your start line."
+            intro="ZanziFit runs two competitions across one weekend on the same coastline. Pick your lane, or take on both."
+          />
+        </Reveal>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <RevealGroup className="mt-14 grid gap-6 lg:grid-cols-2">
           {DISCIPLINES.map((d) => (
+            <RevealItem key={d.title}>
             <Link
-              key={d.title}
               href={d.href}
-              className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-surface-dark-soft transition-colors hover:border-amber/50"
+              className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface-dark-soft transition-colors hover:border-amber/50"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
@@ -91,8 +94,9 @@ export function Disciplines() {
                 </div>
               </div>
             </Link>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   )

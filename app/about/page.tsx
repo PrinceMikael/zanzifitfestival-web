@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
+import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -43,7 +44,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="group relative aspect-[4/5] overflow-hidden rounded-lg">
+          <Reveal className="group relative aspect-[4/5] overflow-hidden rounded-lg">
             <Image
               src="/images/finish-line.png"
               alt="An athlete crossing the ZanziFit finish line at sunset on the Zanzibar coast"
@@ -51,10 +52,10 @@ export default function AboutPage() {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </div>
+          </Reveal>
           <div>
             <SectionHeading title="A festival, not just a race." align="left" />
-            <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
+            <Reveal delay={0.1} className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
               <p>
                 Most endurance events ask you to fly somewhere grey, suffer, and fly home. ZanziFit was built on the
                 opposite idea: that the best finish lines are worth travelling for.
@@ -64,7 +65,7 @@ export default function AboutPage() {
                 racing, and set them against the turquoise water and closed coastal roads of Zanzibar.
                 The result is equal parts competition and celebration.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -72,31 +73,31 @@ export default function AboutPage() {
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading title="The principles behind ZanziFit." />
-          <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3">
+          <RevealGroup className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3">
             {VALUES.map((v, i) => (
-              <div key={v.title} className="border-t-2 border-amber pt-6">
+              <RevealItem key={v.title} className="border-t-2 border-amber pt-6">
                 <span className="font-utility text-sm font-semibold text-amber">0{i + 1}</span>
                 <h3 className="mt-3 font-display text-2xl font-semibold text-surface-dark-foreground">{v.title}</h3>
                 <p className="mt-4 leading-relaxed text-muted-foreground">{v.body}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <SectionHeading title="From idea to start line." />
-        <div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
+        <RevealGroup className="mt-14 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
           {TIMELINE.map((t) => (
-            <div key={t.year} className="bg-background p-8">
+            <RevealItem key={t.year} className="bg-background p-8">
               <div className="font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber">
                 {t.year}
               </div>
               <div className="mt-3 font-display text-xl font-semibold text-surface-dark-foreground">{t.label}</div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </section>
 
       <section className="border-t border-border bg-ink py-16 text-bone">

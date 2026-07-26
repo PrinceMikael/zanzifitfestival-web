@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { FaqAccordion } from '@/components/faq-accordion'
 import { EnquiryLink } from '@/components/enquiry-link'
+import { Reveal } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'FAQ',
@@ -60,10 +61,10 @@ export default function FaqPage() {
       />
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <FaqAccordion groups={FAQ_GROUPS} />
-        <div className="mx-auto mt-16 max-w-3xl border-t border-border pt-10 text-center">
+        <Reveal delay={0.15} className="mx-auto mt-16 max-w-3xl border-t border-border pt-10 text-center">
           <p className="text-muted-foreground">Still have questions?</p>
           <EnquiryLink label="a question that's not covered here" context="experience" className="mt-3 justify-center" />
-        </div>
+        </Reveal>
       </section>
     </main>
   )

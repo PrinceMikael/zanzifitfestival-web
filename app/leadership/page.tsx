@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
+import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Leadership',
@@ -63,9 +64,9 @@ export default function LeadershipPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <SectionHeading title="Founder & governance." />
-        <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2">
+        <RevealGroup className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2">
           {LEADS.map((m) => (
-            <article key={m.name} className="sm:flex sm:gap-6">
+            <RevealItem key={m.name} className="sm:flex sm:gap-6">
               <div className="group relative aspect-[4/5] overflow-hidden sm:w-2/5 sm:shrink-0">
                 <Image
                   src={m.image}
@@ -80,16 +81,16 @@ export default function LeadershipPage() {
                 <div className="mt-1 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber">{m.role}</div>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
               </div>
-            </article>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </section>
 
       <section className="mx-auto max-w-6xl border-t border-border px-6 py-20 md:py-28">
         <SectionHeading title="Operating team." />
-        <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m) => (
-            <article key={m.name}>
+            <RevealItem key={m.name}>
               <div className="group relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={m.image}
@@ -102,11 +103,11 @@ export default function LeadershipPage() {
               <h3 className="mt-5 font-display text-xl font-semibold text-surface-dark-foreground">{m.name}</h3>
               <div className="mt-1 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber">{m.role}</div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
-            </article>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
 
-        <div className="mt-16 border-t border-border pt-10 text-center">
+        <Reveal delay={0.15} className="mt-16 border-t border-border pt-10 text-center">
           <p className="text-muted-foreground">Interested in partnering with ZanziFit?</p>
           <Link
             href="/partnership"
@@ -115,7 +116,7 @@ export default function LeadershipPage() {
             Explore partnership tiers
             <Chevrons />
           </Link>
-        </div>
+        </Reveal>
       </section>
     </main>
   )

@@ -3,6 +3,7 @@ import { PageHero } from '@/components/page-hero'
 import { AccommodationTiers } from '@/components/accommodation-tiers'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
+import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Accommodation',
@@ -255,17 +256,17 @@ export default function AccommodationPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <SectionHeading title="How booking through us works." />
-        <div className="mt-14 grid gap-10 md:grid-cols-3">
+        <RevealGroup className="mt-14 grid gap-10 md:grid-cols-3">
           {BOOKING_STEPS.map((s) => (
-            <div key={s.step}>
+            <RevealItem key={s.step}>
               <div className="font-utility text-4xl font-semibold text-amber">{s.step}</div>
               <h3 className="mt-3 font-display text-2xl font-semibold text-surface-dark-foreground">{s.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.detail}</p>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
 
-        <div className="mt-14 space-y-3 border-t border-border pt-10 text-sm text-muted-foreground">
+        <Reveal delay={0.15} className="mt-14 space-y-3 border-t border-border pt-10 text-sm text-muted-foreground">
           <p className="flex items-center gap-3">
             <Chevrons className="text-amber" count={1} />
             <a href="mailto:info@zanzifit.com" className="transition-colors hover:text-amber">
@@ -288,7 +289,7 @@ export default function AccommodationPage() {
               Message us on WhatsApp
             </a>
           </p>
-        </div>
+        </Reveal>
       </section>
     </main>
   )

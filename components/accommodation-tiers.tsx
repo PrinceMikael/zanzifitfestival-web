@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import { ArrowUpDown } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { ExpandableCard } from '@/components/expandable-card'
+import { RevealGroup, RevealItem } from '@/components/reveal'
 
 type Stay = {
   title: string
@@ -72,23 +73,24 @@ function TierSection({
             {sortByDistance ? 'Sorted: closest first' : 'Sort by distance'}
           </button>
         </div>
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <ExpandableCard
-              key={item.title}
-              image={item.image}
-              alt={item.title}
-              title={item.title}
-              badge={item.badge}
-              summary={`${item.area}: ${item.summary}`}
-              details={item.details}
-              enquiryLabel={item.title}
-              enquiryContext="accommodation"
-              kind={tier.kind}
-              featured={item.title === closest.title}
-            />
+            <RevealItem key={item.title}>
+              <ExpandableCard
+                image={item.image}
+                alt={item.title}
+                title={item.title}
+                badge={item.badge}
+                summary={`${item.area}: ${item.summary}`}
+                details={item.details}
+                enquiryLabel={item.title}
+                enquiryContext="accommodation"
+                kind={tier.kind}
+                featured={item.title === closest.title}
+              />
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   )

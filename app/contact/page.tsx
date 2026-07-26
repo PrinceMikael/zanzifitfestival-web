@@ -4,6 +4,7 @@ import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { ContactForm } from '@/components/contact-form'
+import { Reveal } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -21,44 +22,48 @@ export default function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
             <SectionHeading title="We're based in Zanzibar." align="left" />
-            <div className="mt-8 space-y-3 text-sm text-muted-foreground">
-              <p className="flex items-center gap-3">
-                <Chevrons className="text-amber" count={1} />
-                <a href="mailto:info@zanzifit.com" className="transition-colors hover:text-amber">
-                  info@zanzifit.com
-                </a>
-              </p>
-              <p className="flex items-center gap-3">
-                <Chevrons className="text-amber" count={1} />
-                +255 686 915 587
-              </p>
-              <p className="flex items-center gap-3">
-                <Chevrons className="text-amber" count={1} />
-                Zanzibar, Tanzania
-              </p>
-              <p className="flex items-center gap-3">
-                <Chevrons className="text-amber" count={1} />
-                <a
-                  href="https://wa.me/255686915587"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-cursor-label="Chat"
-                  className="transition-colors hover:text-amber"
-                >
-                  Message us on WhatsApp
-                </a>
-              </p>
-            </div>
+            <Reveal delay={0.1}>
+              <div className="mt-8 space-y-3 text-sm text-muted-foreground">
+                <p className="flex items-center gap-3">
+                  <Chevrons className="text-amber" count={1} />
+                  <a href="mailto:info@zanzifit.com" className="transition-colors hover:text-amber">
+                    info@zanzifit.com
+                  </a>
+                </p>
+                <p className="flex items-center gap-3">
+                  <Chevrons className="text-amber" count={1} />
+                  +255 686 915 587
+                </p>
+                <p className="flex items-center gap-3">
+                  <Chevrons className="text-amber" count={1} />
+                  Zanzibar, Tanzania
+                </p>
+                <p className="flex items-center gap-3">
+                  <Chevrons className="text-amber" count={1} />
+                  <a
+                    href="https://wa.me/255686915587"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cursor-label="Chat"
+                    className="transition-colors hover:text-amber"
+                  >
+                    Message us on WhatsApp
+                  </a>
+                </p>
+              </div>
 
-            <p className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
-              Looking to sponsor the festival instead?{' '}
-              <Link href="/partnership" className="font-semibold text-amber transition-colors hover:text-surface-dark-foreground">
-                Visit our Partnership page
-              </Link>
-              .
-            </p>
+              <p className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
+                Looking to sponsor the festival instead?{' '}
+                <Link href="/partnership" className="font-semibold text-amber transition-colors hover:text-surface-dark-foreground">
+                  Visit our Partnership page
+                </Link>
+                .
+              </p>
+            </Reveal>
           </div>
-          <ContactForm />
+          <Reveal delay={0.15}>
+            <ContactForm />
+          </Reveal>
         </div>
       </section>
     </main>

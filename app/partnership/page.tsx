@@ -5,6 +5,7 @@ import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { PartnershipInquiry } from '@/components/partnership-inquiry'
+import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Partnership',
@@ -62,21 +63,21 @@ export default function PartnershipPage() {
       </PageHero>
 
       <section className="border-b border-border bg-ink py-14 text-bone">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
+        <RevealGroup className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
           {REACH.map((r) => (
-            <div key={r.label}>
+            <RevealItem key={r.label}>
               <div className="font-display text-4xl font-semibold md:text-5xl">{r.value}</div>
               <div className="mt-2 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-bone/70">{r.label}</div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <SectionHeading title="Category-exclusive slots, filling now." />
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {TIERS.map((t) => (
-            <div
+            <RevealItem
               key={t.name}
               className={`flex flex-col rounded-lg border p-8 ${
                 t.highlight ? 'border-amber bg-surface-dark-soft ring-1 ring-amber/40' : 'border-border bg-surface-dark-soft'
@@ -102,27 +103,31 @@ export default function PartnershipPage() {
               >
                 Enquire
               </Link>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </section>
 
       <section id="inquiry" className="scroll-mt-24 border-t border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-start">
           <div>
             <SectionHeading title="Let’s build a partnership." align="left" />
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
-              Tell us about your brand and the tier you’re interested in. We’ll send the full partnership deck with
-              audience data, activation ideas and pricing.
-            </p>
-            <div className="mt-8 space-y-3 text-sm text-muted-foreground">
-              <p className="flex items-center gap-3"><Chevrons className="text-amber" count={1} /> partners@zanzifit.com</p>
-              <p className="flex items-center gap-3"><Chevrons className="text-amber" count={1} /> Zanzibar, Tanzania</p>
-            </div>
+            <Reveal delay={0.1}>
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
+                Tell us about your brand and the tier you’re interested in. We’ll send the full partnership deck with
+                audience data, activation ideas and pricing.
+              </p>
+              <div className="mt-8 space-y-3 text-sm text-muted-foreground">
+                <p className="flex items-center gap-3"><Chevrons className="text-amber" count={1} /> partners@zanzifit.com</p>
+                <p className="flex items-center gap-3"><Chevrons className="text-amber" count={1} /> Zanzibar, Tanzania</p>
+              </div>
+            </Reveal>
           </div>
-          <Suspense fallback={null}>
-            <PartnershipInquiry tiers={TIERS.map((t) => t.name)} />
-          </Suspense>
+          <Reveal delay={0.1}>
+            <Suspense fallback={null}>
+              <PartnershipInquiry tiers={TIERS.map((t) => t.name)} />
+            </Suspense>
+          </Reveal>
         </div>
       </section>
     </main>

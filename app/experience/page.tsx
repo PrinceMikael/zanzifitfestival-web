@@ -5,6 +5,7 @@ import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { ExpandableCard } from '@/components/expandable-card'
 import { EnquiryLink } from '@/components/enquiry-link'
+import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
 
 export const metadata: Metadata = {
   title: 'Experience Zanzibar',
@@ -197,16 +198,18 @@ export default function ExperiencePage() {
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <SectionHeading title="An island shaped by centuries of trade." align="left" />
-            <p className="mt-8 text-pretty leading-relaxed text-muted-foreground">
-              Zanzibar is an archipelago off the coast of mainland Tanzania, its culture
-              layered by Swahili, Arab, Persian, Indian and European influence over
-              hundreds of years of Indian Ocean trade. ZanziFit races on a quiet stretch
-              of the west coast on Menai Bay, close enough to Stone
-              Town for an afternoon of sightseeing, far enough to still feel like your
-              own stretch of coastline.
-            </p>
+            <Reveal delay={0.1}>
+              <p className="mt-8 text-pretty leading-relaxed text-muted-foreground">
+                Zanzibar is an archipelago off the coast of mainland Tanzania, its culture
+                layered by Swahili, Arab, Persian, Indian and European influence over
+                hundreds of years of Indian Ocean trade. ZanziFit races on a quiet stretch
+                of the west coast on Menai Bay, close enough to Stone
+                Town for an afternoon of sightseeing, far enough to still feel like your
+                own stretch of coastline.
+              </p>
+            </Reveal>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
+          <Reveal className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
             <Image
               src="/images/festival-village.png"
               alt="The ZanziFit festival village on the Zanzibar coast"
@@ -214,30 +217,31 @@ export default function ExperiencePage() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section id="things-to-do" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading title="Beyond race day." />
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <RevealGroup className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {THINGS_TO_DO.map((item) => (
-              <ExpandableCard
-                key={item.title}
-                image={item.image}
-                alt={item.title}
-                title={item.title}
-                badge={item.badge}
-                summary={item.summary}
-                details={item.details}
-                enquiryLabel={item.title}
-                enquiryContext="experience"
-                kind="activity"
-                featured={item.title === CLOSEST_ACTIVITY}
-              />
+              <RevealItem key={item.title}>
+                <ExpandableCard
+                  image={item.image}
+                  alt={item.title}
+                  title={item.title}
+                  badge={item.badge}
+                  summary={item.summary}
+                  details={item.details}
+                  enquiryLabel={item.title}
+                  enquiryContext="experience"
+                  kind="activity"
+                  featured={item.title === CLOSEST_ACTIVITY}
+                />
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -245,16 +249,16 @@ export default function ExperiencePage() {
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <SectionHeading title="A crossroads of the Indian Ocean." align="left" />
-            <ul className="mt-8 space-y-4">
+            <RevealGroup as="ul" className="mt-8 space-y-4">
               {CULTURE_FACTS.map((fact) => (
-                <li key={fact} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                <RevealItem key={fact} as="li" className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
                   <Chevrons className="mt-0.5 shrink-0 text-amber" count={1} />
                   {fact}
-                </li>
+                </RevealItem>
               ))}
-            </ul>
+            </RevealGroup>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
+          <Reveal delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
             <Image
               src="/images/zanzibar-coast.png"
               alt="Traditional dhow boats off the Zanzibar coast"
@@ -262,21 +266,21 @@ export default function ExperiencePage() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading title="Eat your way around the island." />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2">
             {FOOD_HIGHLIGHTS.map((f) => (
-              <div key={f.name} className="rounded-lg border border-border bg-background p-6">
+              <RevealItem key={f.name} className="rounded-lg border border-border bg-background p-6">
                 <h3 className="font-display text-xl font-semibold text-surface-dark-foreground">{f.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.detail}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -289,30 +293,30 @@ export default function ExperiencePage() {
           className="object-cover object-[50%_30%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/95 via-surface-dark/40 to-transparent" />
-        <div className="relative z-10 mx-auto max-w-3xl px-6 py-16 text-center">
+        <Reveal className="relative z-10 mx-auto max-w-3xl px-6 py-16 text-center">
           <p className="text-balance font-display text-2xl leading-snug text-surface-dark-foreground sm:text-3xl">
             Race on Saturday. By Sunday afternoon, you could be lost in a Stone Town alley
             with nowhere to be.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <SectionHeading title="Plan your trip." />
-        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+        <RevealGroup as="ul" className="mt-8 grid gap-3 sm:grid-cols-2">
           {TRAVEL_INFO.map((i) => (
-            <li key={i} className="flex items-center gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-3 text-sm text-surface-dark-foreground">
+            <RevealItem key={i} as="li" className="flex items-center gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-3 text-sm text-surface-dark-foreground">
               <Chevrons className="shrink-0 text-amber" count={1} />
               {i}
-            </li>
+            </RevealItem>
           ))}
-        </ul>
-        <div className="mt-10">
+        </RevealGroup>
+        <Reveal delay={0.15} className="mt-10">
           <p className="text-sm text-muted-foreground">
             Have questions about planning your stay around race weekend?
           </p>
           <EnquiryLink label="planning my trip to Zanzibar" context="experience" className="mt-3" />
-        </div>
+        </Reveal>
       </section>
     </main>
   )

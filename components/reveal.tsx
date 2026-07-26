@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react'
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
 
 /**
- * Scroll-entrance wrapper. Fires once when ~20% visible, then holds — this
- * is a section-arrival cue, not a repeating scroll gimmick. Disabled under
- * prefers-reduced-motion, and content renders fully visible until the
- * client has mounted, so a failed or slow script never leaves the page
- * hidden (server-rendered HTML always ships in its final, visible state).
+ * Scroll-entrance wrapper. Replays every time a section crosses into view,
+ * in either scroll direction, so the page feels equally alive scrolling
+ * back up as it does scrolling down. Disabled under prefers-reduced-motion,
+ * and content renders fully visible until the client has mounted, so a
+ * failed or slow script never leaves the page hidden (server-rendered HTML
+ * always ships in its final, visible state).
  */
 const EASE_CONFIDENT = [0.16, 1, 0.3, 1] as const
 
@@ -53,7 +54,7 @@ export function Reveal({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.35 }}
+      viewport={{ once: false, amount: 0.35 }}
       variants={variants}
       transition={{ duration: 0.85, ease: EASE_CONFIDENT, delay }}
     >
@@ -97,7 +98,7 @@ export function RevealGroup({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: false, amount: 0.15 }}
       variants={containerVariants}
     >
       {children}

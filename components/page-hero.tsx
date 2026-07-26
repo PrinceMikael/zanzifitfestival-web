@@ -41,9 +41,9 @@ export function PageHero({
         }`}
       >
         <motion.div
-          initial={animateIn ? { opacity: 0, y: 20 } : false}
+          initial={animateIn ? { opacity: 0, y: 36 } : false}
           animate={animateIn ? { opacity: 1, y: 0 } : undefined}
-          transition={{ duration: 0.6, ease: EASE_CONFIDENT }}
+          transition={{ duration: 0.8, ease: EASE_CONFIDENT }}
         >
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-surface-dark-foreground text-balance md:text-6xl">
             {title}
@@ -58,9 +58,9 @@ export function PageHero({
         {image ? (
           <motion.div
             className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border"
-            initial={animateIn ? { opacity: 0, scale: 0.97 } : false}
-            animate={animateIn ? { opacity: 1, scale: 1 } : undefined}
-            transition={{ duration: 0.7, delay: 0.1, ease: EASE_CONFIDENT }}
+            initial={animateIn ? { opacity: 0, scale: 0.94, y: 24 } : false}
+            animate={animateIn ? { opacity: 1, scale: 1, y: 0 } : undefined}
+            transition={{ duration: 0.9, delay: 0.15, ease: EASE_CONFIDENT }}
           >
             <Image
               src={image.src}

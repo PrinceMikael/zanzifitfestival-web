@@ -13,11 +13,12 @@ import { motion, useReducedMotion, type Variants } from 'framer-motion'
 const EASE_CONFIDENT = [0.16, 1, 0.3, 1] as const
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 56, scale: 0.97 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: EASE_CONFIDENT },
+    scale: 1,
+    transition: { duration: 0.85, ease: EASE_CONFIDENT },
   },
 }
 
@@ -52,9 +53,9 @@ export function Reveal({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.35 }}
       variants={variants}
-      transition={{ delay }}
+      transition={{ duration: 0.85, ease: EASE_CONFIDENT, delay }}
     >
       {children}
     </Component>
@@ -69,7 +70,7 @@ export function Reveal({
 const containerVariants: Variants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.08, delayChildren: 0.04 },
+    transition: { staggerChildren: 0.16, delayChildren: 0.08 },
   },
 }
 

@@ -63,6 +63,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${fraunces.variable} ${ibmPlexMono.variable} ${sourceSerif.variable} bg-background`}
+      suppressHydrationWarning
     >
       <body className="antialiased">
         <ThemeScript />

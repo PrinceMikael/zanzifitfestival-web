@@ -63,19 +63,19 @@
    theme (site-header, site-footer, photo-overlay scrims, the fixed
    deep-teal accent bands) and must not flip. */
 :root[data-theme='light'] {
-  --background: var(--bone);
+  --background: #ffffff;
   --foreground: var(--ink);
   --card: #ffffff;
   --card-foreground: var(--ink);
   --popover: #ffffff;
   --popover-foreground: var(--ink);
   --secondary-foreground: var(--bone);
-  --muted: #e4ddc9;
+  --muted: #f2f2f0;
   --muted-foreground: rgba(11, 14, 18, 0.62);
-  --border: rgba(11, 14, 18, 0.12);
+  --border: rgba(11, 14, 18, 0.1);
   --input: rgba(11, 14, 18, 0.16);
-  --surface-dark: var(--bone);
-  --surface-dark-soft: #e4ddc9;
+  --surface-dark: #ffffff;
+  --surface-dark-soft: #f2f2f0;
   --surface-dark-foreground: var(--ink);
   --surface-dark-foreground-muted: rgba(11, 14, 18, 0.62);
 }

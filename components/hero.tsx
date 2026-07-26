@@ -2,10 +2,10 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { Chevrons } from '@/components/chevrons'
 import { Countdown } from '@/components/countdown'
-import { HorizonLayer } from '@/components/hero-art'
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
@@ -28,9 +28,16 @@ export function Hero() {
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-surface-dark pt-16 lg:pt-20"
       aria-label="ZanziFit Festival hero"
     >
-      {/* Layer 1 — horizon + sails + palms (slowest) */}
+      {/* Layer 1 — Zanzibar aerial photograph (slowest) */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 will-change-transform">
-        <HorizonLayer />
+        <Image
+          src="/images/zanzibar-hero.jpg"
+          alt="Aerial view of Stone Town's coastline in Zanzibar at golden hour, with dhow boats along the beach"
+          fill
+          priority
+          sizes="100vw"
+          className="scale-[1.08] object-cover object-[65%_60%]"
+        />
       </motion.div>
 
       {/* Layer 2 — HYROX athlete silhouette (medium) */}
@@ -39,11 +46,12 @@ export function Hero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center will-change-transform"
         aria-hidden="true"
       >
-        <AthleteSilhouette className="h-[42vh] w-auto max-w-none translate-y-[8%] text-ink/85 sm:h-[52vh]" />
+        <AthleteSilhouette className="h-[42vh] w-auto max-w-none translate-y-[8%] text-ink/90 sm:h-[52vh]" />
       </motion.div>
 
-      {/* Gradient scrim for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/45 to-surface-dark/20" />
+      {/* Gradient scrim for text legibility over the photograph */}
+      <div className="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/70 to-surface-dark/35" />
+      <div className="absolute inset-0 bg-gradient-to-r from-surface-dark/80 via-surface-dark/20 to-transparent" />
 
       {/* Layer 3 — foreground content (fastest, sharpest) */}
       <motion.div

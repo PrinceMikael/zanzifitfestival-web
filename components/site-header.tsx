@@ -132,8 +132,8 @@ export function SiteHeader() {
               aria-expanded={moreOpen}
               aria-haspopup="menu"
               className={cn(
-                'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
-                moreActive ? 'text-amber' : 'text-foreground/70 hover:text-foreground',
+                'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
+                moreActive ? 'text-amber' : 'text-foreground/90 hover:text-foreground',
               )}
             >
               More
@@ -227,8 +227,8 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
     <Link
       href={href}
       className={cn(
-        'relative flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
-        active ? 'text-amber' : 'text-foreground/70 hover:text-foreground',
+        'relative flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
+        active ? 'text-amber' : 'text-foreground/90 hover:text-foreground',
       )}
     >
       {children}

@@ -4,7 +4,6 @@ import { Fraunces, IBM_Plex_Mono, Source_Serif_4 } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ThemeScript } from '@/components/theme-script'
-import { CustomCursor } from '@/components/custom-cursor'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -67,7 +66,6 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <ThemeScript />
-        <CustomCursor />
         <SiteHeader />
         {children}
         <SiteFooter />

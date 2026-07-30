@@ -254,7 +254,7 @@ export default function AccommodationPage() {
 
       <AccommodationTiers tiers={TIERS} />
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <SectionHeading title="How booking through us works." />
         <RevealGroup className="mt-14 grid gap-10 md:grid-cols-3">
           {BOOKING_STEPS.map((s) => (

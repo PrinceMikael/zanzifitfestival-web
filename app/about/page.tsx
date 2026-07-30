@@ -42,7 +42,7 @@ export default function AboutPage() {
         intro="ZanziFit is a hybrid endurance festival on the coast of Zanzibar, combining road cycling and HYROX-style functional fitness racing across one unforgettable weekend."
       />
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <Reveal className="group relative aspect-4/5 overflow-hidden rounded-lg">
             <Image
@@ -71,7 +71,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <SectionHeading title="The principles behind ZanziFit." />
           <RevealGroup className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3">
             {VALUES.map((v, i) => (
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
         <SectionHeading title="From idea to start line." />
         <RevealGroup className="mt-14 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
           {TIMELINE.map((t) => (
@@ -101,7 +101,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-t border-border bg-ink py-16 text-bone">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center">
           <h2 className="font-display text-3xl font-semibold text-balance md:text-4xl">
             Be part of the first edition.
           </h2>

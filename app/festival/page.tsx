@@ -65,7 +65,7 @@ export default function FestivalPage() {
         </div>
       </PageHero>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <SectionHeading title="Pick your lane, or take on both." />
         <RevealGroup className="mt-14 grid gap-8 lg:grid-cols-2">
           {DISCIPLINES.map((d) => (
@@ -97,7 +97,7 @@ export default function FestivalPage() {
       </section>
 
       <section id="schedule" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <SectionHeading title="Three days on the coast." />
           <RevealGroup className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
             {SCHEDULE.map((s, i) => (
@@ -118,7 +118,7 @@ export default function FestivalPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <SectionHeading title="Everything but the effort." align="left" />

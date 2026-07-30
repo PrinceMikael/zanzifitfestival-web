@@ -36,8 +36,8 @@ export function PageHero({
         }}
       />
       <div
-        className={`relative mx-auto max-w-6xl px-6 pb-16 pt-32 md:pb-24 md:pt-40 ${
-          image ? 'grid gap-12 md:grid-cols-2 md:items-center' : ''
+        className={`relative mx-auto px-6 pb-16 pt-32 md:pb-24 md:pt-40 ${
+          image ? 'max-w-7xl grid gap-12 md:grid-cols-2 md:items-center' : 'max-w-3xl text-center'
         }`}
       >
         <motion.div
@@ -45,15 +45,25 @@ export function PageHero({
           animate={animateIn ? { opacity: 1, y: 0 } : undefined}
           transition={{ duration: 0.8, ease: EASE_CONFIDENT }}
         >
-          <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[0.98] tracking-tight text-surface-dark-foreground text-balance md:text-6xl">
+          <h1
+            className={`font-display font-semibold leading-[0.95] tracking-tight text-surface-dark-foreground text-balance ${
+              image ? 'max-w-4xl text-4xl md:text-6xl' : 'mx-auto text-5xl md:text-7xl'
+            }`}
+          >
             {title}
           </h1>
           {intro ? (
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
+            <p
+              className={`mt-6 text-lg leading-relaxed text-muted-foreground text-pretty ${
+                image ? 'max-w-2xl' : 'mx-auto max-w-2xl'
+              }`}
+            >
               {intro}
             </p>
           ) : null}
-          {children ? <div className="mt-8">{children}</div> : null}
+          {children ? (
+            <div className={`mt-8 ${image ? '' : 'flex justify-center'}`}>{children}</div>
+          ) : null}
         </motion.div>
         {image ? (
           <motion.div

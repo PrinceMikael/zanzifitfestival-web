@@ -63,7 +63,7 @@ export default function PartnershipPage() {
       </PageHero>
 
       <section className="border-b border-border bg-ink py-14 text-bone">
-        <RevealGroup className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
+        <RevealGroup className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
           {REACH.map((r) => (
             <RevealItem key={r.label}>
               <div className="font-display text-4xl font-semibold md:text-5xl">{r.value}</div>
@@ -73,7 +73,7 @@ export default function PartnershipPage() {
         </RevealGroup>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <SectionHeading title="Category-exclusive slots, filling now." />
         <RevealGroup className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {TIERS.map((t) => (
@@ -109,7 +109,7 @@ export default function PartnershipPage() {
       </section>
 
       <section id="inquiry" className="scroll-mt-24 border-t border-border bg-surface-dark-soft py-20 md:py-28">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-start">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-start">
           <div>
             <SectionHeading title="Let’s build a partnership." align="left" />
             <Reveal delay={0.1}>

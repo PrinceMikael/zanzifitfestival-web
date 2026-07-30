@@ -30,7 +30,7 @@ const VALUES = [
 const TIMELINE = [
   { year: '2024', label: 'The idea', body: 'A group of endurance athletes and Zanzibari operators sketch a festival that treats the island as the arena.' },
   { year: '2025', label: 'Foundations', body: 'Courses mapped along the Zanzibar coastline, timing and medical partners secured, first sponsors on board.' },
-  { year: '2026', label: 'Race weekend', body: 'Inaugural edition, 6-8 November. 1,500+ athletes across 15 countries.' },
+  { year: '2026', label: 'Race weekend', body: 'Inaugural edition, 6-8 November.' },
   { year: '2027', label: 'The horizon', body: 'A recurring fixture on the global hybrid-fitness calendar, with qualifying pathways for African athletes.' },
 ]
 

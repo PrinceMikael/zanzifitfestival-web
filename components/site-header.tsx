@@ -10,10 +10,13 @@ import { Chevrons } from '@/components/chevrons'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 const PRIMARY_NAV = [
-  { href: '/about', label: 'About' },
-  { href: '/festival', label: 'The Festival' },
   { href: '/experience', label: 'Experience Zanzibar' },
   { href: '/accommodation', label: 'Accommodation' },
+]
+
+const FESTIVAL_NAV = [
+  { href: '/festival#cycling', label: 'Road Cycling' },
+  { href: '/festival#hyrox', label: 'HYROX-Style' },
 ]
 
 const MORE_NAV = [
@@ -25,7 +28,7 @@ const MORE_NAV = [
 
 const MOBILE_NAV = [
   { href: '/about', label: 'About' },
-  { href: '/festival', label: 'The Festival' },
+  { href: '/festival', label: 'The Festival', children: FESTIVAL_NAV },
   { href: '/experience', label: 'Experience Zanzibar' },
   { href: '/accommodation', label: 'Accommodation' },
   { href: '/partnership', label: 'Partnership' },
@@ -39,7 +42,8 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [progress, setProgress] = useState(0)
   const [open, setOpen] = useState(false)
-  const [moreOpen, setMoreOpen] = useState(false)
+  const [openMenu, setOpenMenu] = useState<'festival' | 'more' | null>(null)
+  const festivalRef = useRef<HTMLDivElement>(null)
   const moreRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -56,16 +60,17 @@ export function SiteHeader() {
 
   useEffect(() => {
     setOpen(false)
-    setMoreOpen(false)
+    setOpenMenu(null)
   }, [pathname])
 
   useEffect(() => {
-    if (!moreOpen) return
+    if (!openMenu) return
     function onPointerDown(e: PointerEvent) {
-      if (moreRef.current && !moreRef.current.contains(e.target as Node)) setMoreOpen(false)
+      const ref = openMenu === 'festival' ? festivalRef : moreRef
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpenMenu(null)
     }
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') setMoreOpen(false)
+      if (e.key === 'Escape') setOpenMenu(null)
     }
     document.addEventListener('pointerdown', onPointerDown)
     document.addEventListener('keydown', onKeyDown)
@@ -73,8 +78,9 @@ export function SiteHeader() {
       document.removeEventListener('pointerdown', onPointerDown)
       document.removeEventListener('keydown', onKeyDown)
     }
-  }, [moreOpen])
+  }, [openMenu])
 
+  const festivalActive = pathname === '/festival'
   const moreActive = MORE_NAV.some((item) => item.href === pathname)
 
   return (
@@ -119,6 +125,57 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex xl:gap-9" aria-label="Primary">
+          <NavLink href="/about" active={pathname === '/about'}>
+            About
+          </NavLink>
+          <div className="relative" ref={festivalRef}>
+            <button
+              type="button"
+              onClick={() => setOpenMenu((v) => (v === 'festival' ? null : 'festival'))}
+              aria-expanded={openMenu === 'festival'}
+              aria-haspopup="menu"
+              className={cn(
+                'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
+                festivalActive ? 'text-amber' : 'text-foreground/90 hover:text-foreground',
+              )}
+            >
+              The Festival
+              <ChevronDown className={cn('size-3.5 transition-transform', openMenu === 'festival' && 'rotate-180')} />
+            </button>
+            {openMenu === 'festival' && (
+              <div
+                role="menu"
+                className="absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 rounded-sm border border-border bg-background/95 p-2 shadow-xl backdrop-blur-md"
+              >
+                <Link
+                  href="/festival"
+                  role="menuitem"
+                  className={cn(
+                    'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
+                    pathname === '/festival'
+                      ? 'text-amber'
+                      : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
+                  )}
+                >
+                  Overview
+                  <Chevrons count={1} className="text-amber" />
+                </Link>
+                <div className="my-1 border-t border-border/60" />
+                {FESTIVAL_NAV.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    role="menuitem"
+                    className="flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] text-foreground/70 transition-colors hover:bg-surface-dark-soft hover:text-foreground"
+                  >
+                    {item.label}
+                    <Chevrons count={1} className="text-amber" />
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           {PRIMARY_NAV.map((item) => (
             <NavLink key={item.href} href={item.href} active={pathname === item.href}>
               {item.label}
@@ -128,8 +185,8 @@ export function SiteHeader() {
           <div className="relative" ref={moreRef}>
             <button
               type="button"
-              onClick={() => setMoreOpen((v) => !v)}
-              aria-expanded={moreOpen}
+              onClick={() => setOpenMenu((v) => (v === 'more' ? null : 'more'))}
+              aria-expanded={openMenu === 'more'}
               aria-haspopup="menu"
               className={cn(
                 'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
@@ -137,9 +194,9 @@ export function SiteHeader() {
               )}
             >
               More
-              <ChevronDown className={cn('size-3.5 transition-transform', moreOpen && 'rotate-180')} />
+              <ChevronDown className={cn('size-3.5 transition-transform', openMenu === 'more' && 'rotate-180')} />
             </button>
-            {moreOpen && (
+            {openMenu === 'more' && (
               <div
                 role="menu"
                 className="absolute left-1/2 top-full mt-4 w-48 -translate-x-1/2 rounded-sm border border-border bg-background/95 p-2 shadow-xl backdrop-blur-md"
@@ -199,14 +256,29 @@ export function SiteHeader() {
           </div>
           <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6" aria-label="Mobile">
             {MOBILE_NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex items-center justify-between border-b border-border/60 py-3 font-utility text-sm uppercase tracking-[0.14em] text-foreground/80"
-              >
-                {item.label}
-                <Chevrons count={1} className="text-amber" />
-              </Link>
+              <div key={item.href} className="border-b border-border/60">
+                <Link
+                  href={item.href}
+                  className="flex items-center justify-between py-3 font-utility text-sm uppercase tracking-[0.14em] text-foreground/80"
+                >
+                  {item.label}
+                  <Chevrons count={1} className="text-amber" />
+                </Link>
+                {item.children ? (
+                  <div className="flex flex-col pb-3 pl-4">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="flex items-center justify-between py-2 font-utility text-xs uppercase tracking-[0.12em] text-foreground/60"
+                      >
+                        {child.label}
+                        <Chevrons count={1} className="text-amber/70" />
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             ))}
             <Link
               href="/register"

@@ -10,7 +10,7 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
 export const metadata: Metadata = {
   title: 'Partnership',
   description:
-    'Partner with ZanziFit Festival. Presenting, airline, water, tourism and media partnership tiers reaching 1,500+ athletes across 15 countries.',
+    'Partner with ZanziFit Festival. Presenting, airline, water, tourism and media partnership tiers at a premium destination endurance event.',
 }
 
 const TIERS = [
@@ -42,36 +42,18 @@ const TIERS = [
   },
 ]
 
-const REACH = [
-  { value: '1,500+', label: 'Athletes' },
-  { value: '15', label: 'Countries' },
-  { value: '2,000+', label: 'Spectators on-site' },
-  { value: '500K+', label: 'Digital reach' },
-]
-
 export default function PartnershipPage() {
   return (
     <main>
       <PageHero
         title={<>Put your brand on the horizon.</>}
-        intro="ZanziFit gives partners category exclusivity at a premium destination event, reaching an engaged, affluent, health-focused audience across 15 countries."
+        intro="ZanziFit gives partners category exclusivity at a premium destination event, reaching an engaged, affluent, health-focused audience."
         image={{ src: '/images/hyrox-arena.jpg', alt: 'A HYROX-style athlete competing in front of branded sponsor boards and a packed crowd' }}
       >
         <Link href="#inquiry" className="inline-flex items-center gap-2 rounded-sm bg-amber px-7 py-3.5 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5">
           Request the deck <Chevrons />
         </Link>
       </PageHero>
-
-      <section className="border-b border-border bg-ink py-14 text-bone">
-        <RevealGroup className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
-          {REACH.map((r) => (
-            <RevealItem key={r.label}>
-              <div className="font-display text-4xl font-semibold md:text-5xl">{r.value}</div>
-              <div className="mt-2 font-utility text-xs font-semibold uppercase tracking-[0.14em] text-bone/70">{r.label}</div>
-            </RevealItem>
-          ))}
-        </RevealGroup>
-      </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <SectionHeading title="Category-exclusive slots, filling now." />

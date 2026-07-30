@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 
 const DISCIPLINES = [
   {
+    slug: 'cycling',
     tag: 'Discipline 01',
     name: 'Road Cycling',
     image: '/images/cycling.jpg',
@@ -26,6 +27,7 @@ const DISCIPLINES = [
     ],
   },
   {
+    slug: 'hyrox',
     tag: 'Discipline 02',
     name: 'HYROX-Style',
     image: '/images/hyrox-arena.jpg',
@@ -70,7 +72,7 @@ export default function FestivalPage() {
         <RevealGroup className="mt-14 grid gap-8 lg:grid-cols-2">
           {DISCIPLINES.map((d) => (
             <RevealItem key={d.name}>
-            <article className="overflow-hidden rounded-lg border border-border bg-surface-dark-soft">
+            <article id={d.slug} className="scroll-mt-24 overflow-hidden rounded-lg border border-border bg-surface-dark-soft">
               <div className="group relative aspect-16/10">
                 <Image src={d.image} alt={`${d.name} at ZanziFit Festival`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-linear-to-t from-surface-dark-soft via-surface-dark-soft/20 to-transparent" />

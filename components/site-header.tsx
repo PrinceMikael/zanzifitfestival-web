@@ -15,8 +15,8 @@ const PRIMARY_NAV = [
 ]
 
 const FESTIVAL_NAV = [
-  { href: '/festival#cycling', label: 'Road Cycling' },
-  { href: '/festival#hyrox', label: 'HYROX-Style' },
+  { href: '/festival/cycling', label: 'Road Cycling' },
+  { href: '/festival/hyrox', label: 'HYROX-Style' },
 ]
 
 const MORE_NAV = [
@@ -80,7 +80,7 @@ export function SiteHeader() {
     }
   }, [openMenu])
 
-  const festivalActive = pathname === '/festival'
+  const festivalActive = pathname.startsWith('/festival')
   const moreActive = MORE_NAV.some((item) => item.href === pathname)
 
   return (

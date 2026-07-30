@@ -91,6 +91,13 @@ export default function FestivalPage() {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  href={`/festival/${d.slug}`}
+                  className="mt-6 inline-flex items-center gap-2 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber transition-colors hover:text-surface-dark-foreground"
+                >
+                  {d.name} details
+                  <Chevrons count={1} />
+                </Link>
               </div>
             </article>
             </RevealItem>

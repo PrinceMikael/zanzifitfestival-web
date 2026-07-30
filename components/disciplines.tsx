@@ -8,7 +8,7 @@ const DISCIPLINES = [
   {
     tag: 'Discipline 01',
     title: 'Road Cycling',
-    href: '/festival#cycling',
+    href: '/festival/cycling',
     image: '/images/cycling.jpg',
     copy: 'Coastal road racing on closed circuits along the Zanzibar coastline, from a fast community sprint to a punishing elite endurance loop.',
     categories: ['Elite Road Race', 'Open 60km', 'Community 20km'],
@@ -17,7 +17,7 @@ const DISCIPLINES = [
   {
     tag: 'Discipline 02',
     title: 'HYROX-Style',
-    href: '/festival#hyrox',
+    href: '/festival/hyrox',
     image: '/images/hyrox-arena.jpg',
     copy: 'Eight functional stations against the clock: sled push, sled pull, rowing, burpee broad jumps and the wall-ball finish. Run. Work. Repeat.',
     categories: ['Elite', 'Open', 'Corporate Teams'],

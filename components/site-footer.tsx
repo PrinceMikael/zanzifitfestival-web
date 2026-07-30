@@ -11,8 +11,8 @@ const COLUMNS = [
     links: [
       { href: '/festival', label: 'The Festival' },
       { href: '/register', label: 'Register' },
-      { href: '/festival#cycling', label: 'Road Cycling' },
-      { href: '/festival#hyrox', label: 'HYROX-Style' },
+      { href: '/festival/cycling', label: 'Road Cycling' },
+      { href: '/festival/hyrox', label: 'HYROX-Style' },
     ],
   },
   {

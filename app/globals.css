@@ -52,6 +52,8 @@
   --font-display: var(--font-fraunces);
   --font-utility: var(--font-ibm-plex-mono);
   --font-body: var(--font-source-serif);
+  --font-clash-display: var(--font-clash-display);
+  --font-ibm-plex-sans: var(--font-ibm-plex-sans);
 }
 
 /* Light theme — remaps the semantic (shadcn-style) tokens that
@@ -149,6 +151,12 @@
   .font-utility {
     font-family: var(--font-utility);
     font-feature-settings: 'tnum' 1;
+  }
+  .font-hero-title {
+    font-family: var(--font-clash-display), var(--font-display), ui-serif, Georgia, serif;
+  }
+  .font-hero-body {
+    font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
   }
   /* Condensed technical eyebrow / label */
   .eyebrow {

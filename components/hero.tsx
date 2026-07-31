@@ -24,7 +24,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-surface-dark pt-16 lg:pt-20"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-surface-dark pt-16 lg:block lg:pt-0"
       aria-label="ZanziFit Festival hero"
     >
       {/* Layer 1 — Zanzibar aerial photograph (slowest) */}
@@ -48,9 +48,9 @@ export function Hero() {
       {/* Layer 3 — foreground content (fastest, sharpest) */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 will-change-transform sm:px-6 lg:px-8"
+        className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 will-change-transform sm:px-6 lg:px-8 lg:pb-20 lg:pt-[200px]"
       >
-        <div className="max-w-3xl">
+        <div className="max-w-3xl lg:max-w-none">
           <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
             <span className="eyebrow text-surface-dark-foreground/80">
@@ -58,13 +58,12 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-6 text-balance font-display text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[6.5rem]">
+          <h1 className="font-hero-title mt-6 text-balance text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[180px] lg:leading-[180px]">
             ZanziFit
-            <br />
-            <span className="text-amber">Festival</span>
+            <span className="block text-amber lg:mt-[25px]">Festival</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:text-xl">
+          <p className="font-hero-body mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:mt-10 lg:max-w-2xl lg:text-[32px] lg:font-normal lg:leading-relaxed">
             Where the ocean horizon meets the start line. A hybrid road-cycling
             and HYROX-style functional fitness festival on the coast of
             Zanzibar.

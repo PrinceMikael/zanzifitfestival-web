@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, IBM_Plex_Mono, Source_Serif_4 } from 'next/font/google'
+import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4 } from 'next/font/google'
+import localFont from 'next/font/local'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ThemeScript } from '@/components/theme-script'
@@ -19,9 +20,22 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ['400', '500', '600', '700'],
 })
 
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  variable: '--font-ibm-plex-sans',
+  weight: ['400', '500', '600'],
+})
+
 const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
   variable: '--font-source-serif',
+})
+
+const clashDisplay = localFont({
+  src: '../public/fonts/clash-display/ClashDisplay-Semibold.otf',
+  variable: '--font-clash-display',
+  weight: '600',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -61,7 +75,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${ibmPlexMono.variable} ${sourceSerif.variable} bg-background`}
+      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${sourceSerif.variable} ${clashDisplay.variable} bg-background`}
       suppressHydrationWarning
     >
       <body className="antialiased">

@@ -194,7 +194,7 @@ export default function ExperiencePage() {
         image={{ src: '/images/zanzibar-coast.png', alt: 'A traditional dhow sailing off the Zanzibar coast at golden hour' }}
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <SectionHeading title="An island shaped by centuries of trade." align="left" />
@@ -222,7 +222,7 @@ export default function ExperiencePage() {
       </section>
 
       <section id="things-to-do" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-6xl px-6 lg:px-36">
           <SectionHeading title="Beyond race day." />
           <RevealGroup className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {THINGS_TO_DO.map((item) => (
@@ -245,7 +245,7 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <SectionHeading title="A crossroads of the Indian Ocean." align="left" />
@@ -271,7 +271,7 @@ export default function ExperiencePage() {
       </section>
 
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-6xl px-6 lg:px-36">
           <SectionHeading title="Eat your way around the island." />
           <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2">
             {FOOD_HIGHLIGHTS.map((f) => (
@@ -301,7 +301,7 @@ export default function ExperiencePage() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
         <SectionHeading title="Plan your trip." />
         <RevealGroup as="ul" className="mt-8 grid gap-3 sm:grid-cols-2">
           {TRAVEL_INFO.map((i) => (

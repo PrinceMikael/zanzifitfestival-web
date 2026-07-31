@@ -36,8 +36,8 @@ export function PageHero({
         }}
       />
       <div
-        className={`relative mx-auto px-6 pb-16 pt-32 md:pb-24 md:pt-40 ${
-          image ? 'max-w-7xl grid gap-12 md:grid-cols-2 md:items-center' : 'max-w-3xl text-center'
+        className={`relative mx-auto px-6 pb-16 pt-32 md:pb-24 md:pt-40 lg:px-36 ${
+          image ? 'max-w-6xl grid gap-12 md:grid-cols-2 md:items-center' : 'max-w-3xl text-center'
         }`}
       >
         <motion.div

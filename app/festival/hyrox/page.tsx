@@ -84,7 +84,7 @@ export default function HyroxPage() {
         </div>
       </PageHero>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
         <SectionHeading title="Three ways to race it." />
         <RevealGroup className="mt-14 divide-y divide-border border-t border-border">
           {CATEGORIES.map((c) => (
@@ -97,7 +97,7 @@ export default function HyroxPage() {
       </section>
 
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-6xl px-6 lg:px-36">
           <SectionHeading title="The eight stations." intro="Each station is separated by a 1 km run, run in this order." />
           <RevealGroup className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {STATIONS.map((s, i) => (
@@ -116,7 +116,7 @@ export default function HyroxPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <SectionHeading title="On race day." align="left" />
@@ -156,7 +156,7 @@ export default function HyroxPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28 text-center">
+      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28 text-center">
         <SectionHeading
           title="Ready to line up?"
           align="center"

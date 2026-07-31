@@ -62,7 +62,7 @@ export default function LeadershipPage() {
         intro="ZanziFit's core team is the group of six who hold direct operating and governing responsibility for the festival, spanning event delivery, athlete and venue operations, and Zanzibari hospitality partnerships. Every decision on the festival's direction runs through this group."
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
         <SectionHeading title="Founder & governance." />
         <RevealGroup className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2">
           {LEADS.map((m) => (
@@ -86,7 +86,7 @@ export default function LeadershipPage() {
         </RevealGroup>
       </section>
 
-      <section className="mx-auto max-w-7xl border-t border-border px-6 py-20 md:py-28">
+      <section className="mx-auto max-w-6xl border-t border-border px-6 py-20 md:py-28 lg:px-36">
         <SectionHeading title="Operating team." />
         <RevealGroup className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m) => (

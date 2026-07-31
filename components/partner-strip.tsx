@@ -15,7 +15,7 @@ export function PartnerStrip({ partners = [] as Partner[] }: { partners?: Partne
 
   return (
     <section className="border-t border-border bg-surface-dark py-16 lg:py-20">
-      <Reveal className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Reveal className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-36">
         {hasPartners ? (
           <>
             <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">

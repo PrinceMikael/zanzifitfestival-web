@@ -42,7 +42,7 @@ const SOCIALS = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-ink">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-36 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <Image

@@ -18,7 +18,7 @@ export default function ContactPage() {
         title={<>Talk to the ZanziFit team.</>}
         intro="Race categories, travel logistics, or anything else about race weekend: message us directly and a member of our Zanzibar-based team will reply within two business days."
       />
-      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
             <SectionHeading title="We're based in Zanzibar." align="left" />

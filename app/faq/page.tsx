@@ -59,7 +59,7 @@ export default function FaqPage() {
         title={<>Everything before the start line.</>}
         intro="Travel, visas, accommodation and what to expect as a spectator: the practical details for race weekend."
       />
-      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <FaqAccordion groups={FAQ_GROUPS} />
         <Reveal delay={0.15} className="mx-auto mt-16 max-w-3xl border-t border-border pt-10 text-center">
           <p className="text-muted-foreground">Still have questions?</p>

@@ -48,7 +48,7 @@ export function Hero() {
       {/* Layer 3 — foreground content (fastest, sharpest) */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className="relative z-10 mx-auto w-full max-w-6xl px-4 py-16 will-change-transform sm:px-6 lg:px-36"
+        className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 will-change-transform sm:px-6 lg:px-8"
       >
         <div className="max-w-3xl">
           <div className="flex items-center gap-3">

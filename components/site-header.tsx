@@ -100,7 +100,7 @@ export function SiteHeader() {
         />
       </div>
 
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-36">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-8">
         <Link href="/" className="group flex items-center gap-3" aria-label="ZanziFit Festival home">
           <Image
             src="/zfit-logo.svg"
@@ -246,7 +246,7 @@ export function SiteHeader() {
       {/* Mobile menu */}
       {open && (
         <div className="border-t border-border bg-background/95 backdrop-blur-md lg:hidden">
-          <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+          <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
             <div className="flex items-center gap-2">
               <Chevrons count={3} className="text-amber" animate />
               <span className="font-display text-2xl font-semibold text-foreground">
@@ -254,7 +254,7 @@ export function SiteHeader() {
               </span>
             </div>
           </div>
-          <nav className="mx-auto flex max-w-6xl flex-col px-4 py-4 sm:px-6" aria-label="Mobile">
+          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6" aria-label="Mobile">
             {MOBILE_NAV.map((item) => (
               <div key={item.href} className="border-b border-border/60">
                 <Link

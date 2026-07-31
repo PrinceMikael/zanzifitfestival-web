@@ -88,7 +88,7 @@ export default function CyclingPage() {
         </div>
       </PageHero>
 
-      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <SectionHeading title="Three distances, one coastline." />
         <RevealGroup className="mt-14 divide-y divide-border border-t border-border">
           {CATEGORIES.map((c) => (
@@ -101,7 +101,7 @@ export default function CyclingPage() {
       </section>
 
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6 lg:px-36">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <Reveal className="relative aspect-4/3 overflow-hidden rounded-lg border border-border md:order-2">
               <Image
@@ -127,7 +127,7 @@ export default function CyclingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <SectionHeading title="On race day." intro="What to expect from the start line to the finish." />
         <RevealGroup as="ul" className="mt-10 grid gap-3 sm:grid-cols-2">
           {RACE_DAY.map((item) => (
@@ -154,7 +154,7 @@ export default function CyclingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 lg:px-36 py-20 md:py-28 text-center">
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28 text-center">
         <SectionHeading
           title="Ready to line up?"
           align="center"

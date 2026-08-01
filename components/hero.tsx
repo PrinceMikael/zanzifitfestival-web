@@ -57,10 +57,14 @@ export function Hero() {
         />
       </div>
 
-      {/* Content — constrained to the 144px safe zone */}
+      {/* Content — constrained to the 144px safe zone. Anchored from the
+          top (not vertically centered) so the full stack — title through
+          buttons — never gets pushed below the fold on shorter viewports;
+          centering a block this tall clipped the countdown/buttons on
+          common laptop screen heights. */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className="relative z-10 flex w-full flex-col justify-center py-12 will-change-transform lg:w-[56%] lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
+        className="relative z-10 w-full py-12 will-change-transform lg:w-[56%] lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
       >
         <div className="lg:pt-24">
           <div className="flex items-center gap-3">
@@ -71,23 +75,23 @@ export function Hero() {
           </div>
 
           {/* pt units mirror the Photoshop spec's native units: 135pt = 180px, 24pt = 32px */}
-          <h1 className="font-hero-title mt-6 text-balance text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[135pt]">
+          <h1 className="font-hero-title mt-6 text-balance text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[min(135pt,9vw)]">
             ZanziFit
             <span className="block text-amber lg:mt-[25px]">Festival</span>
           </h1>
 
-          <p className="font-hero-body mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:mt-10 lg:text-[24pt] lg:font-normal">
+          <p className="font-hero-body mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:mt-6 lg:text-[24pt] lg:font-normal">
             Where the ocean horizon meets the start line. A hybrid road-cycling
             and HYROX-style functional fitness festival on the coast of
             Zanzibar.
           </p>
 
-          <div className="mt-8 lg:mt-[40px]">
+          <div className="mt-8 lg:mt-8">
             <p className="eyebrow mb-3 text-surface-dark-foreground/55">Countdown to race day</p>
             <Countdown />
           </div>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-8">
             <Link
               href="/register"
               className="group inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"

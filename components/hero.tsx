@@ -36,7 +36,7 @@ export function Hero() {
       {/* Left column — content, constrained to the 144px safe zone */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className={`relative z-10 flex w-full flex-col justify-center py-12 will-change-transform lg:w-[56%] lg:py-0 lg:pl-[144px] lg:pr-12 ${HERO_SAFE_ZONE_PADDING}`}
+        className={`relative z-10 flex w-full flex-col justify-center py-12 will-change-transform lg:w-[56%] lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12`}
       >
         <div className="lg:pt-[200px]">
           <div className="flex items-center gap-3">

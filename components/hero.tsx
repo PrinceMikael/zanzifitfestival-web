@@ -30,33 +30,15 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-surface-dark pt-16 lg:block lg:pt-0"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-surface-dark pt-16 lg:flex-row lg:items-stretch lg:pt-0"
       aria-label="ZanziFit Festival hero"
     >
-      {/* Layer 1 — Zanzibar aerial photograph (slowest) */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0 will-change-transform">
-        <Image
-          src="/images/zanzibar-hero.jpg"
-          alt="Aerial view of Stone Town's coastline in Zanzibar at golden hour, with dhow boats along the beach"
-          fill
-          priority
-          sizes="100vw"
-          className="scale-[1.08] object-cover object-[65%_60%]"
-        />
-      </motion.div>
-
-      {/* Gradient scrim for text legibility — tuned to keep the photograph
-          visible; strongest low and left where the text sits, clear
-          elsewhere so the destination is still the star of the frame. */}
-      <div className="absolute inset-0 bg-linear-to-t from-surface-dark/95 via-surface-dark/45 to-transparent" />
-      <div className="absolute inset-0 bg-linear-to-r from-surface-dark/65 via-surface-dark/15 to-transparent" />
-
-      {/* Layer 3 — foreground content (fastest, sharpest) */}
+      {/* Left column — content, constrained to the 144px safe zone */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 will-change-transform sm:px-6 lg:px-8 lg:pb-20 lg:pt-[200px]"
+        className={`relative z-10 flex w-full flex-col justify-center py-12 will-change-transform lg:w-[56%] lg:py-0 lg:pl-[144px] lg:pr-12 ${HERO_SAFE_ZONE_PADDING}`}
       >
-        <div className="max-w-3xl lg:max-w-none">
+        <div className="lg:pt-[200px]">
           <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
             <span className="eyebrow text-surface-dark-foreground/80">
@@ -64,18 +46,18 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="font-hero-title mt-6 text-balance text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[180px] lg:leading-[180px]">
+          <h1 className="font-hero-title mt-6 text-balance text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[135pt] lg:leading-[0.95]">
             ZanziFit
             <span className="block text-amber lg:mt-[25px]">Festival</span>
           </h1>
 
-          <p className="font-hero-body mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:mt-10 lg:max-w-2xl lg:text-[32px] lg:font-normal lg:leading-relaxed">
+          <p className="font-hero-body mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:mt-10 lg:max-w-xl lg:text-[24pt] lg:font-normal lg:leading-relaxed">
             Where the ocean horizon meets the start line. A hybrid road-cycling
             and HYROX-style functional fitness festival on the coast of
             Zanzibar.
           </p>
 
-          <div className="mt-8">
+          <div className="mt-8 lg:mt-[40px]">
             <p className="eyebrow mb-3 text-surface-dark-foreground/55">Countdown to race day</p>
             <Countdown />
           </div>
@@ -98,8 +80,25 @@ export function Hero() {
         </div>
       </motion.div>
 
+      {/* Right column — photo panel, bleeds to the viewport edge */}
+      <motion.div
+        style={{ y: bgY }}
+        className="relative min-h-[45vh] w-full flex-1 overflow-hidden will-change-transform lg:min-h-0 lg:w-[44%]"
+      >
+        <Image
+          src="/images/hero-battle-ropes.jpg"
+          alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 44vw"
+          className="object-cover object-[50%_25%]"
+        />
+        {/* Scrim so the panel reads as part of the dark hero, not a jarring photo cutout */}
+        <div className="absolute inset-0 bg-linear-to-l from-transparent via-transparent to-surface-dark/30 lg:bg-linear-to-r lg:from-surface-dark/25 lg:via-transparent lg:to-transparent" />
+      </motion.div>
+
       {/* Scroll cue */}
-      <div className="absolute inset-x-0 bottom-6 z-10 flex justify-center">
+      <div className="absolute inset-x-0 bottom-6 z-10 hidden justify-center lg:flex">
         <div className="flex rotate-90 items-center gap-1 font-utility text-[0.65rem] uppercase tracking-[0.3em] text-surface-dark-foreground/45">
           <span className="-rotate-90">Scroll</span>
           <Chevrons count={3} className="text-amber" animate />

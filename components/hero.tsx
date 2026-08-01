@@ -7,12 +7,6 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion
 import { Chevrons } from '@/components/chevrons'
 import { Countdown } from '@/components/countdown'
 
-// Hero-scoped content grid: 144px safe-zone margins against a 1440px canvas
-// (1152px content width). Scoped to this component only — other pages keep
-// their existing max-w-7xl containers. Scales down below the 1440px design
-// width so content doesn't crush on smaller viewports.
-const HERO_SAFE_ZONE_PADDING = 'px-6 sm:px-10 lg:px-[144px]'
-
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
   const reduce = useReducedMotion()
@@ -46,12 +40,13 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="font-hero-title mt-6 text-balance text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[135pt] lg:leading-[0.95]">
+          {/* pt units mirror the Photoshop spec's native units: 135pt = 180px, 24pt = 32px */}
+          <h1 className="font-hero-title mt-6 text-balance text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[135pt]">
             ZanziFit
             <span className="block text-amber lg:mt-[25px]">Festival</span>
           </h1>
 
-          <p className="font-hero-body mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:mt-10 lg:max-w-xl lg:text-[24pt] lg:font-normal lg:leading-relaxed">
+          <p className="font-hero-body mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:mt-10 lg:text-[24pt] lg:font-normal">
             Where the ocean horizon meets the start line. A hybrid road-cycling
             and HYROX-style functional fitness festival on the coast of
             Zanzibar.

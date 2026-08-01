@@ -75,23 +75,22 @@ export function Hero() {
           </div>
 
           {/* pt units mirror the Photoshop spec's native units: 135pt = 180px, 24pt = 32px */}
-          <h1 className="font-hero-title mt-6 text-balance text-[3.35rem] font-semibold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[min(135pt,9vw)]">
+          <h1 className="font-hero-title mt-4 text-balance text-[3.35rem] font-semibold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[min(135pt,8vw)]">
             ZanziFit
-            <span className="block text-amber lg:mt-[25px]">Festival</span>
+            <span className="block text-amber lg:mt-1">Festival</span>
           </h1>
 
-          <p className="font-hero-body mt-6 max-w-xl text-pretty text-lg leading-relaxed text-surface-dark-foreground/75 lg:mt-6 lg:text-[24pt] lg:font-normal">
-            Where the ocean horizon meets the start line. A hybrid road-cycling
-            and HYROX-style functional fitness festival on the coast of
-            Zanzibar.
+          <p className="font-hero-body mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[24pt] lg:font-normal lg:leading-[1.25]">
+            Where the ocean horizon meets the start line.
+            <br className="hidden lg:block" /> Hybrid road-cycling and HYROX-style fitness on the coast of Zanzibar.
           </p>
 
-          <div className="mt-8 lg:mt-8">
+          <div className="mt-6 lg:mt-6">
             <p className="eyebrow mb-3 text-surface-dark-foreground/55">Countdown to race day</p>
             <Countdown />
           </div>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-8">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-6">
             <Link
               href="/register"
               className="group inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"

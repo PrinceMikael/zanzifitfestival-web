@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { Chevrons } from '@/components/chevrons'
 import { Countdown } from '@/components/countdown'
@@ -15,7 +16,8 @@ export function Hero() {
     offset: ['start start', 'end start'],
   })
 
-  // Depth layer moves at a different rate. Disabled for reduced-motion.
+  // Depth layers move at different rates. Disabled for reduced-motion.
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '18%'])
   const fgY = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '60%'])
   const fgOpacity = useTransform(scrollYProgress, [0, 0.7], [1, reduce ? 1 : 0])
 
@@ -25,6 +27,26 @@ export function Hero() {
       className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black"
       aria-label="ZanziFit Festival hero"
     >
+      {/* Full-bleed background photo. Unlike the previous cutout asset,
+          this is a genuine wide (16:9-ish) photo with the subject already
+          positioned right-of-center and dark on the left — suited to a
+          true background treatment with text over it. */}
+      <motion.div style={{ y: bgY }} className="absolute inset-0 will-change-transform">
+        <Image
+          src="/images/hero-battle-ropes-bg.webp"
+          alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[65%_30%]"
+        />
+      </motion.div>
+
+      {/* Scrim — strongest low and left where the text sits, so the photo
+          stays visible on the right without fighting text legibility. */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/20" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/30 to-transparent" />
+
       {/* Content — constrained to the 144px safe zone. Anchored from the
           top (not vertically centered) so the full stack — title through
           buttons — never gets pushed below the fold on shorter viewports;

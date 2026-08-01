@@ -24,15 +24,45 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-surface-dark pt-16 lg:flex-row lg:items-stretch lg:pt-0"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black pt-16 lg:pt-0"
       aria-label="ZanziFit Festival hero"
     >
-      {/* Left column — content, constrained to the 144px safe zone */}
+      {/* Foreground cutout — the athlete sits directly on the black
+          background (no bordered panel), positioned to the right per
+          the Photoshop layout, cropped/masked in the source PNG itself. */}
+      <motion.div
+        style={{ y: bgY }}
+        className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[52%] will-change-transform lg:block"
+      >
+        <Image
+          src="/images/hero-battle-ropes-cutout.png"
+          alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
+          fill
+          priority
+          sizes="52vw"
+          className="object-cover object-top"
+        />
+      </motion.div>
+
+      {/* Mobile/tablet — same cutout, shown full-width above the content
+          since there's no side column to bleed into below lg. */}
+      <div className="relative h-[45vh] w-full lg:hidden">
+        <Image
+          src="/images/hero-battle-ropes-cutout.png"
+          alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top"
+        />
+      </div>
+
+      {/* Content — constrained to the 144px safe zone */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className={`relative z-10 flex w-full flex-col justify-center py-12 will-change-transform lg:w-[56%] lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12`}
+        className="relative z-10 flex w-full flex-col justify-center py-12 will-change-transform lg:w-[56%] lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
       >
-        <div className="lg:pt-[200px]">
+        <div className="lg:pt-24">
           <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
             <span className="eyebrow text-surface-dark-foreground/80">
@@ -73,23 +103,6 @@ export function Hero() {
             </Link>
           </div>
         </div>
-      </motion.div>
-
-      {/* Right column — photo panel, bleeds to the viewport edge */}
-      <motion.div
-        style={{ y: bgY }}
-        className="relative min-h-[45vh] w-full flex-1 overflow-hidden will-change-transform lg:min-h-0 lg:w-[44%]"
-      >
-        <Image
-          src="/images/hero-battle-ropes.jpg"
-          alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 44vw"
-          className="object-cover object-[50%_25%]"
-        />
-        {/* Scrim so the panel reads as part of the dark hero, not a jarring photo cutout */}
-        <div className="absolute inset-0 bg-linear-to-l from-transparent via-transparent to-surface-dark/30 lg:bg-linear-to-r lg:from-surface-dark/25 lg:via-transparent lg:to-transparent" />
       </motion.div>
 
       {/* Scroll cue */}

@@ -24,38 +24,31 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black pt-16 lg:pt-0"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black"
       aria-label="ZanziFit Festival hero"
     >
       {/* Foreground cutout — the athlete sits directly on the black
-          background (no bordered panel), positioned to the right per
-          the Photoshop layout, cropped/masked in the source PNG itself. */}
+          background (no bordered panel/section), positioned to the right
+          per the Photoshop layout on desktop, and as a full-width backdrop
+          behind the top of the content on mobile — a background layer at
+          every breakpoint, never its own boxed section. */}
       <motion.div
         style={{ y: bgY }}
-        className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[52%] will-change-transform lg:block"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[48vh] w-full will-change-transform lg:inset-y-0 lg:right-0 lg:left-auto lg:h-auto lg:w-[52%]"
       >
         <Image
           src="/images/hero-battle-ropes-cutout.png"
           alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
           fill
           priority
-          sizes="52vw"
+          sizes="(max-width: 1024px) 100vw, 52vw"
           className="object-cover object-top"
         />
+        {/* Fade the photo into the black background at its bottom edge on
+            mobile, so the text below reads as one continuous surface
+            rather than a hard section cut. */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-b from-transparent to-black lg:hidden" />
       </motion.div>
-
-      {/* Mobile/tablet — same cutout, shown full-width above the content
-          since there's no side column to bleed into below lg. */}
-      <div className="relative h-[45vh] w-full lg:hidden">
-        <Image
-          src="/images/hero-battle-ropes-cutout.png"
-          alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-top"
-        />
-      </div>
 
       {/* Content — constrained to the 144px safe zone. Anchored from the
           top (not vertically centered) so the full stack — title through
@@ -64,9 +57,9 @@ export function Hero() {
           common laptop screen heights. */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className="relative z-10 w-full py-12 will-change-transform lg:w-[56%] lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
+        className="relative z-10 w-full pb-12 will-change-transform lg:w-[56%] lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
       >
-        <div className="lg:pt-24">
+        <div className="pt-[calc(48vh-1.5rem)] lg:pt-24">
           <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
             <span className="eyebrow text-surface-dark-foreground/80">

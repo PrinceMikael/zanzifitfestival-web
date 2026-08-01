@@ -27,27 +27,26 @@ export function Hero() {
       className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black"
       aria-label="ZanziFit Festival hero"
     >
-      {/* Foreground cutout — the athlete sits directly on the black
-          background (no bordered panel/section), positioned to the right
-          per the Photoshop layout on desktop, and as a full-width backdrop
-          behind the top of the content on mobile — a background layer at
-          every breakpoint, never its own boxed section. */}
+      {/* Photo panel — the source asset (verified via pixel inspection) is
+          a rectangular photo with a stylized torn edge cut into its left
+          and bottom only; the gym background itself is fully opaque, so
+          it reads as a deliberate photo element rather than a true
+          background wash. Kept right-aligned at its native ~0.78:1
+          aspect ratio on every breakpoint so the torn edge is always the
+          visible seam against the black, instead of being stretched
+          full-width and cropped into a hard rectangle. */}
       <motion.div
         style={{ y: bgY }}
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[48vh] w-full will-change-transform lg:inset-y-0 lg:right-0 lg:left-auto lg:h-auto lg:w-[52%]"
+        className="pointer-events-none absolute right-0 top-0 z-0 aspect-865/1110 h-[48vh] w-auto will-change-transform lg:inset-y-0 lg:h-auto lg:w-[44%]"
       >
         <Image
           src="/images/hero-battle-ropes-cutout.png"
           alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
           fill
           priority
-          sizes="(max-width: 1024px) 100vw, 52vw"
+          sizes="(max-width: 1024px) 48vh, 44vw"
           className="object-cover object-top"
         />
-        {/* Fade the photo into the black background at its bottom edge on
-            mobile, so the text below reads as one continuous surface
-            rather than a hard section cut. */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-b from-transparent to-black lg:hidden" />
       </motion.div>
 
       {/* Content — constrained to the 144px safe zone. Anchored from the

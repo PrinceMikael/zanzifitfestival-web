@@ -2,7 +2,6 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { Chevrons } from '@/components/chevrons'
 import { Countdown } from '@/components/countdown'
@@ -16,8 +15,7 @@ export function Hero() {
     offset: ['start start', 'end start'],
   })
 
-  // Depth layers move at different rates. Disabled for reduced-motion.
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '18%'])
+  // Depth layer moves at a different rate. Disabled for reduced-motion.
   const fgY = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '60%'])
   const fgOpacity = useTransform(scrollYProgress, [0, 0.7], [1, reduce ? 1 : 0])
 
@@ -27,28 +25,6 @@ export function Hero() {
       className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black"
       aria-label="ZanziFit Festival hero"
     >
-      {/* Photo panel — the source asset (verified via pixel inspection) is
-          a rectangular photo with a stylized torn edge cut into its left
-          and bottom only; the gym background itself is fully opaque, so
-          it reads as a deliberate photo element rather than a true
-          background wash. Kept right-aligned at its native ~0.78:1
-          aspect ratio on every breakpoint so the torn edge is always the
-          visible seam against the black, instead of being stretched
-          full-width and cropped into a hard rectangle. */}
-      <motion.div
-        style={{ y: bgY }}
-        className="pointer-events-none absolute right-0 top-0 z-0 aspect-865/1110 h-[48vh] w-auto will-change-transform lg:inset-y-0 lg:h-auto lg:w-[44%]"
-      >
-        <Image
-          src="/images/hero-battle-ropes-cutout.png"
-          alt="A ZanziFit athlete mid-effort on battle ropes during a HYROX-style functional fitness session"
-          fill
-          priority
-          sizes="(max-width: 1024px) 48vh, 44vw"
-          className="object-cover object-top"
-        />
-      </motion.div>
-
       {/* Content — constrained to the 144px safe zone. Anchored from the
           top (not vertically centered) so the full stack — title through
           buttons — never gets pushed below the fold on shorter viewports;
@@ -56,9 +32,9 @@ export function Hero() {
           common laptop screen heights. */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className="relative z-10 w-full pb-12 will-change-transform lg:w-[56%] lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
+        className="relative z-10 w-full pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
       >
-        <div className="pt-[calc(48vh-1.5rem)] lg:pt-24">
+        <div className="pt-16 lg:pt-24">
           <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
             <span className="eyebrow text-surface-dark-foreground/80">
@@ -73,8 +49,8 @@ export function Hero() {
           </h1>
 
           <p className="font-hero-body mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[24pt] lg:font-normal lg:leading-[1.25]">
-            Where the ocean horizon meets the start line.
-            <br className="hidden lg:block" /> Hybrid road-cycling and HYROX-style fitness on the coast of Zanzibar.
+            Where the ocean horizon meets the start line. Hybrid road-cycling
+            and HYROX-style fitness on the coast of Zanzibar.
           </p>
 
           <div className="mt-6 lg:mt-6">

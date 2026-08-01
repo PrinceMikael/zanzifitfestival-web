@@ -7,6 +7,12 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion
 import { Chevrons } from '@/components/chevrons'
 import { Countdown } from '@/components/countdown'
 
+// Hero-scoped content grid: 144px safe-zone margins against a 1440px canvas
+// (1152px content width). Scoped to this component only — other pages keep
+// their existing max-w-7xl containers. Scales down below the 1440px design
+// width so content doesn't crush on smaller viewports.
+const HERO_SAFE_ZONE_PADDING = 'px-6 sm:px-10 lg:px-[144px]'
+
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
   const reduce = useReducedMotion()

@@ -10,9 +10,9 @@
    ================================================================ */
 :root {
   /* Raw brand palette */
-  --ink: #0b0e12; /* near-black w/ blue undertone */
+  --ink: #000000; /* pure black */
   --bone: #ede7d8; /* light reversed sections */
-  --amber: #dfa23b; /* primary accent */
+  --amber: #f2a944; /* primary accent */
   --deep-teal: #0e4f4c; /* ocean / luxury register */
   --ember: #c64a2c; /* live / urgent moments ONLY */
 

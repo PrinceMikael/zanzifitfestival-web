@@ -95,7 +95,7 @@ export function SiteHeader() {
       {/* Chevron scroll-progress band — the ">>>" motif carried into the chrome itself */}
       <div className="absolute inset-x-0 bottom-0 h-[3px] bg-border/60">
         <div
-          className="h-full bg-amber shadow-[0_0_12px_rgba(223,162,59,0.65)] transition-[width] duration-150"
+          className="h-full bg-amber shadow-[0_0_12px_rgba(242,169,68,0.65)] transition-[width] duration-150"
           style={{ width: `${Math.max(progress * 100, 2)}%` }}
         />
       </div>
@@ -226,7 +226,7 @@ export function SiteHeader() {
           <ThemeToggle />
           <Link
             href="/register"
-            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm bg-amber px-5 py-2.5 font-utility text-[0.78rem] font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-[0_0_0_1px_rgba(223,162,59,0.4)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(223,162,59,0.7)] sm:inline-flex"
+            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm bg-amber px-5 py-2.5 font-utility text-[0.78rem] font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-[0_0_0_1px_rgba(242,169,68,0.4)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(242,169,68,0.7)] sm:inline-flex"
           >
             Join Waitlist
             <Chevrons count={3} className="text-primary-foreground/80" animate />

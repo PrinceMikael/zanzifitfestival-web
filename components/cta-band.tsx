@@ -9,7 +9,7 @@ export function CtaBand() {
         className="pointer-events-none absolute -right-24 top-1/2 h-[40rem] w-[40rem] -translate-y-1/2 rounded-full opacity-[0.12] blur-3xl"
         style={{
           background:
-            'radial-gradient(circle, rgba(223,162,59,0.9) 0%, rgba(223,162,59,0) 70%)',
+            'radial-gradient(circle, rgba(242,169,68,0.9) 0%, rgba(242,169,68,0) 70%)',
         }}
         aria-hidden="true"
       />

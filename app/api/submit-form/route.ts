@@ -4,8 +4,8 @@ import { isRequired, isValidEmail } from '@/lib/validation'
 
 export const runtime = 'nodejs'
 
-const TO_ADDRESS = 'info@zanzifit.com'
-const FROM_ADDRESS = 'ZanziFit Festival <onboarding@resend.dev>'
+const TO_ADDRESS = 'info@zanzifitfestival.com'
+const FROM_ADDRESS = 'ZanziFit Festival <noreply@zanzifitfestival.com>'
 
 type RegisterPayload = {
   kind: 'register'

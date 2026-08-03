@@ -53,71 +53,43 @@ export function Hero() {
           centering a block this tall clipped the countdown/buttons on
           common laptop screen heights. */}
       <motion.div
-        style={{ y: fgY, opacity: fgOpacity, ['--hero-scale' as string]: 'clamp(1, 0.62vw, 1.85)' }}
-        className="relative z-10 w-full pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:pl-[max(144px,7.5vw)] lg:pr-12"
+        style={{ y: fgY, opacity: fgOpacity }}
+        className="relative z-10 w-full pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
       >
-        <div
-          className="pt-24 lg:pt-36"
-          style={{ paddingTop: 'calc(var(--hero-scale, 1) * 2.25rem)' }}
-        >
-          <div className="flex items-center gap-3" style={{ gap: 'calc(var(--hero-scale, 1) * 0.75rem)' }}>
+        <div className="pt-24 lg:pt-36">
+          <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
-            <span
-              className="eyebrow text-surface-dark-foreground/80"
-              style={{ fontSize: 'calc(var(--hero-scale, 1) * 0.72rem)' }}
-            >
+            <span className="eyebrow text-surface-dark-foreground/80">
               Zanzibar, Tanzania · 6-8 November 2026
             </span>
           </div>
 
-          <h1
-            className="font-hero-title mt-4 text-balance text-[3.38rem] font-semibold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(8.5rem,8.08vw,16rem)]"
-            style={{ marginTop: 'calc(var(--hero-scale, 1) * 1rem)' }}
-          >
+          <h1 className="font-hero-title mt-4 text-balance text-[3.38rem] font-semibold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
             ZanziFit
             <span className="block text-amber lg:mt-1">Festival</span>
           </h1>
 
-          <p
-            className="font-hero-body mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:max-w-[min(42vw,48rem)] lg:text-[clamp(1.5rem,1.4vw,2.25rem)] lg:font-normal lg:leading-[1.25]"
-            style={{ marginTop: 'calc(var(--hero-scale, 1) * 1rem)' }}
-          >
+          <p className="font-hero-body mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:font-normal lg:leading-tight">
             Where the ocean horizon meets the start line. Hybrid road-cycling
             and HYROX-style fitness on the coast of Zanzibar.
           </p>
 
-          <div className="lg:mt-6" style={{ marginTop: 'calc(var(--hero-scale, 1) * 1.5rem)' }}>
-            <p
-              className="eyebrow mb-3 text-surface-dark-foreground/55"
-              style={{ fontSize: 'calc(var(--hero-scale, 1) * 0.72rem)' }}
-            >
-              Countdown to race day
-            </p>
-            <Countdown style={{ ['--hero-scale' as string]: 'var(--hero-scale, 1)' }} scaled />
+          <div className="mt-6 lg:mt-6">
+            <p className="eyebrow mb-3 text-surface-dark-foreground/55">Countdown to race day</p>
+            <Countdown />
           </div>
 
-          <div
-            className="flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-6"
-            style={{ marginTop: 'calc(var(--hero-scale, 1) * 1.75rem)', gap: 'calc(var(--hero-scale, 1) * 0.75rem)' }}
-          >
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-6">
             <Link
               href="/register"
-              className="group inline-flex items-center justify-center gap-2 rounded-sm bg-amber font-utility font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"
-              style={{
-                padding: 'calc(var(--hero-scale, 1) * 1rem) calc(var(--hero-scale, 1) * 1.75rem)',
-                fontSize: 'calc(var(--hero-scale, 1) * 0.875rem)',
-              }}
+              className="group inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"
             >
               Join the Waitlist
               <Chevrons count={3} className="text-primary-foreground/80" animate />
             </Link>
             <Link
               href="/partnership"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-surface-dark-foreground/30 font-utility font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber"
-              style={{
-                padding: 'calc(var(--hero-scale, 1) * 1rem) calc(var(--hero-scale, 1) * 1.75rem)',
-                fontSize: 'calc(var(--hero-scale, 1) * 0.875rem)',
-              }}
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-surface-dark-foreground/30 px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber"
             >
               Become a Partner
             </Link>

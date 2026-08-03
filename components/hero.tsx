@@ -24,7 +24,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[85svh] flex-col overflow-hidden bg-black lg:min-h-[100svh]"
+      className="relative flex min-h-[500px] flex-col overflow-hidden bg-black lg:min-h-svh"
       aria-label="ZanziFit Festival hero"
     >
       {/* Full-bleed background photo. Unlike the previous cutout asset,

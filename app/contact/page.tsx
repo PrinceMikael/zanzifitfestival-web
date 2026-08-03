@@ -26,8 +26,8 @@ export default function ContactPage() {
               <div className="mt-8 space-y-3 text-sm text-muted-foreground">
                 <p className="flex items-center gap-3">
                   <Chevrons className="text-amber" count={1} />
-                  <a href="mailto:info@zanzifit.com" className="transition-colors hover:text-amber">
-                    info@zanzifit.com
+                  <a href="mailto:info@zanzifitfestival.com" className="transition-colors hover:text-amber">
+                    info@zanzifitfestival.com
                   </a>
                 </p>
                 <p className="flex items-center gap-3">

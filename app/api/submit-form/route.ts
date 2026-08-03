@@ -115,7 +115,7 @@ export async function POST(request: Request) {
   if (!apiKey) {
     console.error('RESEND_API_KEY is not configured; form submission was not sent.', payload)
     return NextResponse.json(
-      { error: 'This form is temporarily unavailable. Please email info@zanzifit.com directly.' },
+      { error: 'This form is temporarily unavailable. Please email info@zanzifitfestival.com directly.' },
       { status: 503 },
     )
   }
@@ -136,7 +136,7 @@ export async function POST(request: Request) {
   if (error) {
     console.error('Resend send failed:', error)
     return NextResponse.json(
-      { error: 'We could not send your submission. Please email info@zanzifit.com directly.' },
+      { error: 'We could not send your submission. Please email info@zanzifitfestival.com directly.' },
       { status: 502 },
     )
   }

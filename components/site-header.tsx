@@ -224,13 +224,75 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Link
-            href="/register"
-            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm bg-amber px-5 py-2.5 font-utility text-[0.78rem] font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-[0_0_0_1px_rgba(242,169,68,0.4)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-8px_rgba(242,169,68,0.7)] sm:inline-flex"
-          >
-            Join Waitlist
-            <Chevrons count={3} className="text-primary-foreground/80" animate />
-          </Link>
+          <style data-impeccable-css="9bc03082">{`
+            @scope ([data-impeccable-variant="1"]) {
+              :scope > a {
+                background: color-mix(in srgb, var(--amber) 22%, transparent);
+                backdrop-filter: blur(var(--p-blur, 12px));
+                -webkit-backdrop-filter: blur(var(--p-blur, 12px));
+                border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent);
+                border-radius: 999px;
+                color: var(--bone);
+                font-weight: 700;
+                box-shadow: none;
+              }
+            }
+            @scope ([data-impeccable-variant="2"]) {
+              :scope > a {
+                background: color-mix(in srgb, var(--bone) 14%, transparent);
+                backdrop-filter: blur(var(--p-blur, 16px));
+                -webkit-backdrop-filter: blur(var(--p-blur, 16px));
+                border: 1px solid color-mix(in srgb, var(--bone) 35%, transparent);
+                border-radius: 999px;
+                color: var(--bone);
+                font-weight: 700;
+                box-shadow: inset 0 1px 0 color-mix(in srgb, var(--bone) 25%, transparent);
+              }
+            }
+            @scope ([data-impeccable-variant="3"]) {
+              :scope > a {
+                background: color-mix(in srgb, var(--amber) 16%, transparent);
+                backdrop-filter: blur(var(--p-blur, 10px));
+                -webkit-backdrop-filter: blur(var(--p-blur, 10px));
+                border: 1px solid color-mix(in srgb, var(--amber) 60%, transparent);
+                border-radius: 999px;
+                color: var(--bone);
+                font-weight: 700;
+                transition: background 0.2s, border-color 0.2s, transform 0.2s;
+              }
+              :scope > a:hover {
+                background: color-mix(in srgb, var(--amber) 28%, transparent);
+                transform: translateY(-1px);
+              }
+            }
+          `}</style>
+          <div data-impeccable-variant="1" style={{ display: "none" }} data-impeccable-params='[{"id":"blur","kind":"range","min":4,"max":24,"step":1,"default":12,"label":"Blur"}]'>
+            <Link
+              href="/register"
+              className="group hidden items-center gap-2.5 whitespace-nowrap px-5 py-2.5 font-utility text-[0.78rem] uppercase tracking-[0.14em] transition-all hover:-translate-y-0.5 sm:inline-flex"
+            >
+              Join Waitlist
+              <Chevrons count={3} className="text-bone/80" animate />
+            </Link>
+          </div>
+          <div data-impeccable-variant="2" style={{ display: "none" }} data-impeccable-params='[{"id":"blur","kind":"range","min":4,"max":24,"step":1,"default":16,"label":"Blur"}]'>
+            <Link
+              href="/register"
+              className="group hidden items-center gap-2.5 whitespace-nowrap px-5 py-2.5 font-utility text-[0.78rem] uppercase tracking-[0.14em] transition-all hover:-translate-y-0.5 sm:inline-flex"
+            >
+              Join Waitlist
+              <Chevrons count={3} className="text-bone/80" animate />
+            </Link>
+          </div>
+          <div data-impeccable-variant="3" style={{ display: "none" }} data-impeccable-params='[{"id":"blur","kind":"range","min":4,"max":24,"step":1,"default":10,"label":"Blur"}]'>
+            <Link
+              href="/register"
+              className="group hidden items-center gap-2.5 whitespace-nowrap px-5 py-2.5 font-utility text-[0.78rem] uppercase tracking-[0.14em] sm:inline-flex"
+            >
+              Join Waitlist
+              <Chevrons count={3} className="text-bone/80" animate />
+            </Link>
+          </div>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

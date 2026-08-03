@@ -19,3 +19,10 @@ node_modules
 # Claude Code / Impeccable local tooling
 .claude/
 .impeccable/
+
+# Raw source photography (not referenced by the app; processed images live in public/images/)
+/Photos/
+/Zanz Pictures/
+
+# Full font family source (only the weight actually used ships from public/fonts/)
+/ClashDisplay/

@@ -64,8 +64,7 @@ export function Hero() {
             </span>
           </div>
 
-          {/* pt units mirror the Photoshop spec's native units: 135pt = 180px, 24pt = 32px */}
-          <h1 className="font-hero-title mt-4 text-balance text-[3.35rem] font-semibold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[min(135pt,8vw)]">
+          <h1 className="font-hero-title mt-4 text-balance text-[3.38rem] font-semibold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[min(136pt,8.08vw)]">
             ZanziFit
             <span className="block text-amber lg:mt-1">Festival</span>
           </h1>

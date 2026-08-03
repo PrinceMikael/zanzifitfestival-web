@@ -126,6 +126,13 @@
 
   --font-display: var(--font-display), ui-serif, Georgia, serif;
   --font-utility: var(--font-utility), ui-monospace, monospace;
+
+  /* Content container keeps growing past the old fixed 1280px cap so very
+     wide viewports (large monitors, zoomed-out browsers) don't strand
+     content in a fixed-width column with a large empty gap on both sides.
+     Scales smoothly with viewport width, capped at 1600px so line length
+     stays readable on ultrawide screens. */
+  --container-7xl: clamp(80rem, 66rem + 10vw, 100rem);
 }
 
 @layer base {

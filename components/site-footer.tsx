@@ -112,10 +112,10 @@ export function SiteFooter() {
               ))}
             </div>
             <a
-              href="mailto:info@zanzifit.com"
+              href="mailto:info@zanzifitfestival.com"
               className="font-utility text-xs uppercase tracking-[0.16em] text-bone/60 transition-colors hover:text-amber"
             >
-              info@zanzifit.com
+              info@zanzifitfestival.com
             </a>
           </div>
         </div>

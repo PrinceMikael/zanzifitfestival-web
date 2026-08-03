@@ -269,8 +269,8 @@ export default function AccommodationPage() {
         <Reveal delay={0.15} className="mt-14 space-y-3 border-t border-border pt-10 text-sm text-muted-foreground">
           <p className="flex items-center gap-3">
             <Chevrons className="text-amber" count={1} />
-            <a href="mailto:info@zanzifit.com" className="transition-colors hover:text-amber">
-              info@zanzifit.com
+            <a href="mailto:info@zanzifitfestival.com" className="transition-colors hover:text-amber">
+              info@zanzifitfestival.com
             </a>
           </p>
           <p className="flex items-center gap-3">

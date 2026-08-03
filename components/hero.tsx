@@ -54,7 +54,7 @@ export function Hero() {
           common laptop screen heights. */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className="relative z-10 w-full pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
+        className="relative z-10 w-full pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:pl-[max(144px,7.5vw)] lg:pr-12"
       >
         <div className="pt-16 lg:pt-24">
           <div className="flex items-center gap-3">
@@ -64,12 +64,12 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="font-hero-title mt-4 text-balance text-[3.38rem] font-semibold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[min(136pt,8.08vw)]">
+          <h1 className="font-hero-title mt-4 text-balance text-[3.38rem] font-semibold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(8.5rem,8.08vw,16rem)]">
             ZanziFit
             <span className="block text-amber lg:mt-1">Festival</span>
           </h1>
 
-          <p className="font-hero-body mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[24pt] lg:font-normal lg:leading-[1.25]">
+          <p className="font-hero-body mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[clamp(1.5rem,1.4vw,2.25rem)] lg:font-normal lg:leading-[1.25]">
             Where the ocean horizon meets the start line. Hybrid road-cycling
             and HYROX-style fitness on the coast of Zanzibar.
           </p>

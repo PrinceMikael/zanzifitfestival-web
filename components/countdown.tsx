@@ -17,7 +17,15 @@ function diff() {
   return { days, hours, minutes, seconds }
 }
 
-export function Countdown({ className }: { className?: string }) {
+export function Countdown({
+  className,
+  style,
+  scaled,
+}: {
+  className?: string
+  style?: React.CSSProperties
+  scaled?: boolean
+}) {
   const [time, setTime] = useState<ReturnType<typeof diff> | null>(null)
 
   useEffect(() => {
@@ -36,18 +44,33 @@ export function Countdown({ className }: { className?: string }) {
   return (
     <div
       className={cn('flex items-stretch gap-2 sm:gap-3', className)}
+      style={scaled ? { gap: 'calc(var(--hero-scale, 1) * 0.5rem)', ...style } : style}
       role="timer"
       aria-label="Countdown to ZanziFit Festival"
     >
       {units.map((u) => (
         <div
           key={u.label}
-          className="flex min-w-[3.75rem] flex-col items-center rounded-sm border border-border bg-surface-dark/60 px-2 py-2.5 backdrop-blur-sm sm:min-w-[5rem] sm:px-4 sm:py-3"
+          className="flex min-w-[3.75rem] flex-col items-center rounded-sm border border-border bg-surface-dark/60 backdrop-blur-sm sm:min-w-[5rem]"
+          style={
+            scaled
+              ? {
+                  minWidth: 'calc(var(--hero-scale, 1) * 3.75rem)',
+                  padding: 'calc(var(--hero-scale, 1) * 0.5rem) calc(var(--hero-scale, 1) * 0.625rem)',
+                }
+              : undefined
+          }
         >
-          <span className="font-utility text-2xl font-semibold tabular-nums text-amber sm:text-4xl">
+          <span
+            className="font-utility text-2xl font-semibold tabular-nums text-amber sm:text-4xl"
+            style={scaled ? { fontSize: 'calc(var(--hero-scale, 1) * 1.5rem)' } : undefined}
+          >
             {u.value === undefined ? '––' : String(u.value).padStart(2, '0')}
           </span>
-          <span className="mt-1 font-utility text-[0.6rem] uppercase tracking-[0.2em] text-surface-dark-foreground/55 sm:text-[0.65rem]">
+          <span
+            className="mt-1 font-utility text-[0.6rem] uppercase tracking-[0.2em] text-surface-dark-foreground/55 sm:text-[0.65rem]"
+            style={scaled ? { fontSize: 'calc(var(--hero-scale, 1) * 0.6rem)' } : undefined}
+          >
             {u.label}
           </span>
         </div>

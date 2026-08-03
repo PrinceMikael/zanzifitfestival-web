@@ -54,6 +54,7 @@
   --font-body: var(--font-source-serif);
   --font-clash-display: var(--font-clash-display);
   --font-ibm-plex-sans: var(--font-ibm-plex-sans);
+  --font-syne: var(--font-syne);
 }
 
 /* Light theme — remaps the semantic (shadcn-style) tokens that
@@ -160,7 +161,7 @@
     font-feature-settings: 'tnum' 1;
   }
   .font-hero-title {
-    font-family: var(--font-clash-display), var(--font-display), ui-serif, Georgia, serif;
+    font-family: var(--font-syne), var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
   }
   .font-hero-body {
     font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;

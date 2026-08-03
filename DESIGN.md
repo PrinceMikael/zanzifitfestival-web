@@ -15,8 +15,8 @@ typography:
     lineHeight: 1.05
     letterSpacing: "-0.01em"
   hero-title:
-    fontFamily: "Clash Display, Fraunces, ui-serif, Georgia, serif"
-    fontWeight: 600
+    fontFamily: "Syne, Clash Display, ui-sans-serif, system-ui, sans-serif"
+    fontWeight: 700
     lineHeight: 0.88
     letterSpacing: "-0.02em"
   utility:
@@ -62,7 +62,7 @@ Confirmed visual rejections: no cream + serif + terracotta ("generic AI luxury")
 **Key Characteristics:**
 - Void-black ground with a single dominant accent (amber), used sparingly and always with intent.
 - Condensed, uppercase, wide-tracked utility type for every label, nav item, and button — the "timing board" register.
-- A high-contrast editorial display serif (Fraunces, with Clash Display escalating to hero scale) for headline moments — the "luxury" register.
+- A high-contrast editorial display serif (Fraunces) for section headline moments, paired with an expanded geometric sans (Syne) at hero scale — the "luxury" register.
 - The `>>>` chevron motif recurs everywhere as a literal directional/motion device (scroll cue, active-state marker, button trailing icon, mobile menu), never as static decoration.
 - Flat surfaces, sharp near-square corners, glow-style amber shadows in place of ambient drop shadows.
 
@@ -88,22 +88,23 @@ Void Black and Ember Amber carry the entire system; Deep Teal and true Ember red
 
 ## Typography
 
-**Display Font:** Fraunces (with Clash Display escalating to hero-scale headlines only)
+**Display Font:** Fraunces (section headlines) with Syne (expanded geometric sans, hero title only)
 **Body Font:** Source Serif 4 (reading copy) paired with IBM Plex Sans (hero/short-form copy)
 **Label/Mono Font:** IBM Plex Mono
 
-**Character:** The pairing is the brand tension made literal — Fraunces/Clash Display is the editorial, high-contrast "luxury" voice reserved for headline moments; IBM Plex Mono is the condensed technical "timing board" voice for every label, stat, and piece of chrome. They never substitute for each other.
+**Character:** The pairing is the brand tension made literal — Fraunces and Syne are the editorial, high-contrast "luxury" voice reserved for headline moments (Fraunces for section headings, Syne's expanded geometric bulk reserved for the single hero moment); IBM Plex Mono is the condensed technical "timing board" voice for every label, stat, and piece of chrome. They never substitute for each other.
 
 ### Hierarchy
-- **Hero Display** (600, `min(135pt, 8vw)` desktop / `3.35rem` mobile, line-height 0.88, tracking -0.02em): Clash Display, home hero title only. The single moment allowed to be the biggest thing on the page.
+- **Hero Display** (700, `clamp(6rem, 8.08vw, 10rem)` desktop / `3.38rem` mobile, line-height 0.88, tracking -0.02em): Syne, home hero title only. The single moment allowed to be the biggest thing on the page — an expanded geometric sans rather than the editorial serif, reserved exclusively for this one placement.
 - **Display** (600, `text-4xl`–`text-6xl` responsive, line-height 1.05, tracking -0.01em): Fraunces, section headings (`SectionHeading`, CTA band headline).
 - **Body** (400, `text-lg`, leading-relaxed): Source Serif 4, all reading copy; letter-spacing opened slightly (+0.006em) to compensate for its tighter default rhythm versus a grotesque sans.
-- **Hero Body** (400, `24pt` desktop / `text-lg` mobile, leading-snug/1.25): IBM Plex Sans, used only in the hero subhead where a sans reads cleaner over photography than the serif body face.
+- **Hero Body** (400, responsive `clamp(1.25rem, 1.4vw, 1.75rem)` desktop / `text-lg` mobile, leading-tight): IBM Plex Sans, used only in the hero subhead where a sans reads cleaner over photography than the serif body face.
 - **Label/Eyebrow** (500, `0.72rem`, tracking 0.22em, uppercase): IBM Plex Mono, the `.eyebrow` utility — dates, section kickers, countdown captions.
 - **Utility/Nav** (500–700, `0.78rem`–`0.82rem`, tracking 0.14em, uppercase): IBM Plex Mono, nav links, buttons, badges, menu items.
 
 ### Named Rules
-**The Two-Voice Rule.** Only Fraunces/Clash Display (editorial) and IBM Plex Mono (technical/label) carry typographic weight in the interface. Source Serif 4 and IBM Plex Sans exist purely as reading-copy workhorses and should never be asked to carry hierarchy or brand voice.
+**The Two-Voice Rule.** Only the editorial display faces (Fraunces for section headings, Syne exclusively for the hero title) and IBM Plex Mono (technical/label) carry typographic weight in the interface. Source Serif 4 and IBM Plex Sans exist purely as reading-copy workhorses and should never be asked to carry hierarchy or brand voice.
+**The One Hero Rule.** Syne is licensed to exactly one placement — the home hero title. Introducing it anywhere else (section headings, buttons, nav) would blur the "single biggest moment" signal it exists to create.
 
 ## Layout
 
@@ -157,6 +158,7 @@ Fixed header, transparent-over-black gradient at rest, solid blurred background 
 ### Don't:
 - **Don't** use Ember Red for anything that isn't genuinely urgent or live (countdown-closing, live results) — it is not a secondary accent.
 - **Don't** add ambient neutral drop shadows to buttons or content cards; depth comes from banding and amber glow, not lifted shadows (dropdown menus are the sole exception).
-- **Don't** let Source Serif 4 or IBM Plex Sans carry headline hierarchy — that's Fraunces/Clash Display's job only.
+- **Don't** let Source Serif 4 or IBM Plex Sans carry headline hierarchy — that's Fraunces (section) and Syne (hero title) territory only.
+- **Don't** use Syne anywhere but the home hero title — it's a one-placement typeface by design.
 - **Don't** reach for cream backgrounds, terracotta accents, or gold/foil treatments — these are explicitly rejected anti-references for this brand.
 - **Don't** center-anchor tall hero content; anchor from the top so the full stack survives short viewports.

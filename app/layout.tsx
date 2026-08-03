@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4 } from 'next/font/google'
+import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4, Syne } from 'next/font/google'
 import localFont from 'next/font/local'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -36,6 +36,12 @@ const clashDisplay = localFont({
   variable: '--font-clash-display',
   weight: '600',
   display: 'swap',
+})
+
+const syne = Syne({
+  subsets: ['latin'],
+  variable: '--font-syne',
+  weight: ['700', '800'],
 })
 
 export const metadata: Metadata = {
@@ -75,7 +81,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${sourceSerif.variable} ${clashDisplay.variable} bg-background`}
+      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${sourceSerif.variable} ${clashDisplay.variable} ${syne.variable} bg-background`}
       suppressHydrationWarning
     >
       <body className="antialiased">

@@ -60,52 +60,52 @@ export function Disciplines() {
 
                 <div
                   className={cn(
-                    'absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 sm:p-10',
+                    'absolute inset-x-0 bottom-0 flex flex-col gap-4 p-6 sm:p-10',
                     d.textAlign === 'right' && 'items-end text-right',
                   )}
                 >
-                  <div className="flex items-center gap-3">
-                    <h3 className="font-display text-3xl text-bone sm:text-4xl lg:text-5xl">
-                      {d.title}
-                    </h3>
-                    <ArrowUpRight className="size-6 shrink-0 text-bone/50 transition-colors group-hover:text-amber" />
-                  </div>
-                  <p className="max-w-md text-pretty leading-relaxed text-bone/80">
-                    {d.copy}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div
-                  className={cn(
-                    'flex flex-col gap-4 border-b border-border py-6 sm:flex-row sm:items-center sm:justify-between sm:py-8',
-                    d.textAlign === 'right' && 'sm:flex-row-reverse',
-                  )}
-                >
-                  <div className="flex flex-wrap gap-2">
-                    {d.categories.map((c) => (
-                      <span
-                        key={c}
-                        className="rounded-sm border border-border px-3 py-1.5 font-utility text-xs uppercase tracking-[0.12em] text-surface-dark-foreground/70"
-                      >
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className={cn('flex items-end gap-8', d.textAlign === 'right' && 'flex-row-reverse')}>
-                    <div className={d.textAlign === 'right' ? 'text-right' : undefined}>
-                      <div className="font-utility text-3xl font-semibold text-amber">
-                        {d.stat.value}
-                      </div>
-                      <div className="mt-1 font-utility text-xs uppercase tracking-[0.16em] text-surface-dark-foreground/50">
-                        {d.stat.label}
-                      </div>
+                  <div className={cn('flex flex-col gap-2', d.textAlign === 'right' && 'items-end')}>
+                    <div className="flex items-center gap-3">
+                      <h3 className="font-display text-3xl text-bone sm:text-4xl lg:text-5xl">
+                        {d.title}
+                      </h3>
+                      <ArrowUpRight className="size-6 shrink-0 text-bone/50 transition-colors group-hover:text-amber" />
                     </div>
-                    <span className="font-utility text-xs uppercase tracking-[0.16em] text-surface-dark-foreground/70 group-hover:text-amber">
-                      Explore format
-                    </span>
+                    <p className="max-w-md text-pretty leading-relaxed text-bone/80">
+                      {d.copy}
+                    </p>
+                  </div>
+
+                  <div
+                    className={cn(
+                      'flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-8',
+                      d.textAlign === 'right' && 'sm:flex-row-reverse',
+                    )}
+                  >
+                    <div className="flex flex-wrap gap-2">
+                      {d.categories.map((c) => (
+                        <span
+                          key={c}
+                          className="rounded-sm border border-bone/25 bg-ink/40 px-3 py-1.5 font-utility text-xs uppercase tracking-[0.12em] text-bone/80 backdrop-blur-sm"
+                        >
+                          {c}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className={cn('flex items-end gap-6', d.textAlign === 'right' && 'flex-row-reverse')}>
+                      <div className={d.textAlign === 'right' ? 'text-right' : undefined}>
+                        <div className="font-utility text-2xl font-semibold text-amber sm:text-3xl">
+                          {d.stat.value}
+                        </div>
+                        <div className="mt-1 font-utility text-xs uppercase tracking-[0.16em] text-bone/60">
+                          {d.stat.label}
+                        </div>
+                      </div>
+                      <span className="font-utility text-xs uppercase tracking-[0.16em] text-bone/80 transition-colors group-hover:text-amber">
+                        Explore format
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

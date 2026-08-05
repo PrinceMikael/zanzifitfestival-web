@@ -215,7 +215,7 @@ export function SiteHeader() {
           <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
             <div className="flex items-center gap-2">
               <Chevrons count={3} className="text-amber" animate />
-              <span className="font-display text-2xl font-semibold text-foreground">
+              <span className="font-utility text-lg font-semibold uppercase tracking-[0.1em] text-foreground">
                 Zanzibar <span className="text-amber">·</span> 6&ndash;8 Nov 2026
               </span>
             </div>

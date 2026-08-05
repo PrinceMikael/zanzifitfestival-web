@@ -69,7 +69,7 @@ export function Hero() {
             <span className="block text-amber lg:mt-1">Festival</span>
           </h1>
 
-          <p className="font-hero-body mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:font-normal lg:leading-tight">
+          <p className="font-body-athletic mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:font-normal lg:leading-tight">
             Where the ocean horizon meets the start line. Hybrid road-cycling
             and HYROX-style fitness on the coast of Zanzibar.
           </p>

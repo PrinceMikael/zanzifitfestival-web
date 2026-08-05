@@ -131,7 +131,7 @@ export function SiteHeader() {
             // always inverted to read light-on-black in the header.
             className="h-12 w-auto invert transition-transform duration-300 group-hover:scale-[1.03] lg:h-[4.5rem]"
           />
-          <span className="hidden flex-col border-l border-border/70 pl-3 leading-none sm:flex lg:hidden">
+          <span className="hidden flex-col border-l border-border/70 pl-3 leading-none sm:flex">
             <span className="font-clash-regular text-[0.68rem] uppercase tracking-[0.24em] text-amber">
               Zanzibar
             </span>

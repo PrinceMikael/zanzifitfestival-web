@@ -9,14 +9,14 @@ import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Chevrons } from '@/components/chevrons'
 
-// Four top-level decision points, each grounded in what the visitor is
-// actually deciding — no unlabeled catch-all bucket:
+// Five top-level decision points, each grounded in what the visitor is
+// actually deciding:
 //   About        -> who is behind this (story + the people)
 //   The Festival  -> what the competition is
 //   Experience    -> should I go, where do I stay
 //   Partnership   -> a named revenue persona, given real top-level scent
-// FAQ and Contact already live in the footer (Discover/Connect columns)
-// and don't need header real estate too.
+//   More          -> FAQ + Contact only (support/utility, not a catch-all —
+//                    Partnership/Leadership have their own homes above)
 const ABOUT_NAV = [{ href: '/leadership', label: 'Leadership' }]
 
 const FESTIVAL_NAV = [
@@ -25,6 +25,11 @@ const FESTIVAL_NAV = [
 ]
 
 const EXPERIENCE_NAV = [{ href: '/accommodation', label: 'Accommodation' }]
+
+const MORE_NAV = [
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact' },
+]
 
 const MOBILE_NAV = [
   { href: '/about', label: 'About', children: ABOUT_NAV },
@@ -40,10 +45,11 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [progress, setProgress] = useState(0)
   const [open, setOpen] = useState(false)
-  const [openMenu, setOpenMenu] = useState<'about' | 'festival' | 'experience' | null>(null)
+  const [openMenu, setOpenMenu] = useState<'about' | 'festival' | 'experience' | 'more' | null>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
   const festivalRef = useRef<HTMLDivElement>(null)
   const experienceRef = useRef<HTMLDivElement>(null)
+  const moreRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => {
@@ -64,7 +70,7 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (!openMenu) return
-    const refs = { about: aboutRef, festival: festivalRef, experience: experienceRef }
+    const refs = { about: aboutRef, festival: festivalRef, experience: experienceRef, more: moreRef }
     function onPointerDown(e: PointerEvent) {
       const ref = refs[openMenu as keyof typeof refs]
       if (ref.current && !ref.current.contains(e.target as Node)) setOpenMenu(null)
@@ -94,6 +100,7 @@ export function SiteHeader() {
   const aboutActive = pathname === '/about' || pathname === '/leadership'
   const festivalActive = pathname.startsWith('/festival')
   const experienceActive = pathname === '/experience' || pathname === '/accommodation'
+  const moreActive = MORE_NAV.some((item) => item.href === pathname)
 
   return (
     <header
@@ -171,6 +178,15 @@ export function SiteHeader() {
           <NavLink href="/partnership" active={pathname === '/partnership'}>
             Partnership
           </NavLink>
+          <NavDropdown
+            label="More"
+            items={MORE_NAV}
+            active={moreActive}
+            open={openMenu === 'more'}
+            onToggle={() => setOpenMenu((v) => (v === 'more' ? null : 'more'))}
+            containerRef={moreRef}
+            pathname={pathname}
+          />
         </nav>
 
         <div className="flex items-center gap-3">
@@ -262,7 +278,7 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
 function NavDropdown({
   label,
   overviewHref,
-  overviewLabel,
+  overviewLabel = 'Overview',
   items,
   active,
   open,
@@ -271,8 +287,8 @@ function NavDropdown({
   pathname,
 }: {
   label: string
-  overviewHref: string
-  overviewLabel: string
+  overviewHref?: string
+  overviewLabel?: string
   items: { href: string; label: string }[]
   active: boolean
   open: boolean
@@ -307,20 +323,24 @@ function NavDropdown({
             transition={{ duration: 0.15, ease: 'easeOut' }}
             className="absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 rounded-sm border border-border bg-background/95 p-2 shadow-xl backdrop-blur-md"
           >
-            <Link
-              href={overviewHref}
-              role="menuitem"
-              className={cn(
-                'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
-                pathname === overviewHref
-                  ? 'text-amber'
-                  : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
-              )}
-            >
-              {overviewLabel}
-              <Chevrons count={1} className="text-amber" />
-            </Link>
-            <div className="my-1 border-t border-border/60" />
+            {overviewHref && (
+              <>
+                <Link
+                  href={overviewHref}
+                  role="menuitem"
+                  className={cn(
+                    'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
+                    pathname === overviewHref
+                      ? 'text-amber'
+                      : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
+                  )}
+                >
+                  {overviewLabel}
+                  <Chevrons count={1} className="text-amber" />
+                </Link>
+                <div className="my-1 border-t border-border/60" />
+              </>
+            )}
             {items.map((item) => (
               <Link
                 key={item.href}

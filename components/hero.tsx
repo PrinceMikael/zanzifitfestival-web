@@ -56,23 +56,23 @@ export function Hero() {
         style={{ y: fgY, opacity: fgOpacity }}
         className="relative z-10 w-full pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
       >
-        <div className="pt-24 lg:pt-36">
-          <h1 className="font-hero-title text-balance text-[3.38rem] font-bold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
+        <div className="pt-20 sm:pt-24 lg:pt-36">
+          <h1 className="font-hero-title text-balance text-[2.75rem] font-bold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
             ZanziFit
             <span className="block text-amber lg:mt-1">Festival</span>
           </h1>
 
-          <p className="font-hero-subhead font-medium mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:leading-tight">
+          <p className="font-hero-subhead font-medium mt-6 max-w-2xl text-pretty text-base leading-relaxed text-surface-dark-foreground/75 sm:mt-4 sm:text-lg sm:leading-snug lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:leading-tight">
             Where the ocean horizon meets the start line. Hybrid road-cycling
             and HYROX-style fitness on the coast of Zanzibar.
           </p>
 
-          <div className="mt-6 lg:mt-6">
+          <div className="mt-9 sm:mt-6 lg:mt-6">
             <p className="eyebrow mb-3 text-surface-dark-foreground/55">Countdown to race day</p>
             <Countdown />
           </div>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-6">
+          <div className="mt-9 flex flex-col gap-4 sm:mt-7 sm:flex-row sm:items-center sm:gap-3 lg:mt-6">
             <Link
               href="/register"
               className="group inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"

@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4, Syne } from 'next/font/google'
-import localFont from 'next/font/local'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import './globals.css'
@@ -9,7 +8,10 @@ import './globals.css'
 const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-fraunces',
-  weight: ['400', '600', '700', '900'],
+  // Every .font-display usage sitewide pairs Fraunces with weight 600
+  // only (confirmed by audit) — the 400/700/900 weights this used to
+  // load were never actually used, so they were trimmed.
+  weight: ['600'],
   style: ['normal'],
 })
 
@@ -30,17 +32,14 @@ const sourceSerif = Source_Serif_4({
   variable: '--font-source-serif',
 })
 
-const clashDisplay = localFont({
-  src: '../public/fonts/clash-display/ClashDisplay-Semibold.otf',
-  variable: '--font-clash-display',
-  weight: '600',
-  display: 'swap',
-})
-
 const syne = Syne({
   subsets: ['latin'],
   variable: '--font-syne',
-  weight: ['700', '800'],
+  // 600 added alongside the original 700/800: Syne now also backs the
+  // .font-display-athletic role (competition-page headings), several
+  // of which are set at font-semibold (600) — without this weight
+  // loaded the browser has to fake/substitute it.
+  weight: ['600', '700', '800'],
 })
 
 export const metadata: Metadata = {
@@ -80,7 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${sourceSerif.variable} ${clashDisplay.variable} ${syne.variable} bg-background`}
+      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${sourceSerif.variable} ${syne.variable} bg-background`}
       suppressHydrationWarning
     >
       <body className="antialiased">

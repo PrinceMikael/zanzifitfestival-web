@@ -61,12 +61,12 @@ export function Disciplines() {
                   )}
                 >
                   <div className="flex items-center gap-3">
-                    <h3 className="font-display text-3xl text-bone sm:text-4xl lg:text-5xl">
+                    <h3 className="font-display-athletic text-3xl text-bone sm:text-4xl lg:text-5xl">
                       {d.title}
                     </h3>
                     <ArrowUpRight className="size-6 shrink-0 text-bone/50 transition-colors group-hover:text-amber" />
                   </div>
-                  <p className="max-w-md text-pretty leading-relaxed text-bone/80">
+                  <p className="font-body-athletic max-w-md text-pretty leading-relaxed text-bone/80">
                     {d.copy}
                   </p>
                 </div>

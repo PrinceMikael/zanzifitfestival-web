@@ -52,7 +52,6 @@
   --font-display: var(--font-fraunces);
   --font-utility: var(--font-ibm-plex-mono);
   --font-body: var(--font-source-serif);
-  --font-clash-display: var(--font-clash-display);
   --font-ibm-plex-sans: var(--font-ibm-plex-sans);
   --font-syne: var(--font-syne);
 }
@@ -144,9 +143,24 @@
     font-feature-settings: 'tnum' 1;
   }
   .font-hero-title {
-    font-family: var(--font-syne), var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   }
   .font-hero-body {
+    font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+  /* Athletic/competition register — Festival, HYROX-Style, and Road
+     Cycling pages (plus the homepage discipline cards) opt into these
+     instead of the editorial .font-display/.font-sans pairing, so
+     race-format content (stations, categories, splits) reads as
+     technical/competitive rather than travel-editorial. Reuses Syne
+     and IBM Plex Sans — both already loaded for the home hero — instead
+     of adding a new family. Tourism-register pages (About, Experience,
+     Accommodation, Leadership) are unaffected and keep Fraunces/Source
+     Serif 4 by not opting in. */
+  .font-display-athletic {
+    font-family: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  }
+  .font-body-athletic {
     font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
   }
   /* Condensed technical eyebrow / label */

@@ -67,6 +67,7 @@ export default function HyroxPage() {
         title={<>Eight stations. One clock.</>}
         intro="HYROX-style racing at ZanziFit pairs functional strength stations with connecting runs, from a scaled Open field to full competition-weight Elite heats."
         image={{ src: '/images/hyrox-arena.jpg', alt: 'A HYROX-style athlete competing in front of a crowd' }}
+        voice="athletic"
       >
         <div className="flex flex-wrap gap-3">
           <Link
@@ -85,12 +86,12 @@ export default function HyroxPage() {
       </PageHero>
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <SectionHeading title="Three ways to race it." />
+        <SectionHeading title="Three ways to race it." voice="athletic" />
         <RevealGroup className="mt-14 divide-y divide-border border-t border-border">
           {CATEGORIES.map((c) => (
             <RevealItem key={c.name} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between">
-              <span className="font-display text-xl font-semibold text-surface-dark-foreground">{c.name}</span>
-              <span className="text-muted-foreground">{c.detail}</span>
+              <span className="font-display-athletic text-xl font-semibold text-surface-dark-foreground">{c.name}</span>
+              <span className="font-body-athletic text-muted-foreground">{c.detail}</span>
             </RevealItem>
           ))}
         </RevealGroup>
@@ -98,7 +99,7 @@ export default function HyroxPage() {
 
       <section className="border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading title="The eight stations." intro="Each station is separated by a 1 km run, run in this order." />
+          <SectionHeading title="The eight stations." intro="Each station is separated by a 1 km run, run in this order." voice="athletic" />
           <RevealGroup className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {STATIONS.map((s, i) => (
               <RevealItem
@@ -108,8 +109,8 @@ export default function HyroxPage() {
                 <span className="font-utility text-xs font-semibold uppercase tracking-[0.14em] text-amber">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className="mt-2 font-display text-lg font-semibold text-surface-dark-foreground">{s.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{s.detail}</p>
+                <h3 className="font-display-athletic mt-2 text-lg font-semibold text-surface-dark-foreground">{s.name}</h3>
+                <p className="font-body-athletic mt-1 text-sm text-muted-foreground">{s.detail}</p>
               </RevealItem>
             ))}
           </RevealGroup>
@@ -119,13 +120,13 @@ export default function HyroxPage() {
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <SectionHeading title="On race day." align="left" />
+            <SectionHeading title="On race day." align="left" voice="athletic" />
             <RevealGroup as="ul" className="mt-8 space-y-3">
               {RACE_DAY.map((item) => (
                 <RevealItem
                   key={item}
                   as="li"
-                  className="flex items-start gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-4 text-sm leading-relaxed text-surface-dark-foreground"
+                  className="font-body-athletic flex items-start gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-4 text-sm leading-relaxed text-surface-dark-foreground"
                 >
                   <Chevrons className="mt-0.5 shrink-0 text-amber" count={1} />
                   {item}
@@ -147,7 +148,7 @@ export default function HyroxPage() {
 
       <section className="border-t border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6">
-          <SectionHeading title="HYROX-Style questions." />
+          <SectionHeading title="HYROX-Style questions." voice="athletic" />
           <div className="mt-10">
             {FAQS.map((f) => (
               <AccordionItem key={f.question} question={f.question} answer={f.answer} />
@@ -161,6 +162,7 @@ export default function HyroxPage() {
           title="Ready to line up?"
           align="center"
           intro="Join the waitlist to be first in line when registration opens."
+          voice="athletic"
         />
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link

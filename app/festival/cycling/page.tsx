@@ -71,6 +71,7 @@ export default function CyclingPage() {
         title={<>Closed roads. Open coastline.</>}
         intro="Road cycling at ZanziFit runs on fully closed coastal roads, from a fast community sprint to a UCI-style elite endurance race, all sharing the same start and finish."
         image={{ src: '/images/cycling.jpg', alt: 'The peloton racing along the coastal road' }}
+        voice="athletic"
       >
         <div className="flex flex-wrap gap-3">
           <Link
@@ -89,12 +90,12 @@ export default function CyclingPage() {
       </PageHero>
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <SectionHeading title="Three distances, one coastline." />
+        <SectionHeading title="Three distances, one coastline." voice="athletic" />
         <RevealGroup className="mt-14 divide-y divide-border border-t border-border">
           {CATEGORIES.map((c) => (
             <RevealItem key={c.name} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between">
-              <span className="font-display text-xl font-semibold text-surface-dark-foreground">{c.name}</span>
-              <span className="text-muted-foreground">{c.detail}</span>
+              <span className="font-display-athletic text-xl font-semibold text-surface-dark-foreground">{c.name}</span>
+              <span className="font-body-athletic text-muted-foreground">{c.detail}</span>
             </RevealItem>
           ))}
         </RevealGroup>
@@ -113,12 +114,12 @@ export default function CyclingPage() {
               />
             </Reveal>
             <div>
-              <SectionHeading title="The course." align="left" />
+              <SectionHeading title="The course." align="left" voice="athletic" />
               <RevealGroup className="mt-8 space-y-6">
                 {COURSE_POINTS.map((p) => (
                   <RevealItem key={p.title}>
-                    <h3 className="font-display text-lg font-semibold text-surface-dark-foreground">{p.title}</h3>
-                    <p className="mt-2 leading-relaxed text-muted-foreground">{p.body}</p>
+                    <h3 className="font-display-athletic text-lg font-semibold text-surface-dark-foreground">{p.title}</h3>
+                    <p className="font-body-athletic mt-2 leading-relaxed text-muted-foreground">{p.body}</p>
                   </RevealItem>
                 ))}
               </RevealGroup>
@@ -128,13 +129,13 @@ export default function CyclingPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <SectionHeading title="On race day." intro="What to expect from the start line to the finish." />
+        <SectionHeading title="On race day." intro="What to expect from the start line to the finish." voice="athletic" />
         <RevealGroup as="ul" className="mt-10 grid gap-3 sm:grid-cols-2">
           {RACE_DAY.map((item) => (
             <RevealItem
               key={item}
               as="li"
-              className="flex items-start gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-4 text-sm leading-relaxed text-surface-dark-foreground"
+              className="font-body-athletic flex items-start gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-4 text-sm leading-relaxed text-surface-dark-foreground"
             >
               <Chevrons className="mt-0.5 shrink-0 text-amber" count={1} />
               {item}
@@ -145,7 +146,7 @@ export default function CyclingPage() {
 
       <section className="border-t border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6">
-          <SectionHeading title="Road cycling questions." />
+          <SectionHeading title="Road cycling questions." voice="athletic" />
           <div className="mt-10">
             {FAQS.map((f) => (
               <AccordionItem key={f.question} question={f.question} answer={f.answer} />
@@ -159,6 +160,7 @@ export default function CyclingPage() {
           title="Ready to line up?"
           align="center"
           intro="Join the waitlist to be first in line when registration opens."
+          voice="athletic"
         />
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link

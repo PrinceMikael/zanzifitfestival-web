@@ -56,6 +56,7 @@ export default function FestivalPage() {
         title={<>Two disciplines. One coastline. One weekend.</>}
         intro="6–8 November 2026 in Zanzibar. Race the discipline you love, or take on both, then recover on the same sand you started from."
         image={{ src: '/images/cycling.jpg', alt: 'The peloton racing along the coastal road' }}
+        voice="athletic"
       >
         <div className="flex flex-wrap gap-3">
           <Link href="/register" className="inline-flex items-center gap-2 rounded-sm bg-amber px-6 py-3 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5">
@@ -68,7 +69,7 @@ export default function FestivalPage() {
       </PageHero>
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <SectionHeading title="Pick your lane, or take on both." />
+        <SectionHeading title="Pick your lane, or take on both." voice="athletic" />
         <RevealGroup className="mt-14 grid gap-8 lg:grid-cols-2">
           {DISCIPLINES.map((d) => (
             <RevealItem key={d.name}>
@@ -81,8 +82,8 @@ export default function FestivalPage() {
                 </span>
               </div>
               <div className="p-8">
-                <h3 className="font-display text-3xl font-semibold text-surface-dark-foreground">{d.name}</h3>
-                <p className="mt-3 leading-relaxed text-muted-foreground">{d.blurb}</p>
+                <h3 className="font-display-athletic text-3xl font-semibold text-surface-dark-foreground">{d.name}</h3>
+                <p className="font-body-athletic mt-3 leading-relaxed text-muted-foreground">{d.blurb}</p>
                 <ul className="mt-6 divide-y divide-border border-t border-border">
                   {d.categories.map((c) => (
                     <li key={c.name} className="flex items-baseline justify-between gap-4 py-3">
@@ -107,13 +108,13 @@ export default function FestivalPage() {
 
       <section id="schedule" className="scroll-mt-24 border-y border-border bg-surface-dark-soft py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading title="Three days on the coast." />
+          <SectionHeading title="Three days on the coast." voice="athletic" />
           <RevealGroup className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
             {SCHEDULE.map((s, i) => (
               <RevealItem key={s.day} className={i > 0 ? 'md:border-l md:border-border md:pl-6' : ''}>
                 <div className="font-utility text-sm font-semibold uppercase tracking-[0.14em] text-amber">{s.day}</div>
-                <h3 className="mt-2 font-display text-2xl font-semibold text-surface-dark-foreground">{s.title}</h3>
-                <ul className="mt-5 space-y-3">
+                <h3 className="font-display-athletic mt-2 text-2xl font-semibold text-surface-dark-foreground">{s.title}</h3>
+                <ul className="font-body-athletic mt-5 space-y-3">
                   {s.items.map((i) => (
                     <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
                       <Chevrons className="mt-0.5 shrink-0 text-amber" count={1} />
@@ -130,7 +131,7 @@ export default function FestivalPage() {
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <SectionHeading title="Everything but the effort." align="left" />
+            <SectionHeading title="Everything but the effort." align="left" voice="athletic" />
             <RevealGroup as="ul" className="mt-8 grid gap-3 sm:grid-cols-2">
               {INCLUDED.map((i) => (
                 <RevealItem key={i} as="li" className="flex items-center gap-3 rounded-sm border border-border bg-surface-dark-soft px-4 py-3 text-sm text-surface-dark-foreground">

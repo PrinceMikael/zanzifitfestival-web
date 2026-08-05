@@ -12,11 +12,16 @@ export function PageHero({
   intro,
   image,
   children,
+  voice = 'editorial',
 }: {
   title: ReactNode
   intro?: string
   image?: { src: string; alt: string }
   children?: ReactNode
+  // 'editorial' (default) is the sitewide Fraunces/Source-Serif-4 voice.
+  // 'athletic' opts into Syne/IBM-Plex-Sans for competition-register
+  // pages (Festival, HYROX-Style, Road Cycling) — see app/globals.css.
+  voice?: 'editorial' | 'athletic'
 }) {
   const reduce = useReducedMotion()
   // Server-rendered HTML always ships fully visible; animation only
@@ -46,17 +51,17 @@ export function PageHero({
           transition={{ duration: 0.8, ease: EASE_CONFIDENT }}
         >
           <h1
-            className={`font-display font-semibold leading-[0.95] tracking-tight text-surface-dark-foreground text-balance ${
-              image ? 'max-w-4xl text-4xl md:text-6xl' : 'mx-auto text-5xl md:text-7xl'
-            }`}
+            className={`font-semibold leading-[0.95] tracking-tight text-surface-dark-foreground text-balance ${
+              voice === 'athletic' ? 'font-display-athletic' : 'font-display'
+            } ${image ? 'max-w-4xl text-4xl md:text-6xl' : 'mx-auto text-5xl md:text-7xl'}`}
           >
             {title}
           </h1>
           {intro ? (
             <p
               className={`mt-6 text-lg leading-relaxed text-muted-foreground text-pretty ${
-                image ? 'max-w-2xl' : 'mx-auto max-w-2xl'
-              }`}
+                voice === 'athletic' ? 'font-body-athletic' : ''
+              } ${image ? 'max-w-2xl' : 'mx-auto max-w-2xl'}`}
             >
               {intro}
             </p>

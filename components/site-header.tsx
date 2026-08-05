@@ -131,14 +131,6 @@ export function SiteHeader() {
             // always inverted to read light-on-black in the header.
             className="h-12 w-auto invert transition-transform duration-300 group-hover:scale-[1.03] lg:h-[4.5rem]"
           />
-          <span className="hidden flex-col border-l border-border/70 pl-3 leading-none sm:flex">
-            <span className="font-clash-regular text-[0.68rem] uppercase tracking-[0.24em] text-amber">
-              Zanzibar
-            </span>
-            <span className="font-clash-regular mt-1 text-[0.68rem] uppercase tracking-[0.2em] text-foreground/50">
-              6&ndash;8 Nov 2026
-            </span>
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex xl:gap-9" aria-label="Primary">
@@ -192,7 +184,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/register"
-            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm border border-amber/60 px-5 py-2.5 font-utility text-[0.78rem] font-bold uppercase tracking-[0.14em] text-bone transition-all hover:-translate-y-0.5 hover:border-amber hover:shadow-[0_8px_24px_-8px_rgba(242,169,68,0.7)] sm:inline-flex"
+            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm border border-amber/60 px-5 py-2.5 font-clash-regular text-[0.78rem] uppercase tracking-[0.14em] text-bone transition-all hover:-translate-y-0.5 hover:border-amber hover:shadow-[0_8px_24px_-8px_rgba(242,169,68,0.7)] sm:inline-flex"
           >
             Join Waitlist
             <Chevrons count={3} className="text-amber" animate />
@@ -212,20 +204,12 @@ export function SiteHeader() {
       {/* Mobile menu */}
       {open && (
         <div className="border-t border-border bg-background/95 backdrop-blur-md lg:hidden">
-          <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
-            <div className="flex items-center gap-2">
-              <Chevrons count={3} className="text-amber" animate />
-              <span className="font-clash-regular text-lg uppercase tracking-[0.1em] text-foreground">
-                Zanzibar <span className="text-amber">·</span> 6&ndash;8 Nov 2026
-              </span>
-            </div>
-          </div>
-          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6" aria-label="Mobile">
+          <nav className="mx-auto flex max-w-7xl flex-col px-4 pt-6 pb-4 sm:px-6" aria-label="Mobile">
             {MOBILE_NAV.map((item) => (
               <div key={item.href} className="border-b border-border/60">
                 <Link
                   href={item.href}
-                  className="flex items-center justify-between py-3 font-utility text-sm uppercase tracking-[0.14em] text-foreground/80"
+                  className="flex items-center justify-between py-3 font-clash-regular text-sm uppercase tracking-[0.14em] text-foreground/80"
                 >
                   {item.label}
                   <Chevrons count={1} className="text-amber" />
@@ -236,7 +220,7 @@ export function SiteHeader() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="flex items-center justify-between py-2 font-utility text-xs uppercase tracking-[0.12em] text-foreground/60"
+                        className="flex items-center justify-between py-2 font-clash-regular text-xs uppercase tracking-[0.12em] text-foreground/60"
                       >
                         {child.label}
                         <Chevrons count={1} className="text-amber/70" />
@@ -248,7 +232,7 @@ export function SiteHeader() {
             ))}
             <Link
               href="/register"
-              className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-5 py-3.5 font-utility text-sm font-bold uppercase tracking-[0.14em] text-primary-foreground"
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-5 py-3.5 font-clash-regular text-sm uppercase tracking-[0.14em] text-primary-foreground"
             >
               Join the Waitlist
               <Chevrons count={3} className="text-primary-foreground/80" />
@@ -265,7 +249,7 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
     <Link
       href={href}
       className={cn(
-        'relative flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
+        'relative flex items-center gap-1.5 whitespace-nowrap font-clash-regular text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
         active ? 'text-amber' : 'text-foreground/90 hover:text-foreground',
       )}
     >
@@ -304,7 +288,7 @@ function NavDropdown({
         aria-expanded={open}
         aria-haspopup="menu"
         className={cn(
-          'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
+          'flex items-center gap-1.5 whitespace-nowrap font-clash-regular text-[0.82rem] uppercase tracking-[0.14em] transition-colors',
           active ? 'text-amber' : 'text-foreground/90 hover:text-foreground',
         )}
       >
@@ -329,7 +313,7 @@ function NavDropdown({
                   href={overviewHref}
                   role="menuitem"
                   className={cn(
-                    'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
+                    'flex items-center justify-between rounded-sm px-3 py-2.5 font-clash-regular text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
                     pathname === overviewHref
                       ? 'text-amber'
                       : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
@@ -347,7 +331,7 @@ function NavDropdown({
                 href={item.href}
                 role="menuitem"
                 className={cn(
-                  'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
+                  'flex items-center justify-between rounded-sm px-3 py-2.5 font-clash-regular text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
                   pathname === item.href
                     ? 'text-amber'
                     : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',

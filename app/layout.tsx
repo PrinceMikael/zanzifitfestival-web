@@ -42,10 +42,18 @@ const syne = Syne({
   weight: ['600', '700', '800'],
 })
 
+// Three weights of one local family, sharing one CSS variable — Next.js
+// picks the matching file per requested font-weight automatically.
+//   700 (Bold)    -> hero title ("ZanziFit Festival")
+//   500 (Medium)  -> hero subhead paragraph
+//   400 (Regular) -> hero eyebrow line + nav brand wordmark
 const clashDisplay = localFont({
-  src: '../public/fonts/clash-display/ClashDisplay-Bold.otf',
+  src: [
+    { path: '../public/fonts/clash-display/ClashDisplay-Regular.otf', weight: '400' },
+    { path: '../public/fonts/clash-display/ClashDisplay-Medium.otf', weight: '500' },
+    { path: '../public/fonts/clash-display/ClashDisplay-Bold.otf', weight: '700' },
+  ],
   variable: '--font-clash-display',
-  weight: '700',
   display: 'swap',
 })
 

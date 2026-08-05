@@ -132,10 +132,10 @@ export function SiteHeader() {
             className="h-12 w-auto invert transition-transform duration-300 group-hover:scale-[1.03] lg:h-[4.5rem]"
           />
           <span className="hidden flex-col border-l border-border/70 pl-3 leading-none sm:flex lg:hidden">
-            <span className="font-utility text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-amber">
+            <span className="font-clash-regular text-[0.68rem] uppercase tracking-[0.24em] text-amber">
               Zanzibar
             </span>
-            <span className="mt-1 font-utility text-[0.62rem] uppercase tracking-[0.2em] text-foreground/50">
+            <span className="font-clash-regular mt-1 text-[0.68rem] uppercase tracking-[0.2em] text-foreground/50">
               6&ndash;8 Nov 2026
             </span>
           </span>
@@ -215,7 +215,7 @@ export function SiteHeader() {
           <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
             <div className="flex items-center gap-2">
               <Chevrons count={3} className="text-amber" animate />
-              <span className="font-utility text-lg font-semibold uppercase tracking-[0.1em] text-foreground">
+              <span className="font-clash-regular text-lg uppercase tracking-[0.1em] text-foreground">
                 Zanzibar <span className="text-amber">·</span> 6&ndash;8 Nov 2026
               </span>
             </div>

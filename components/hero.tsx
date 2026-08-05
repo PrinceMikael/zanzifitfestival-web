@@ -59,7 +59,7 @@ export function Hero() {
         <div className="pt-24 lg:pt-36">
           <div className="flex items-center gap-3">
             <Chevrons count={3} className="text-amber" animate />
-            <span className="eyebrow text-surface-dark-foreground/80">
+            <span className="eyebrow-hero text-surface-dark-foreground/80">
               Zanzibar, Tanzania · 6-8 November 2026
             </span>
           </div>
@@ -69,7 +69,7 @@ export function Hero() {
             <span className="block text-amber lg:mt-1">Festival</span>
           </h1>
 
-          <p className="font-body-athletic mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:font-normal lg:leading-tight">
+          <p className="font-hero-subhead font-medium mt-4 max-w-2xl text-pretty text-lg leading-snug text-surface-dark-foreground/75 lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:leading-tight">
             Where the ocean horizon meets the start line. Hybrid road-cycling
             and HYROX-style fitness on the coast of Zanzibar.
           </p>

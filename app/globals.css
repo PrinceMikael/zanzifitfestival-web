@@ -176,19 +176,6 @@
   .font-nav {
     font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
   }
-  /* Hero eyebrow line specifically: same caps/tracking/size treatment as
-     the shared .eyebrow utility, but in Clash Display Regular instead of
-     mono. A standalone class (not a .eyebrow override) so declaration
-     order can't accidentally let .eyebrow's font-family win the cascade,
-     and so the shared .eyebrow utility used on FAQ/footer/partner-strip
-     stays untouched. */
-  .eyebrow-hero {
-    font-family: var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    font-size: 0.72rem;
-    font-weight: 400;
-  }
   /* Condensed technical eyebrow / label */
   .eyebrow {
     font-family: var(--font-utility);

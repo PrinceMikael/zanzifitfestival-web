@@ -25,7 +25,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
   variable: '--font-ibm-plex-sans',
-  weight: ['400', '500', '600'],
+  // 700 added: the nav (.font-nav) now uses font-bold for more visual
+  // weight than the previous semibold — needs the actual bold file
+  // loaded, not a browser-synthesized fake.
+  weight: ['400', '500', '600', '700'],
 })
 
 const sourceSerif = Source_Serif_4({

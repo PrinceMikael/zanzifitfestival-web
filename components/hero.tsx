@@ -57,14 +57,7 @@ export function Hero() {
         className="relative z-10 w-full pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
       >
         <div className="pt-24 lg:pt-36">
-          <div className="flex items-center gap-3">
-            <Chevrons count={3} className="text-amber" animate />
-            <span className="eyebrow-hero text-surface-dark-foreground/80">
-              Zanzibar, Tanzania · 6-8 November 2026
-            </span>
-          </div>
-
-          <h1 className="font-hero-title mt-4 text-balance text-[3.38rem] font-bold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
+          <h1 className="font-hero-title text-balance text-[3.38rem] font-bold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
             ZanziFit
             <span className="block text-amber lg:mt-1">Festival</span>
           </h1>

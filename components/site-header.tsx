@@ -184,7 +184,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/register"
-            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm border border-amber/60 px-5 py-2.5 font-nav text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-amber hover:shadow-[0_8px_24px_-8px_rgba(242,169,68,0.7)] sm:inline-flex"
+            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm border border-amber/60 px-5 py-2.5 font-nav text-sm font-semibold uppercase tracking-wide text-white transition-all hover:-translate-y-0.5 hover:border-amber hover:shadow-[0_8px_24px_-8px_rgba(242,169,68,0.7)] sm:inline-flex"
           >
             Join Waitlist
             <Chevrons count={3} className="text-amber" animate />
@@ -209,7 +209,7 @@ export function SiteHeader() {
               <div key={item.href} className="border-b border-border/60">
                 <Link
                   href={item.href}
-                  className="flex items-center justify-between py-3 font-nav text-sm font-medium text-white"
+                  className="flex items-center justify-between py-3 font-nav text-sm font-medium uppercase tracking-wide text-white"
                 >
                   {item.label}
                   <Chevrons count={1} className="text-amber" />
@@ -220,7 +220,7 @@ export function SiteHeader() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="flex items-center justify-between py-2 font-nav text-sm font-medium text-white"
+                        className="flex items-center justify-between py-2 font-nav text-sm font-medium uppercase tracking-wide text-white"
                       >
                         {child.label}
                         <Chevrons count={1} className="text-amber/70" />
@@ -232,7 +232,7 @@ export function SiteHeader() {
             ))}
             <Link
               href="/register"
-              className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-5 py-3.5 font-nav text-sm font-semibold text-primary-foreground"
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-5 py-3.5 font-nav text-sm font-semibold uppercase tracking-wide text-primary-foreground"
             >
               Join the Waitlist
               <Chevrons count={3} className="text-primary-foreground/80" />
@@ -249,7 +249,7 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
     <Link
       href={href}
       className={cn(
-        'relative flex items-center gap-1.5 whitespace-nowrap font-nav text-sm font-medium transition-colors',
+        'relative flex items-center gap-1.5 whitespace-nowrap font-nav text-sm font-medium uppercase tracking-wide transition-colors',
         active ? 'text-amber' : 'text-white hover:text-amber',
       )}
     >
@@ -288,7 +288,7 @@ function NavDropdown({
         aria-expanded={open}
         aria-haspopup="menu"
         className={cn(
-          'flex items-center gap-1.5 whitespace-nowrap font-nav text-sm font-medium transition-colors',
+          'flex items-center gap-1.5 whitespace-nowrap font-nav text-sm font-medium uppercase tracking-wide transition-colors',
           active ? 'text-amber' : 'text-white hover:text-amber',
         )}
       >
@@ -313,7 +313,7 @@ function NavDropdown({
                   href={overviewHref}
                   role="menuitem"
                   className={cn(
-                    'flex items-center justify-between rounded-sm px-3 py-2.5 font-nav text-sm font-medium transition-colors',
+                    'flex items-center justify-between rounded-sm px-3 py-2.5 font-nav text-sm font-medium uppercase tracking-wide transition-colors',
                     pathname === overviewHref
                       ? 'text-amber'
                       : 'text-white hover:bg-surface-dark-soft hover:text-amber',
@@ -331,7 +331,7 @@ function NavDropdown({
                 href={item.href}
                 role="menuitem"
                 className={cn(
-                  'flex items-center justify-between rounded-sm px-3 py-2.5 font-nav text-sm font-medium transition-colors',
+                  'flex items-center justify-between rounded-sm px-3 py-2.5 font-nav text-sm font-medium uppercase tracking-wide transition-colors',
                   pathname === item.href
                     ? 'text-amber'
                     : 'text-white hover:bg-surface-dark-soft hover:text-amber',

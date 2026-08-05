@@ -53,6 +53,7 @@
   --font-utility: var(--font-ibm-plex-mono);
   --font-body: var(--font-source-serif);
   --font-ibm-plex-sans: var(--font-ibm-plex-sans);
+  --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
   --font-syne: var(--font-syne);
   --font-clash-display: var(--font-clash-display);
 }
@@ -170,11 +171,11 @@
   .font-hero-subhead {
     font-family: var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
   }
-  /* Nav bar text — links, dropdown items, buttons, mobile menu. A
-     plain, neutral UI sans (IBM Plex Sans, already loaded) rather than
-     a display/brand face, so the nav reads as understated chrome. */
+  /* Nav bar text — links, dropdown items, buttons, mobile menu. Plus
+     Jakarta Sans per spec: links at weight 500, the CTA button at 600,
+     both set at 14px (0.875rem) by the elements that use this class. */
   .font-nav {
-    font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
   }
   /* Condensed technical eyebrow / label */
   .eyebrow {

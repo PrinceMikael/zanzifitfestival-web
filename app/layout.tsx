@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4, Syne } from 'next/font/google'
+import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans, Plus_Jakarta_Sans, Source_Serif_4, Syne } from 'next/font/google'
 import localFont from 'next/font/local'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -25,10 +25,15 @@ const ibmPlexMono = IBM_Plex_Mono({
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
   variable: '--font-ibm-plex-sans',
-  // 700 added: the nav (.font-nav) now uses font-bold for more visual
-  // weight than the previous semibold — needs the actual bold file
-  // loaded, not a browser-synthesized fake.
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600'],
+})
+
+// Nav bar only: links at weight 500, the CTA button at weight 600 —
+// per exact spec (Plus Jakarta Sans, 14px / 0.875rem).
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta-sans',
+  weight: ['500', '600'],
 })
 
 const sourceSerif = Source_Serif_4({
@@ -97,7 +102,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${sourceSerif.variable} ${syne.variable} ${clashDisplay.variable} bg-background`}
+      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${plusJakartaSans.variable} ${sourceSerif.variable} ${syne.variable} ${clashDisplay.variable} bg-background`}
       suppressHydrationWarning
     >
       <body className="antialiased">

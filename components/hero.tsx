@@ -64,7 +64,7 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="font-hero-title mt-4 text-balance text-[3.38rem] font-semibold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
+          <h1 className="font-hero-title mt-4 text-balance text-[3.38rem] font-bold leading-[0.88] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
             ZanziFit
             <span className="block text-amber lg:mt-1">Festival</span>
           </h1>

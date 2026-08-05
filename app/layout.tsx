@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4, Syne } from 'next/font/google'
+import localFont from 'next/font/local'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import './globals.css'
@@ -35,11 +36,17 @@ const sourceSerif = Source_Serif_4({
 const syne = Syne({
   subsets: ['latin'],
   variable: '--font-syne',
-  // 600 added alongside the original 700/800: Syne now also backs the
-  // .font-display-athletic role (competition-page headings), several
-  // of which are set at font-semibold (600) — without this weight
-  // loaded the browser has to fake/substitute it.
+  // Still backs .font-display-athletic (competition-page headings,
+  // several set at font-semibold) — kept loaded even though the hero
+  // title itself has moved to Clash Display Bold below.
   weight: ['600', '700', '800'],
+})
+
+const clashDisplay = localFont({
+  src: '../public/fonts/clash-display/ClashDisplay-Bold.otf',
+  variable: '--font-clash-display',
+  weight: '700',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -79,7 +86,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${sourceSerif.variable} ${syne.variable} bg-background`}
+      className={`${fraunces.variable} ${ibmPlexMono.variable} ${ibmPlexSans.variable} ${sourceSerif.variable} ${syne.variable} ${clashDisplay.variable} bg-background`}
       suppressHydrationWarning
     >
       <body className="antialiased">

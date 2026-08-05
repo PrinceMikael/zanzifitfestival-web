@@ -54,6 +54,7 @@
   --font-body: var(--font-source-serif);
   --font-ibm-plex-sans: var(--font-ibm-plex-sans);
   --font-syne: var(--font-syne);
+  --font-clash-display: var(--font-clash-display);
 }
 
 @theme inline {
@@ -142,8 +143,12 @@
     font-family: var(--font-utility);
     font-feature-settings: 'tnum' 1;
   }
+  /* The "One Hero Rule" placement — the single home hero title, set in
+     Clash Display Bold, licensed to exactly this one spot. Syne stays
+     as a fallback in the chain (still loaded for .font-display-athletic
+     elsewhere) in case the local font fails to load. */
   .font-hero-title {
-    font-family: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-clash-display), var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   }
   /* Athletic/competition register — the home hero, Festival, HYROX-Style,
      and Road Cycling pages (plus the homepage discipline cards) opt into

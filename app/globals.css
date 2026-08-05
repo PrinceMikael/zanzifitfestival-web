@@ -170,10 +170,11 @@
   .font-hero-subhead {
     font-family: var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
   }
-  /* Clash Display Regular — the nav's brand wordmark text (desktop
-     tagline + mobile menu header). */
-  .font-clash-regular {
-    font-family: var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
+  /* Nav bar text — links, dropdown items, buttons, mobile menu. A
+     plain, neutral UI sans (IBM Plex Sans, already loaded) rather than
+     a display/brand face, so the nav reads as understated chrome. */
+  .font-nav {
+    font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
   }
   /* Hero eyebrow line specifically: same caps/tracking/size treatment as
      the shared .eyebrow utility, but in Clash Display Regular instead of

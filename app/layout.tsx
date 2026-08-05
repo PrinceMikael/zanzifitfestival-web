@@ -4,7 +4,6 @@ import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4, Syne } from 'ne
 import localFont from 'next/font/local'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
-import { ThemeScript } from '@/components/theme-script'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -85,7 +84,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="antialiased">
-        <ThemeScript />
         <SiteHeader />
         {children}
         <SiteFooter />

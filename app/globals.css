@@ -57,32 +57,6 @@
   --font-syne: var(--font-syne);
 }
 
-/* Light theme — remaps the semantic (shadcn-style) tokens that
-   body/bg-background/text-foreground consume, plus the surface-dark-*
-   tokens that page-body sections use for their dark-banded look
-   (bg-surface-dark, bg-surface-dark-soft, text-surface-dark-foreground).
-   Raw brand tokens (bg-ink, text-bone, bg-deep-teal) are deliberately
-   left unaffected: they mark surfaces that stay dark regardless of
-   theme (site-header, site-footer, photo-overlay scrims, the fixed
-   deep-teal accent bands) and must not flip. */
-:root[data-theme='light'] {
-  --background: #ffffff;
-  --foreground: var(--ink);
-  --card: #ffffff;
-  --card-foreground: var(--ink);
-  --popover: #ffffff;
-  --popover-foreground: var(--ink);
-  --secondary-foreground: var(--bone);
-  --muted: #f2f2f0;
-  --muted-foreground: rgba(11, 14, 18, 0.62);
-  --border: rgba(11, 14, 18, 0.1);
-  --input: rgba(11, 14, 18, 0.16);
-  --surface-dark: #ffffff;
-  --surface-dark-soft: #f2f2f0;
-  --surface-dark-foreground: var(--ink);
-  --surface-dark-foreground-muted: rgba(11, 14, 18, 0.62);
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -149,6 +123,15 @@
   ::selection {
     background: var(--amber);
     color: #17110a;
+  }
+  /* System-wide keyboard focus ring: amber to match the elevation
+     language (glow, not a neutral browser-default outline), visible
+     against both flat-black and photo backgrounds. Applied via
+     :focus-visible so mouse/touch interaction stays visually quiet. */
+  :focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
   }
 }
 

@@ -4,35 +4,33 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Chevrons } from '@/components/chevrons'
-import { ThemeToggle } from '@/components/theme-toggle'
 
-const PRIMARY_NAV = [
-  { href: '/experience', label: 'Experience Zanzibar' },
-  { href: '/accommodation', label: 'Accommodation' },
-]
+// Four top-level decision points, each grounded in what the visitor is
+// actually deciding — no unlabeled catch-all bucket:
+//   About        -> who is behind this (story + the people)
+//   The Festival  -> what the competition is
+//   Experience    -> should I go, where do I stay
+//   Partnership   -> a named revenue persona, given real top-level scent
+// FAQ and Contact already live in the footer (Discover/Connect columns)
+// and don't need header real estate too.
+const ABOUT_NAV = [{ href: '/leadership', label: 'Leadership' }]
 
 const FESTIVAL_NAV = [
   { href: '/festival/cycling', label: 'Road Cycling' },
   { href: '/festival/hyrox', label: 'HYROX-Style' },
 ]
 
-const MORE_NAV = [
-  { href: '/partnership', label: 'Partnership' },
-  { href: '/leadership', label: 'Leadership' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/contact', label: 'Contact' },
-]
+const EXPERIENCE_NAV = [{ href: '/accommodation', label: 'Accommodation' }]
 
 const MOBILE_NAV = [
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'About', children: ABOUT_NAV },
   { href: '/festival', label: 'The Festival', children: FESTIVAL_NAV },
-  { href: '/experience', label: 'Experience Zanzibar' },
-  { href: '/accommodation', label: 'Accommodation' },
+  { href: '/experience', label: 'Experience Zanzibar', children: EXPERIENCE_NAV },
   { href: '/partnership', label: 'Partnership' },
-  { href: '/leadership', label: 'Leadership' },
   { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -42,9 +40,10 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [progress, setProgress] = useState(0)
   const [open, setOpen] = useState(false)
-  const [openMenu, setOpenMenu] = useState<'festival' | 'more' | null>(null)
+  const [openMenu, setOpenMenu] = useState<'about' | 'festival' | 'experience' | null>(null)
+  const aboutRef = useRef<HTMLDivElement>(null)
   const festivalRef = useRef<HTMLDivElement>(null)
-  const moreRef = useRef<HTMLDivElement>(null)
+  const experienceRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => {
@@ -65,8 +64,9 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (!openMenu) return
+    const refs = { about: aboutRef, festival: festivalRef, experience: experienceRef }
     function onPointerDown(e: PointerEvent) {
-      const ref = openMenu === 'festival' ? festivalRef : moreRef
+      const ref = refs[openMenu as keyof typeof refs]
       if (ref.current && !ref.current.contains(e.target as Node)) setOpenMenu(null)
     }
     function onKeyDown(e: KeyboardEvent) {
@@ -80,8 +80,20 @@ export function SiteHeader() {
     }
   }, [openMenu])
 
+  // Close an open dropdown if a resize crosses the lg breakpoint while
+  // it's open (e.g. rotating a tablet), so state can't strand a desktop
+  // dropdown open underneath the mobile layout.
+  useEffect(() => {
+    function onResize() {
+      if (window.innerWidth < 1024) setOpenMenu(null)
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  const aboutActive = pathname === '/about' || pathname === '/leadership'
   const festivalActive = pathname.startsWith('/festival')
-  const moreActive = MORE_NAV.some((item) => item.href === pathname)
+  const experienceActive = pathname === '/experience' || pathname === '/accommodation'
 
   return (
     <header
@@ -108,11 +120,9 @@ export function SiteHeader() {
             width={220}
             height={76}
             priority
-            // Theme toggling sets `data-theme` on <html> (no `.dark` class), so
-            // `dark:` variants never match here. Invert by default (correct for
-            // the dark theme, the site default), and cancel the invert in light
-            // mode via an explicit data-theme attribute selector.
-            className="h-12 w-auto invert transition-transform duration-300 group-hover:scale-[1.03] lg:h-[4.5rem] [:root[data-theme='light']_&]:invert-0"
+            // Site is dark-only: the logo asset is a dark mark, so it's
+            // always inverted to read light-on-black in the header.
+            className="h-12 w-auto invert transition-transform duration-300 group-hover:scale-[1.03] lg:h-[4.5rem]"
           />
           <span className="hidden flex-col border-l border-border/70 pl-3 leading-none sm:flex lg:hidden">
             <span className="font-utility text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-amber">
@@ -125,178 +135,56 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex xl:gap-9" aria-label="Primary">
-          <NavLink href="/about" active={pathname === '/about'}>
-            About
+          <NavDropdown
+            label="About"
+            overviewHref="/about"
+            overviewLabel="Overview"
+            items={ABOUT_NAV}
+            active={aboutActive}
+            open={openMenu === 'about'}
+            onToggle={() => setOpenMenu((v) => (v === 'about' ? null : 'about'))}
+            containerRef={aboutRef}
+            pathname={pathname}
+          />
+          <NavDropdown
+            label="The Festival"
+            overviewHref="/festival"
+            overviewLabel="Overview"
+            items={FESTIVAL_NAV}
+            active={festivalActive}
+            open={openMenu === 'festival'}
+            onToggle={() => setOpenMenu((v) => (v === 'festival' ? null : 'festival'))}
+            containerRef={festivalRef}
+            pathname={pathname}
+          />
+          <NavDropdown
+            label="Experience Zanzibar"
+            overviewHref="/experience"
+            overviewLabel="Overview"
+            items={EXPERIENCE_NAV}
+            active={experienceActive}
+            open={openMenu === 'experience'}
+            onToggle={() => setOpenMenu((v) => (v === 'experience' ? null : 'experience'))}
+            containerRef={experienceRef}
+            pathname={pathname}
+          />
+          <NavLink href="/partnership" active={pathname === '/partnership'}>
+            Partnership
           </NavLink>
-          <div className="relative" ref={festivalRef}>
-            <button
-              type="button"
-              onClick={() => setOpenMenu((v) => (v === 'festival' ? null : 'festival'))}
-              aria-expanded={openMenu === 'festival'}
-              aria-haspopup="menu"
-              className={cn(
-                'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
-                festivalActive ? 'text-amber' : 'text-foreground/90 hover:text-foreground',
-              )}
-            >
-              The Festival
-              <ChevronDown className={cn('size-3.5 transition-transform', openMenu === 'festival' && 'rotate-180')} />
-            </button>
-            {openMenu === 'festival' && (
-              <div
-                role="menu"
-                className="absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 rounded-sm border border-border bg-background/95 p-2 shadow-xl backdrop-blur-md"
-              >
-                <Link
-                  href="/festival"
-                  role="menuitem"
-                  className={cn(
-                    'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
-                    pathname === '/festival'
-                      ? 'text-amber'
-                      : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
-                  )}
-                >
-                  Overview
-                  <Chevrons count={1} className="text-amber" />
-                </Link>
-                <div className="my-1 border-t border-border/60" />
-                {FESTIVAL_NAV.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    role="menuitem"
-                    className="flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] text-foreground/70 transition-colors hover:bg-surface-dark-soft hover:text-foreground"
-                  >
-                    {item.label}
-                    <Chevrons count={1} className="text-amber" />
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {PRIMARY_NAV.map((item) => (
-            <NavLink key={item.href} href={item.href} active={pathname === item.href}>
-              {item.label}
-            </NavLink>
-          ))}
-
-          <div className="relative" ref={moreRef}>
-            <button
-              type="button"
-              onClick={() => setOpenMenu((v) => (v === 'more' ? null : 'more'))}
-              aria-expanded={openMenu === 'more'}
-              aria-haspopup="menu"
-              className={cn(
-                'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
-                moreActive ? 'text-amber' : 'text-foreground/90 hover:text-foreground',
-              )}
-            >
-              More
-              <ChevronDown className={cn('size-3.5 transition-transform', openMenu === 'more' && 'rotate-180')} />
-            </button>
-            {openMenu === 'more' && (
-              <div
-                role="menu"
-                className="absolute left-1/2 top-full mt-4 w-48 -translate-x-1/2 rounded-sm border border-border bg-background/95 p-2 shadow-xl backdrop-blur-md"
-              >
-                {MORE_NAV.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    role="menuitem"
-                    className={cn(
-                      'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
-                      pathname === item.href
-                        ? 'text-amber'
-                        : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
-                    )}
-                  >
-                    {item.label}
-                    <Chevrons count={1} className="text-amber" />
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
         </nav>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <style data-impeccable-css="9bc03082">{`
-            @scope ([data-impeccable-variant="1"]) {
-              :scope > a {
-                background: color-mix(in srgb, var(--amber) 22%, transparent);
-                backdrop-filter: blur(var(--p-blur, 12px));
-                -webkit-backdrop-filter: blur(var(--p-blur, 12px));
-                border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent);
-                border-radius: 999px;
-                color: var(--bone);
-                font-weight: 700;
-                box-shadow: none;
-              }
-            }
-            @scope ([data-impeccable-variant="2"]) {
-              :scope > a {
-                background: color-mix(in srgb, var(--bone) 14%, transparent);
-                backdrop-filter: blur(var(--p-blur, 16px));
-                -webkit-backdrop-filter: blur(var(--p-blur, 16px));
-                border: 1px solid color-mix(in srgb, var(--bone) 35%, transparent);
-                border-radius: 999px;
-                color: var(--bone);
-                font-weight: 700;
-                box-shadow: inset 0 1px 0 color-mix(in srgb, var(--bone) 25%, transparent);
-              }
-            }
-            @scope ([data-impeccable-variant="3"]) {
-              :scope > a {
-                background: color-mix(in srgb, var(--amber) 16%, transparent);
-                backdrop-filter: blur(var(--p-blur, 10px));
-                -webkit-backdrop-filter: blur(var(--p-blur, 10px));
-                border: 1px solid color-mix(in srgb, var(--amber) 60%, transparent);
-                border-radius: 999px;
-                color: var(--bone);
-                font-weight: 700;
-                transition: background 0.2s, border-color 0.2s, transform 0.2s;
-              }
-              :scope > a:hover {
-                background: color-mix(in srgb, var(--amber) 28%, transparent);
-                transform: translateY(-1px);
-              }
-            }
-          `}</style>
-          <div data-impeccable-variant="1" style={{ display: "none" }} data-impeccable-params='[{"id":"blur","kind":"range","min":4,"max":24,"step":1,"default":12,"label":"Blur"}]'>
-            <Link
-              href="/register"
-              className="group hidden items-center gap-2.5 whitespace-nowrap px-5 py-2.5 font-utility text-[0.78rem] uppercase tracking-[0.14em] transition-all hover:-translate-y-0.5 sm:inline-flex"
-            >
-              Join Waitlist
-              <Chevrons count={3} className="text-bone/80" animate />
-            </Link>
-          </div>
-          <div data-impeccable-variant="2" style={{ display: "none" }} data-impeccable-params='[{"id":"blur","kind":"range","min":4,"max":24,"step":1,"default":16,"label":"Blur"}]'>
-            <Link
-              href="/register"
-              className="group hidden items-center gap-2.5 whitespace-nowrap px-5 py-2.5 font-utility text-[0.78rem] uppercase tracking-[0.14em] transition-all hover:-translate-y-0.5 sm:inline-flex"
-            >
-              Join Waitlist
-              <Chevrons count={3} className="text-bone/80" animate />
-            </Link>
-          </div>
-          <div data-impeccable-variant="3" style={{ display: "none" }} data-impeccable-params='[{"id":"blur","kind":"range","min":4,"max":24,"step":1,"default":10,"label":"Blur"}]'>
-            <Link
-              href="/register"
-              className="group hidden items-center gap-2.5 whitespace-nowrap px-5 py-2.5 font-utility text-[0.78rem] uppercase tracking-[0.14em] sm:inline-flex"
-            >
-              Join Waitlist
-              <Chevrons count={3} className="text-bone/80" animate />
-            </Link>
-          </div>
+          <Link
+            href="/register"
+            className="group hidden items-center gap-2.5 whitespace-nowrap rounded-sm border border-amber/60 px-5 py-2.5 font-utility text-[0.78rem] font-bold uppercase tracking-[0.14em] text-bone transition-all hover:-translate-y-0.5 hover:border-amber hover:shadow-[0_8px_24px_-8px_rgba(242,169,68,0.7)] sm:inline-flex"
+          >
+            Join Waitlist
+            <Chevrons count={3} className="text-amber" animate />
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex size-10 items-center justify-center rounded-sm border border-border text-foreground lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-sm border border-border text-foreground lg:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
@@ -368,5 +256,90 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
       {children}
       {active && <Chevrons count={1} className="text-amber" />}
     </Link>
+  )
+}
+
+function NavDropdown({
+  label,
+  overviewHref,
+  overviewLabel,
+  items,
+  active,
+  open,
+  onToggle,
+  containerRef,
+  pathname,
+}: {
+  label: string
+  overviewHref: string
+  overviewLabel: string
+  items: { href: string; label: string }[]
+  active: boolean
+  open: boolean
+  onToggle: () => void
+  containerRef: React.RefObject<HTMLDivElement | null>
+  pathname: string
+}) {
+  return (
+    <div className="relative" ref={containerRef}>
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        className={cn(
+          'flex items-center gap-1.5 whitespace-nowrap font-utility text-[0.82rem] font-semibold uppercase tracking-[0.14em] transition-colors',
+          active ? 'text-amber' : 'text-foreground/90 hover:text-foreground',
+        )}
+      >
+        {label}
+        {/* Single brand chevron rotates to signal open/closed — the same
+            >>> motif used for active links and CTAs, not a generic caret. */}
+        <Chevrons count={1} className={cn('transition-transform duration-200', open ? '-rotate-90' : 'rotate-90')} />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="menu"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.15, ease: 'easeOut' }}
+            className="absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 rounded-sm border border-border bg-background/95 p-2 shadow-xl backdrop-blur-md"
+          >
+            <Link
+              href={overviewHref}
+              role="menuitem"
+              className={cn(
+                'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
+                pathname === overviewHref
+                  ? 'text-amber'
+                  : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
+              )}
+            >
+              {overviewLabel}
+              <Chevrons count={1} className="text-amber" />
+            </Link>
+            <div className="my-1 border-t border-border/60" />
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                role="menuitem"
+                className={cn(
+                  'flex items-center justify-between rounded-sm px-3 py-2.5 font-utility text-[0.8rem] uppercase tracking-[0.12em] transition-colors',
+                  pathname === item.href
+                    ? 'text-amber'
+                    : 'text-foreground/70 hover:bg-surface-dark-soft hover:text-foreground',
+                )}
+              >
+                {item.label}
+                <Chevrons count={1} className="text-amber" />
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   )
 }

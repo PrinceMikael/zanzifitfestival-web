@@ -47,45 +47,54 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/20" />
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/30 to-transparent" />
 
-      {/* Content — constrained to the 144px safe zone. Anchored from the
-          top (not vertically centered) so the full stack — title through
-          buttons — never gets pushed below the fold on shorter viewports;
-          centering a block this tall clipped the countdown/buttons on
-          common laptop screen heights. */}
+      {/* Content — outer element handles the full-bleed safe-zone padding;
+          inner element caps the reading column at 1600px and centers it,
+          so on ultra-wide/zoomed-out viewports (4K, wide monitors) the
+          text stops pinning to the physical left edge with a growing dead
+          zone to the right. Below a 1600px-wide viewport this is a no-op
+          (the cap never engages) so normal desktop/laptop layout is
+          unchanged. lg:items-center vertically centers the stack within
+          the section (which sets its own lg:min-h-svh floor); the section
+          is flex-col so this motion.div only ever grows to the content's
+          natural height plus that floor — it can't force extra space that
+          would push the stack off-screen on a short viewport the way a
+          hard 100%-height flex-center container would. */}
       <motion.div
         style={{ y: fgY, opacity: fgOpacity }}
-        className="relative z-10 w-full pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:pl-[144px] lg:pr-12"
+        className="relative z-10 flex w-full flex-1 pb-12 will-change-transform lg:py-0 px-6 sm:px-10 lg:px-12 xl:px-16 lg:items-center"
       >
-        <div className="pt-20 sm:pt-24 lg:pt-36">
-          <h1 className="font-hero-title text-balance text-[2.75rem] font-bold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
-            ZanziFit
-            <span className="block text-amber lg:mt-1">Festival</span>
-          </h1>
+        <div className="mx-auto w-full max-w-[1600px]">
+          <div className="pt-20 sm:pt-24 lg:pt-0">
+            <h1 className="font-hero-title text-balance text-[2.75rem] font-bold leading-[0.95] tracking-[-0.02em] text-surface-dark-foreground sm:text-7xl lg:text-[clamp(6rem,8.08vw,10rem)]">
+              ZanziFit
+              <span className="block text-amber lg:mt-1">Festival</span>
+            </h1>
 
-          <p className="font-hero-subhead font-medium mt-6 max-w-2xl text-pretty text-base leading-relaxed text-surface-dark-foreground/75 sm:mt-4 sm:text-lg sm:leading-snug lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:leading-tight">
-            Where the ocean horizon meets the start line. Hybrid road-cycling
-            and HYROX-style fitness on the coast of Zanzibar.
-          </p>
+            <p className="font-hero-subhead font-medium mt-6 max-w-2xl text-pretty text-base leading-relaxed text-surface-dark-foreground/75 sm:mt-4 sm:text-lg sm:leading-snug lg:mt-4 lg:text-[clamp(1.25rem,1.4vw,1.75rem)] lg:leading-tight">
+              Where the ocean horizon meets the start line. Hybrid road-cycling
+              and HYROX-style fitness on the coast of Zanzibar.
+            </p>
 
-          <div className="mt-9 sm:mt-6 lg:mt-6">
-            <p className="eyebrow mb-3 text-surface-dark-foreground/55">Countdown to race day</p>
-            <Countdown />
-          </div>
+            <div className="mt-9 sm:mt-6 lg:mt-8">
+              <p className="eyebrow mb-3 text-surface-dark-foreground/55">Countdown to race day</p>
+              <Countdown className="lg:gap-4" />
+            </div>
 
-          <div className="mt-9 flex flex-col gap-4 sm:mt-7 sm:flex-row sm:items-center sm:gap-3 lg:mt-6">
-            <Link
-              href="/register"
-              className="group inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5"
-            >
-              Join the Waitlist
-              <Chevrons count={3} className="text-primary-foreground/80" animate />
-            </Link>
-            <Link
-              href="/partnership"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-surface-dark-foreground/30 px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber"
-            >
-              Become a Partner
-            </Link>
+            <div className="mt-9 flex flex-col gap-4 sm:mt-7 sm:flex-row sm:items-center sm:gap-3 lg:mt-8 lg:gap-4">
+              <Link
+                href="/register"
+                className="group inline-flex items-center justify-center gap-2 rounded-sm bg-amber px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5 lg:px-9 lg:py-5 lg:text-base"
+              >
+                Join the Waitlist
+                <Chevrons count={3} className="text-primary-foreground/80" animate />
+              </Link>
+              <Link
+                href="/partnership"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-surface-dark-foreground/30 px-7 py-4 font-utility text-sm font-semibold uppercase tracking-[0.14em] text-surface-dark-foreground transition-colors hover:border-amber hover:text-amber lg:px-9 lg:py-5 lg:text-base"
+              >
+                Become a Partner
+              </Link>
+            </div>
           </div>
         </div>
       </motion.div>

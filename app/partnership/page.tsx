@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
@@ -6,12 +5,14 @@ import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { PartnershipInquiry } from '@/components/partnership-inquiry'
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/partnership',
   title: 'Partnership',
   description:
     'Partner with ZanziFit Festival. Presenting, airline, water, tourism and media partnership tiers at a premium destination endurance event.',
-}
+})
 
 const TIERS = [
   {

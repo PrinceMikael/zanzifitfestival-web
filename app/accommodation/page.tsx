@@ -1,15 +1,16 @@
-import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { AccommodationTiers } from '@/components/accommodation-tiers'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/accommodation',
   title: 'Accommodation',
   description:
     'Where to stay for ZanziFit Festival: hotels, resorts, boutique stays and budget options around Zanzibar. We help you book.',
-}
+})
 
 const HOTELS = [
   {

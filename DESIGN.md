@@ -19,6 +19,10 @@ typography:
     fontWeight: 700
     lineHeight: 0.88
     letterSpacing: "-0.02em"
+  clash-display:
+    fontFamily: "Clash Display, ui-sans-serif, system-ui, sans-serif"
+    fontWeight: "400 / 500 / 700"
+    usage: "Local font (public/fonts/clash-display). Primary hero title face (700), hero subhead (500), nav wordmark and eyebrow (400) — see app/layout.tsx. Syne remains for .font-display-athletic (competition-page headings) only."
   utility:
     fontFamily: "IBM Plex Mono, ui-monospace, monospace"
     fontWeight: 500

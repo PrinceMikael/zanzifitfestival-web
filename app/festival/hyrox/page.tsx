@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
@@ -6,12 +5,15 @@ import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { AccordionItem } from '@/components/accordion-item'
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/festival/hyrox',
   title: 'HYROX-Style',
   description:
     'Eight functional stations against the clock at ZanziFit Festival: Elite, Open and Corporate Teams categories on the Zanzibar coast, 6-8 November 2026.',
-}
+  image: '/images/discipline-hyrox.jpg',
+})
 
 const CATEGORIES = [
   { name: 'Elite', detail: 'Individual · full competition weight' },

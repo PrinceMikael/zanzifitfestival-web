@@ -65,13 +65,21 @@ const clashDisplay = localFont({
   display: 'swap',
 })
 
+const SITE_URL = 'https://zanzifitfestival.com'
+const SITE_NAME = 'ZanziFit Festival'
+const DEFAULT_DESCRIPTION =
+  'A hybrid road-cycling and HYROX-style functional fitness festival on the coast of Zanzibar, Tanzania. Race weekend 6-8 November 2026, race day 7 November.'
+// Branded 1200x630 share card generated at build time by
+// app/opengraph-image.tsx — see lib/seo.ts for the per-page equivalent.
+const DEFAULT_OG_IMAGE = '/opengraph-image'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'ZanziFit Festival, Zanzibar, 6-8 November 2026',
     template: '%s · ZanziFit Festival',
   },
-  description:
-    'A hybrid road-cycling and HYROX-style functional fitness festival on the coast of Zanzibar, Tanzania. Race weekend 6-8 November 2026, race day 7 November.',
+  description: DEFAULT_DESCRIPTION,
   keywords: [
     'ZanziFit',
     'Zanzibar fitness festival',
@@ -79,6 +87,31 @@ export const metadata: Metadata = {
     'road cycling Zanzibar',
     'endurance festival Tanzania',
   ],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: 'ZanziFit Festival, Zanzibar, 6-8 November 2026',
+    description: DEFAULT_DESCRIPTION,
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'ZanziFit Festival, road cycling and HYROX-style racing on the Zanzibar coast',
+      },
+    ],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ZanziFit Festival, Zanzibar, 6-8 November 2026',
+    description: DEFAULT_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+  },
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
@@ -87,6 +120,18 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   generator: 'v0.app',
+}
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/zfit-logo.svg`,
+  // Footer social links (site-footer.tsx) are still placeholder "#" hrefs.
+  // Add the live Instagram/Facebook/YouTube URLs here once those exist —
+  // fake URLs would be worse for schema validity than omitting them.
+  sameAs: [] as string[],
 }
 
 export const viewport: Viewport = {
@@ -106,6 +151,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <SiteHeader />
         {children}
         <SiteFooter />

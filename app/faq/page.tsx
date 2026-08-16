@@ -1,13 +1,14 @@
-import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { FaqAccordion } from '@/components/faq-accordion'
 import { EnquiryLink } from '@/components/enquiry-link'
 import { Reveal } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/faq',
   title: 'FAQ',
   description: 'Travel, visas, accommodation and spectator information for ZanziFit Festival, 6-8 November 2026, Zanzibar.',
-}
+})
 
 const FAQ_GROUPS = [
   {
@@ -52,9 +53,29 @@ const FAQ_GROUPS = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_GROUPS.flatMap((group) =>
+    group.items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  ),
+}
+
 export default function FaqPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHero
         title={<>Everything before the start line.</>}
         intro="Travel, visas, accommodation and what to expect as a spectator: the practical details for race weekend."

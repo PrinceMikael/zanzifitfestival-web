@@ -1,16 +1,17 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/festival',
   title: 'The Festival',
   description:
     'Two disciplines, one weekend on the Zanzibar coast. Explore the road-cycling and HYROX-style courses, the race-day schedule and what is included.',
-}
+})
 
 const DISCIPLINES = [
   {

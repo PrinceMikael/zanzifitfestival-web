@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
@@ -6,12 +5,15 @@ import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { AccordionItem } from '@/components/accordion-item'
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/festival/cycling',
   title: 'Road Cycling',
   description:
     'Closed-road coastal racing at ZanziFit Festival: Elite, Open and Community categories along the Zanzibar coastline, 6-8 November 2026.',
-}
+  image: '/images/discipline-road-cycling.jpg',
+})
 
 const CATEGORIES = [
   { name: 'Elite Road Race', detail: '120 km · closed circuit · UCI-style timing' },

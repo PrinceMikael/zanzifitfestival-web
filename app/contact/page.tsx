@@ -1,15 +1,16 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { ContactForm } from '@/components/contact-form'
 import { Reveal } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/contact',
   title: 'Contact',
   description: 'Get in touch with ZanziFit Festival in Zanzibar, Tanzania.',
-}
+})
 
 export default function ContactPage() {
   return (

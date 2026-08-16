@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
@@ -6,12 +5,14 @@ import { Chevrons } from '@/components/chevrons'
 import { ExpandableCard } from '@/components/expandable-card'
 import { EnquiryLink } from '@/components/enquiry-link'
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/experience',
   title: 'Experience Zanzibar',
   description:
     'What to see, taste and understand on the island that hosts ZanziFit: Stone Town, the coast, the culture and the food, all a short ride from the festival venue.',
-}
+})
 
 const THINGS_TO_DO = [
   {

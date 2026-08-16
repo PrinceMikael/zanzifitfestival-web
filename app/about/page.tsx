@@ -1,16 +1,17 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/about',
   title: 'About',
   description:
     'ZanziFit is a hybrid road-cycling and HYROX-style fitness festival built to put Zanzibar on the global endurance map.',
-}
+})
 
 const VALUES = [
   {

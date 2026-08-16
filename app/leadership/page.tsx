@@ -1,16 +1,17 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { Chevrons } from '@/components/chevrons'
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/leadership',
   title: 'Leadership',
   description:
     'Meet the team behind ZanziFit Festival: endurance athletes, event operators and Zanzibari hospitality leaders.',
-}
+})
 
 const LEADS = [
   {

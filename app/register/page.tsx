@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { RegisterForm } from '@/components/register-form'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/register',
   title: 'Register',
   description: 'Register your interest for ZanziFit Festival: road cycling, HYROX-style, and corporate team categories.',
-}
+})
 
 export default function RegisterPage() {
   return (

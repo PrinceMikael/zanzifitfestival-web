@@ -49,3 +49,12 @@ export function YoutubeIcon(props: IconProps) {
     </svg>
   )
 }
+
+export function TiktokIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="M16 3v9.5a3.5 3.5 0 1 1-3.5-3.5" />
+      <path d="M16 3c.3 2.2 2 3.9 4 4.2" />
+    </svg>
+  )
+}

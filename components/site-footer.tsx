@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { MessageCircle } from 'lucide-react'
 import { NewsletterForm } from '@/components/newsletter-form'
 import { Chevrons } from '@/components/chevrons'
-import { InstagramIcon, FacebookIcon, YoutubeIcon } from '@/components/social-icons'
+import { InstagramIcon, FacebookIcon, TiktokIcon } from '@/components/social-icons'
 
 const COLUMNS = [
   {
@@ -33,9 +33,21 @@ const COLUMNS = [
 ]
 
 const SOCIALS = [
-  { href: '#', label: 'Instagram', Icon: InstagramIcon },
-  { href: '#', label: 'Facebook', Icon: FacebookIcon },
-  { href: '#', label: 'YouTube', Icon: YoutubeIcon },
+  {
+    href: 'https://www.instagram.com/zanzfit_festival?igsi=OGp3ZHEyaDYyODV5&utm_source=qr',
+    label: 'Instagram',
+    Icon: InstagramIcon,
+  },
+  {
+    href: 'https://www.facebook.com/share/1Be8x2Fjdk/?mibextid=wwXIfr',
+    label: 'Facebook',
+    Icon: FacebookIcon,
+  },
+  {
+    href: 'https://www.tiktok.com/@zanzifit_festival?_r=1&_t=ZS-99DEuysmOUG',
+    label: 'TikTok',
+    Icon: TiktokIcon,
+  },
   { href: 'https://wa.me/255686915587', label: 'WhatsApp', Icon: MessageCircle },
 ]
 

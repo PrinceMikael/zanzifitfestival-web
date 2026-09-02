@@ -26,3 +26,5 @@ node_modules
 
 # Full font family source (only the weight actually used ships from public/fonts/)
 /ClashDisplay/
+# superpowers brainstorm session files
+.superpowers/
